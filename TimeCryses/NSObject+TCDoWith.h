@@ -3,7 +3,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSObject.h"
 
 @interface NSObject (TCDoWith)
 + (instancetype) tc_with:(void (^)(id o))block;

@@ -6,20 +6,159 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		076931DD1D18575100D24A35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 076931DC1D18575100D24A35 /* main.m */; };
+		076931E81D18575100D24A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076931E71D18575100D24A35 /* Assets.xcassets */; };
+		076931EB1D18575100D24A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076931E91D18575100D24A35 /* LaunchScreen.storyboard */; };
+		2DDE4B2888DC52D879CF9FC5 /* Pods_TimeCryses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E76B3B9EFBF73A484C8C4 /* Pods_TimeCryses.framework */; };
+		CBB6B1EF7C336F1B07598442 /* NSObject+TCDoWith.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B99472185577727FC0E8 /* NSObject+TCDoWith.m */; };
+		CBB6B32DD6472F5CE1B10354 /* TCMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B086D16E9B25365E21AB /* TCMainMenuViewController.m */; };
+		CBB6B51A2ED6B76EE3BD9A24 /* TCDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BF479A5F36E63D7A667B /* TCDraggableView.m */; };
+		CBB6B7E27A0713FBD369E062 /* UIView+TCTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BC056D344C2273B38DFA /* UIView+TCTapAction.m */; };
+		CBB6B9ECA36D7E6211EF617A /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B9543522EAE02C4DAAD8 /* TCAppDelegate.m */; };
+		CBB6BB2AD54F6168821A2693 /* TCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B216FE06EB2D71162694 /* TCButton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		076931D81D18575000D24A35 /* TimeCryses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCryses.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		076931DC1D18575100D24A35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		076931E71D18575100D24A35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		076931EA1D18575100D24A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		076931EC1D18575100D24A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A8E76B3B9EFBF73A484C8C4 /* Pods_TimeCryses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCryses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		210C68684CC01E81EE07FBEE /* Pods-TimeCryses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCryses.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeCryses/Pods-TimeCryses.release.xcconfig"; sourceTree = "<group>"; };
+		41594FA01906A40B2CF127EE /* Pods-TimeCryses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCryses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeCryses/Pods-TimeCryses.debug.xcconfig"; sourceTree = "<group>"; };
+		CBB6B086D16E9B25365E21AB /* TCMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMainMenuViewController.m; sourceTree = "<group>"; };
+		CBB6B0E959F2D7EE9FB021CD /* TCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
+		CBB6B216FE06EB2D71162694 /* TCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCButton.m; sourceTree = "<group>"; };
+		CBB6B33F1475DDC4F79B298F /* TCMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMainMenuViewController.h; sourceTree = "<group>"; };
+		CBB6B58046170E0F41A63BD7 /* TCDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDraggableView.h; sourceTree = "<group>"; };
+		CBB6B8C988ABFA359C6E9336 /* TCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCButton.h; sourceTree = "<group>"; };
+		CBB6B9543522EAE02C4DAAD8 /* TCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
+		CBB6B99472185577727FC0E8 /* NSObject+TCDoWith.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TCDoWith.m"; sourceTree = "<group>"; };
+		CBB6BA54EB6EC099C9831EB7 /* NSObject+TCDoWith.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TCDoWith.h"; sourceTree = "<group>"; };
+		CBB6BC056D344C2273B38DFA /* UIView+TCTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TCTapAction.m"; sourceTree = "<group>"; };
+		CBB6BE927BE0A7DE1377EA60 /* UIView+TCTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TCTapAction.h"; sourceTree = "<group>"; };
+		CBB6BF479A5F36E63D7A667B /* TCDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCDraggableView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		076931D51D18575000D24A35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DDE4B2888DC52D879CF9FC5 /* Pods_TimeCryses.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		076931CD1D1856A200D24A35 = {
 			isa = PBXGroup;
 			children = (
+				076931DA1D18575100D24A35 /* TimeCryses */,
+				076931D91D18575000D24A35 /* Products */,
+				CC1BBFB452037EF55978D64E /* Pods */,
+				17691315698EA5B505D5491A /* Frameworks */,
 			);
+			sourceTree = "<group>";
+			usesTabs = 1;
+		};
+		076931D91D18575000D24A35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				076931D81D18575000D24A35 /* TimeCryses.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		076931DA1D18575100D24A35 /* TimeCryses */ = {
+			isa = PBXGroup;
+			children = (
+				076931E71D18575100D24A35 /* Assets.xcassets */,
+				076931E91D18575100D24A35 /* LaunchScreen.storyboard */,
+				076931EC1D18575100D24A35 /* Info.plist */,
+				076931DB1D18575100D24A35 /* Supporting Files */,
+				CBB6B9543522EAE02C4DAAD8 /* TCAppDelegate.m */,
+				CBB6B0E959F2D7EE9FB021CD /* TCAppDelegate.h */,
+				CBB6B086D16E9B25365E21AB /* TCMainMenuViewController.m */,
+				CBB6B33F1475DDC4F79B298F /* TCMainMenuViewController.h */,
+				CBB6B99472185577727FC0E8 /* NSObject+TCDoWith.m */,
+				CBB6BA54EB6EC099C9831EB7 /* NSObject+TCDoWith.h */,
+				CBB6B216FE06EB2D71162694 /* TCButton.m */,
+				CBB6B8C988ABFA359C6E9336 /* TCButton.h */,
+				CBB6BC056D344C2273B38DFA /* UIView+TCTapAction.m */,
+				CBB6BE927BE0A7DE1377EA60 /* UIView+TCTapAction.h */,
+				CBB6BF479A5F36E63D7A667B /* TCDraggableView.m */,
+				CBB6B58046170E0F41A63BD7 /* TCDraggableView.h */,
+			);
+			path = TimeCryses;
+			sourceTree = "<group>";
+		};
+		076931DB1D18575100D24A35 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				076931DC1D18575100D24A35 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17691315698EA5B505D5491A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A8E76B3B9EFBF73A484C8C4 /* Pods_TimeCryses.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC1BBFB452037EF55978D64E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41594FA01906A40B2CF127EE /* Pods-TimeCryses.debug.xcconfig */,
+				210C68684CC01E81EE07FBEE /* Pods-TimeCryses.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		076931D71D18575000D24A35 /* TimeCryses */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 076931ED1D18575100D24A35 /* Build configuration list for PBXNativeTarget "TimeCryses" */;
+			buildPhases = (
+				F0BDA8051A15D0BA04DAA525 /* 📦 Check Pods Manifest.lock */,
+				4B8F921EFCD36F4F3A894FEA /* uD83DuDCE6 Check Pods Manifest.lock */,
+				076931D41D18575000D24A35 /* Sources */,
+				076931D51D18575000D24A35 /* Frameworks */,
+				076931D61D18575000D24A35 /* Resources */,
+				FACF5BEF63EC3E20A779260C /* uD83DuDCE6 Embed Pods Frameworks */,
+				37A7DD51658E7C73C3BA22EC /* uD83DuDCE6 Copy Pods Resources */,
+				E19ADB689FC2727786AC22FA /* 📦 Embed Pods Frameworks */,
+				143BDF55C8ACA1E4524DB006 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeCryses;
+			productName = TimeCryses;
+			productReference = 076931D81D18575000D24A35 /* TimeCryses.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		076931CE1D1856A200D24A35 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
+				TargetAttributes = {
+					076931D71D18575000D24A35 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
 			};
 			buildConfigurationList = 076931D11D1856A200D24A35 /* Build configuration list for PBXProject "TimeCryses" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -27,14 +166,150 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 076931CD1D1856A200D24A35;
+			productRefGroup = 076931D91D18575000D24A35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				076931D71D18575000D24A35 /* TimeCryses */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		076931D61D18575000D24A35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076931EB1D18575100D24A35 /* LaunchScreen.storyboard in Resources */,
+				076931E81D18575100D24A35 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		143BDF55C8ACA1E4524DB006 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeCryses/Pods-TimeCryses-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37A7DD51658E7C73C3BA22EC /* uD83DuDCE6 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "uD83DuDCE6 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeCryses/Pods-TimeCryses-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B8F921EFCD36F4F3A894FEA /* uD83DuDCE6 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "uD83DuDCE6 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E19ADB689FC2727786AC22FA /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeCryses/Pods-TimeCryses-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0BDA8051A15D0BA04DAA525 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FACF5BEF63EC3E20A779260C /* uD83DuDCE6 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "uD83DuDCE6 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeCryses/Pods-TimeCryses-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		076931D41D18575000D24A35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076931DD1D18575100D24A35 /* main.m in Sources */,
+				CBB6B9ECA36D7E6211EF617A /* TCAppDelegate.m in Sources */,
+				CBB6B32DD6472F5CE1B10354 /* TCMainMenuViewController.m in Sources */,
+				CBB6B1EF7C336F1B07598442 /* NSObject+TCDoWith.m in Sources */,
+				CBB6BB2AD54F6168821A2693 /* TCButton.m in Sources */,
+				CBB6B7E27A0713FBD369E062 /* UIView+TCTapAction.m in Sources */,
+				CBB6B51A2ED6B76EE3BD9A24 /* TCDraggableView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		076931E91D18575100D24A35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				076931EA1D18575100D24A35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		076931D21D1856A200D24A35 /* Debug */ = {
@@ -49,6 +324,102 @@
 			};
 			name = Release;
 		};
+		076931EE1D18575100D24A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41594FA01906A40B2CF127EE /* Pods-TimeCryses.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = TimeCryses/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = terana.TimeCryses;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		076931EF1D18575100D24A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 210C68684CC01E81EE07FBEE /* Pods-TimeCryses.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = TimeCryses/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = terana.TimeCryses;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -57,6 +428,15 @@
 			buildConfigurations = (
 				076931D21D1856A200D24A35 /* Debug */,
 				076931D31D1856A200D24A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		076931ED1D18575100D24A35 /* Build configuration list for PBXNativeTarget "TimeCryses" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				076931EE1D18575100D24A35 /* Debug */,
+				076931EF1D18575100D24A35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

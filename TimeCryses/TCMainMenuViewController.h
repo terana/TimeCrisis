@@ -2,7 +2,8 @@
 // Created by Anastasia on 6/20/16.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface TCMainMenuViewController : NSObject
+@interface TCMainMenuViewController : UIViewController
+
 @end

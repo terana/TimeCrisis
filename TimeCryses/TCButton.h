@@ -2,7 +2,10 @@
 // Created by Anastasia on 6/22/16.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface TCButton : NSObject
+@interface TCButton : UIView
+@property (nonatomic, readonly) UILabel *label;
+- (void) setTarget:(id)object withAction:(SEL)action;
+
 @end
