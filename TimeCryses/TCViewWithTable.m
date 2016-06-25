@@ -3,6 +3,8 @@
 //
 
 #import "TCViewWithTable.h"
+#import "KeepLayout/KeepLayout.h"
+#import "NSObject+TCDoWith.h"
 
 @interface TCViewWithTable (TableView) <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -16,9 +18,15 @@
 	self = [super init];
 	if (self)
 	{
-		self.userInteractionEnabled        = YES;
-		UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(drag:)];
-		[self addGestureRecognizer:recognizer];
+		__unused UITableView *table = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] tc_with:^(UITableView *o) {
+			o.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.1];
+			[self addSubview: o];
+			o.keepHorizontalInsets.equal = 0;
+			o.keepTopInset.equal = 15;
+			o.keepBottomInset.equal = 0;
+			o.delegate =  self;
+			o.dataSource = self;
+		}];
 	}
 
 	return self;
@@ -36,7 +44,14 @@
 	{
 		return 1;
 	}
-	return 2;
+	return [_data count];
+}
+
+-(void) setData:(NSArray *)data
+{
+	_data = data;
+	UITableView *tableview = [[self subviews] objectAtIndex:0];
+	[tableview reloadData];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -46,8 +61,13 @@
 	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:identifier];
 	}
-
-		cell.textLabel.text = [NSString stringWithFormat:@"Section %d, row %d", indexPath.section, indexPath.row];
+	if(indexPath.section)
+	{cell.textLabel.text = [NSString stringWithFormat:@"%@", _data[indexPath.row]];}
+	else
+	{
+		cell.textLabel.text = @"Table";
+	}
 	return cell;
 }
+
 @end

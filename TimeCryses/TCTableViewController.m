@@ -14,23 +14,19 @@
 {
 	self.view = [TCViewWithTable tc_with:^(TCViewWithTable *o) {
 		o.backgroundColor = [UIColor whiteColor];
-		__unused UITableView *table = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] tc_with:^(UITableView *oo) {
-			oo.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.1];
-			[o addSubview: oo];
-			oo.keepHorizontalInsets.equal = 0;
-			oo.keepVerticalInsets.equal = 5;
-			oo.delegate = (TCViewWithTable *) o;
-			oo.dataSource = (TCViewWithTable *) o;
-
-		}];
-
 	}];
+}
+
+- (void) viewDidLoad
+{
+	NSArray *data = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12 ];
+	TCViewWithTable *view = self.view;
+	view.data = data;
 }
 
 - (void) updateOnClassInjection
 {
 	[self loadView];
 }
-
 
 @end
