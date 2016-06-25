@@ -8,6 +8,7 @@
 #import "UIView+TCTapAction.h"
 #import "TCButton.h"
 #import "TCDraggableView.h"
+#import "TCTableViewController.h"
 
 @implementation TCMainMenuViewController
 - (void) loadView
@@ -49,7 +50,24 @@
 			oo.keepTopOffsetTo(viewWithLabels).equal = 50;
 			oo.keepHorizontalCenter.equal = 0.5;
 		}];
+
+		__unused TCButton *nextViewButton = [TCButton tc_with:^(TCButton *oo) {
+			oo.label.text = @"Next";
+			oo.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent: 0.1];
+			[oo setTarget:self withAction:@selector(nextView:)];
+			[o addSubview:oo];
+			oo.keepBottomInset.equal = 10;
+			oo.keepHorizontalCenter.equal = 0.5;
+		}];
 	}];
+}
+
+- (void) nextView:(UIView*) sender
+{
+	TCTableViewController  *tableViewController = [TCTableViewController new];
+	tableViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+	tableViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	[self presentViewController: tableViewController animated:YES completion:nil];
 }
 
 - (void) methodForButton:(UIView*)sender
