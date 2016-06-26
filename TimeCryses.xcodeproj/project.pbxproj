@@ -17,6 +17,7 @@
 		CBB6B51A2ED6B76EE3BD9A24 /* TCDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BF479A5F36E63D7A667B /* TCDraggableView.m */; };
 		CBB6B69DC9A1DB9A43A30852 /* TCViewWithTable.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BA5D77ECE5D1DCE194CC /* TCViewWithTable.m */; };
 		CBB6B7E27A0713FBD369E062 /* UIView+TCTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BC056D344C2273B38DFA /* UIView+TCTapAction.m */; };
+		CBB6B816C6639BB1615527C0 /* NSDate+TCDateString.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B78A4A8DF05D5D29832B /* NSDate+TCDateString.m */; };
 		CBB6B90D7F114BC786A8F047 /* TCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B2B01DC6F5310A1BB0D8 /* TCUser.m */; };
 		CBB6B9ECA36D7E6211EF617A /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B9543522EAE02C4DAAD8 /* TCAppDelegate.m */; };
 		CBB6BB2AD54F6168821A2693 /* TCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B216FE06EB2D71162694 /* TCButton.m */; };
@@ -40,6 +41,7 @@
 		CBB6B2B01DC6F5310A1BB0D8 /* TCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUser.m; sourceTree = "<group>"; };
 		CBB6B33F1475DDC4F79B298F /* TCMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMainMenuViewController.h; sourceTree = "<group>"; };
 		CBB6B58046170E0F41A63BD7 /* TCDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDraggableView.h; sourceTree = "<group>"; };
+		CBB6B78A4A8DF05D5D29832B /* NSDate+TCDateString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TCDateString.m"; sourceTree = "<group>"; };
 		CBB6B8C988ABFA359C6E9336 /* TCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCButton.h; sourceTree = "<group>"; };
 		CBB6B8CE3972E208E6A84DB6 /* TCViewWithTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithTable.h; sourceTree = "<group>"; };
 		CBB6B9543522EAE02C4DAAD8 /* TCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		CBB6BC056D344C2273B38DFA /* UIView+TCTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TCTapAction.m"; sourceTree = "<group>"; };
 		CBB6BE19BEB703D89772FD68 /* TCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTableViewController.m; sourceTree = "<group>"; };
 		CBB6BE927BE0A7DE1377EA60 /* UIView+TCTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TCTapAction.h"; sourceTree = "<group>"; };
+		CBB6BEA8AC92B6E1D62B383D /* NSDate+TCDateString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TCDateString.h"; sourceTree = "<group>"; };
 		CBB6BF479A5F36E63D7A667B /* TCDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCDraggableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +115,8 @@
 				CBB6B005F90F0B0DCA371C56 /* TCUserTableCell.h */,
 				CBB6B2B01DC6F5310A1BB0D8 /* TCUser.m */,
 				CBB6B20C450DED7DAEE8D6F4 /* TCUser.h */,
+				CBB6B78A4A8DF05D5D29832B /* NSDate+TCDateString.m */,
+				CBB6BEA8AC92B6E1D62B383D /* NSDate+TCDateString.h */,
 			);
 			path = TimeCryses;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				CBB6B69DC9A1DB9A43A30852 /* TCViewWithTable.m in Sources */,
 				CBB6BCB3A86D3D87484E0383 /* TCUserTableCell.m in Sources */,
 				CBB6B90D7F114BC786A8F047 /* TCUser.m in Sources */,
+				CBB6B816C6639BB1615527C0 /* NSDate+TCDateString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

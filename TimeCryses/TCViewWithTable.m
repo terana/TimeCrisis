@@ -12,6 +12,7 @@
 
 @implementation TCViewWithTable
 {
+	UITableView *_tableView;
 }
 
 - (instancetype) init
@@ -19,16 +20,16 @@
 	self = [super init];
 	if (self)
 	{
-		__unused UITableView *table = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] tc_with:^(UITableView *o) {
+		__unused UITableView *table = _tableView = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] tc_with:^(UITableView *o) {
 			o.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.1];
+			o.delegate        = self;
+			o.dataSource      = self;
+			[o registerClass:[TCUserTableCell class] forCellReuseIdentifier:@"Cell"];
 			[self addSubview:o];
 			o.keepHorizontalInsets.equal = 0;
 			o.keepTopInset.equal         = 15;
 			o.keepBottomInset.equal      = 0;
-			o.delegate                   = self;
-			o.dataSource                 = self;
 		}];
-		[table registerClass:[TCUserTableCell class] forCellReuseIdentifier:@"Cell"];
 	}
 	return self;
 }
@@ -69,9 +70,9 @@
 	return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if(indexPath.section)
+	if (indexPath.section)
 	{
 		return 100.f;
 	}

@@ -5,5 +5,4 @@
 #import <UIKit/UIKit.h>
 
 @interface TCTableViewController : UIViewController
-
 @end

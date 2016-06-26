@@ -3,6 +3,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 typedef void(^TCTapActionBlock)(__kindof UIView *sender);
 
 @interface UIView (TCTapAction)

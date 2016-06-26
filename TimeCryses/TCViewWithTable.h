@@ -5,5 +5,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TCViewWithTable : UIView
-@property (strong, nonatomic)  NSArray * data;
+@property (strong, nonatomic) NSArray *data;
 @end

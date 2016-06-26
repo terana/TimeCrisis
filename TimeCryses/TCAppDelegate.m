@@ -18,5 +18,4 @@
 	_window = window;
 	return YES;
 }
-
 @end

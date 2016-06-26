@@ -7,6 +7,7 @@
 #import "NSObject+TCDoWith.h"
 #import "TCViewWithTable.h"
 #import "TCUser.h"
+#import "NSDate+TCDateString.h"
 
 @implementation TCTableViewController
 {
@@ -21,40 +22,35 @@
 - (void) viewDidLoad
 {
 	TCUser *userRuslan = [TCUser new];
-	userRuslan.name = @"Ruslan";
-	userRuslan.rang = @"loh";
-	userRuslan.registrationDate.year = 2016;
-	userRuslan.registrationDate.month = 1;
-	userRuslan.photo = [UIImage imageNamed:@"Ruslan"];
+	userRuslan.name             = @"Ruslan";
+	userRuslan.rang             = @"loh";
+	userRuslan.registrationDate = [NSDate dateFromString:@"01.01.2016"];
+	userRuslan.photo            = [UIImage imageNamed:@"Ruslan"];
 
 	TCUser *userAnastasia = [TCUser new];
-	userAnastasia.name = @"Anastasia";
-	userAnastasia.rang = @"molodec";
-	userAnastasia.registrationDate.year = 2016;
-	userAnastasia.registrationDate.month = 2;
-	userAnastasia.photo = [UIImage imageNamed:@"Anastasia"];
+	userAnastasia.name             = @"Anastasia";
+	userAnastasia.rang             = @"molodec";
+	userAnastasia.registrationDate = [NSDate dateFromString:@"01.03.2016"];
+	userAnastasia.photo            = [UIImage imageNamed:@"Anastasia"];
 
 	TCUser *userAnton = [TCUser new];
-	userAnton.name = @"Anton";
-	userAnton.rang = @"nyashka";
-	userAnton.registrationDate.year = 2016;
-	userAnton.registrationDate.month = 3;
-	userAnton.photo = [UIImage imageNamed:@"Anton"];
+	userAnton.name             = @"Anton";
+	userAnton.rang             = @"nyashka";
+	userAnton.registrationDate = [NSDate dateFromString:@"01.03.2016"];
+	userAnton.photo            = [UIImage imageNamed:@"Anton"];
 
-	TCUser *userYoulya= [TCUser new];
-	userYoulya.name = @"Youlya";
-	userYoulya.rang = @"youlya";
-	userYoulya.registrationDate.year = 2016;
-	userYoulya.registrationDate.month = 4;
-	userYoulya.photo = [UIImage imageNamed:@"Youlya"];
+	TCUser *userYoulya = [TCUser new];
+	userYoulya.name             = @"Youlya";
+	userYoulya.rang             = @"youlya";
+	userYoulya.registrationDate = [NSDate dateFromString:@"01.04.2016"];
+	userYoulya.photo            = [UIImage imageNamed:@"Youlya"];
 
 	TCViewWithTable *view = self.view;
-	view.data = @[userAnastasia, userAnton, userRuslan, userYoulya];
+	view.data = @[ userAnastasia, userAnton, userRuslan, userYoulya ];
 }
 
 - (void) updateOnClassInjection
 {
 	[self loadView];
 }
-
 @end

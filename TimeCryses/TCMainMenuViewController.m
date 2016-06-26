@@ -30,7 +30,7 @@
 			}];
 
 			__unused UILabel *label2 = [UILabel tc_with:^(UILabel *ooo) {
-				ooo.text = @"Ткнуть";
+				ooo.text         = @"Ткнуть";
 				ooo.tc_tapAction = ^(UILabel *sender) {
 					NSLog(@"Меня ткнули! %@", sender.text);
 				};
@@ -41,36 +41,36 @@
 				ooo.keepHorizontalCenter.equal    = 0.5;
 			}];
 		}];
-		__unused TCButton *button = [TCButton tc_with:^(TCButton *oo) {
+		__unused TCButton        *button         = [TCButton tc_with:^(TCButton *oo) {
 			oo.label.textColor = [UIColor greenColor];
-			oo.label.text = @"Синяя Кнопка";
+			oo.label.text      = @"Синяя Кнопка";
 			oo.backgroundColor = [UIColor redColor];
 			[oo setTarget:self withAction:@selector(methodForButton:)];
 			[o addSubview:oo];
 			oo.keepTopOffsetTo(viewWithLabels).equal = 50;
-			oo.keepHorizontalCenter.equal = 0.5;
+			oo.keepHorizontalCenter.equal            = 0.5;
 		}];
 
 		__unused TCButton *nextViewButton = [TCButton tc_with:^(TCButton *oo) {
-			oo.label.text = @"Next";
-			oo.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent: 0.1];
+			oo.label.text      = @"Next";
+			oo.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.1];
 			[oo setTarget:self withAction:@selector(nextView:)];
 			[o addSubview:oo];
-			oo.keepBottomInset.equal = 10;
+			oo.keepBottomInset.equal      = 10;
 			oo.keepHorizontalCenter.equal = 0.5;
 		}];
 	}];
 }
 
-- (void) nextView:(UIView*) sender
+- (void) nextView:(UIView *)sender
 {
-	TCTableViewController  *tableViewController = [TCTableViewController new];
+	TCTableViewController *tableViewController = [TCTableViewController new];
 	tableViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-	tableViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	[self presentViewController: tableViewController animated:YES completion:nil];
+	tableViewController.modalTransitionStyle   = UIModalTransitionStyleCoverVertical;
+	[self presentViewController:tableViewController animated:YES completion:nil];
 }
 
-- (void) methodForButton:(UIView*)sender
+- (void) methodForButton:(UIView *)sender
 {
 //	[self changeBackgroundColorOf:self.view toColor:[[UIColor blackColor] colorWithAlphaComponent:0.1]];
 	[self moveSenderUp:sender];
@@ -81,16 +81,15 @@
 	view.backgroundColor = color;
 }
 
-- (void) moveSenderUp:(UIView*)sender
+- (void) moveSenderUp:(UIView *)sender
 {
-	CGSize size  = self.view.bounds.size;
+	CGSize size = self.view.bounds.size;
 	[UIView animateWithDuration:0.33 animations:^{
-		CGRect rect  = sender.frame;
-		rect.origin.x = arc4random()% (int)size.width;
-		rect.origin.y = arc4random()% (int)size.height;
+		CGRect rect = sender.frame;
+		rect.origin.x = arc4random() % (int) size.width;
+		rect.origin.y = arc4random() % (int) size.height;
 
 		sender.frame = rect;
-
 	}];
 }
 

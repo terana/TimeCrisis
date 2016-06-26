@@ -5,5 +5,4 @@
 #import <UIKit/UIKit.h>
 
 @interface TCMainMenuViewController : UIViewController
-
 @end

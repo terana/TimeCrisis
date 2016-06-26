@@ -7,5 +7,4 @@
 @interface TCButton : UIView
 @property (nonatomic, readonly) UILabel *label;
 - (void) setTarget:(id)object withAction:(SEL)action;
-
 @end
