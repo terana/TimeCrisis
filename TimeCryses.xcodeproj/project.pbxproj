@@ -17,8 +17,10 @@
 		CBB6B51A2ED6B76EE3BD9A24 /* TCDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BF479A5F36E63D7A667B /* TCDraggableView.m */; };
 		CBB6B69DC9A1DB9A43A30852 /* TCViewWithTable.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BA5D77ECE5D1DCE194CC /* TCViewWithTable.m */; };
 		CBB6B7E27A0713FBD369E062 /* UIView+TCTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BC056D344C2273B38DFA /* UIView+TCTapAction.m */; };
+		CBB6B90D7F114BC786A8F047 /* TCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B2B01DC6F5310A1BB0D8 /* TCUser.m */; };
 		CBB6B9ECA36D7E6211EF617A /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B9543522EAE02C4DAAD8 /* TCAppDelegate.m */; };
 		CBB6BB2AD54F6168821A2693 /* TCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B216FE06EB2D71162694 /* TCButton.m */; };
+		CBB6BCB3A86D3D87484E0383 /* TCUserTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BBFF5598D269104919CB /* TCUserTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +32,12 @@
 		1A8E76B3B9EFBF73A484C8C4 /* Pods_TimeCryses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCryses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		210C68684CC01E81EE07FBEE /* Pods-TimeCryses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCryses.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeCryses/Pods-TimeCryses.release.xcconfig"; sourceTree = "<group>"; };
 		41594FA01906A40B2CF127EE /* Pods-TimeCryses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCryses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeCryses/Pods-TimeCryses.debug.xcconfig"; sourceTree = "<group>"; };
+		CBB6B005F90F0B0DCA371C56 /* TCUserTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserTableCell.h; sourceTree = "<group>"; };
 		CBB6B086D16E9B25365E21AB /* TCMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMainMenuViewController.m; sourceTree = "<group>"; };
 		CBB6B0E959F2D7EE9FB021CD /* TCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
+		CBB6B20C450DED7DAEE8D6F4 /* TCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUser.h; sourceTree = "<group>"; };
 		CBB6B216FE06EB2D71162694 /* TCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCButton.m; sourceTree = "<group>"; };
+		CBB6B2B01DC6F5310A1BB0D8 /* TCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUser.m; sourceTree = "<group>"; };
 		CBB6B33F1475DDC4F79B298F /* TCMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMainMenuViewController.h; sourceTree = "<group>"; };
 		CBB6B58046170E0F41A63BD7 /* TCDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDraggableView.h; sourceTree = "<group>"; };
 		CBB6B8C988ABFA359C6E9336 /* TCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCButton.h; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		CBB6B99472185577727FC0E8 /* NSObject+TCDoWith.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TCDoWith.m"; sourceTree = "<group>"; };
 		CBB6BA54EB6EC099C9831EB7 /* NSObject+TCDoWith.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TCDoWith.h"; sourceTree = "<group>"; };
 		CBB6BA5D77ECE5D1DCE194CC /* TCViewWithTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithTable.m; sourceTree = "<group>"; };
+		CBB6BBFF5598D269104919CB /* TCUserTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUserTableCell.m; sourceTree = "<group>"; };
 		CBB6BC056D344C2273B38DFA /* UIView+TCTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TCTapAction.m"; sourceTree = "<group>"; };
 		CBB6BE19BEB703D89772FD68 /* TCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTableViewController.m; sourceTree = "<group>"; };
 		CBB6BE927BE0A7DE1377EA60 /* UIView+TCTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TCTapAction.h"; sourceTree = "<group>"; };
@@ -102,6 +108,10 @@
 				CBB6B98E5094FFF30117429F /* TCTableViewController.h */,
 				CBB6BA5D77ECE5D1DCE194CC /* TCViewWithTable.m */,
 				CBB6B8CE3972E208E6A84DB6 /* TCViewWithTable.h */,
+				CBB6BBFF5598D269104919CB /* TCUserTableCell.m */,
+				CBB6B005F90F0B0DCA371C56 /* TCUserTableCell.h */,
+				CBB6B2B01DC6F5310A1BB0D8 /* TCUser.m */,
+				CBB6B20C450DED7DAEE8D6F4 /* TCUser.h */,
 			);
 			path = TimeCryses;
 			sourceTree = "<group>";
@@ -307,6 +317,8 @@
 				CBB6B51A2ED6B76EE3BD9A24 /* TCDraggableView.m in Sources */,
 				CBB6B0BF8D77A545615C6837 /* TCTableViewController.m in Sources */,
 				CBB6B69DC9A1DB9A43A30852 /* TCViewWithTable.m in Sources */,
+				CBB6BCB3A86D3D87484E0383 /* TCUserTableCell.m in Sources */,
+				CBB6B90D7F114BC786A8F047 /* TCUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
