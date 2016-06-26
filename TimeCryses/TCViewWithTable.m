@@ -52,8 +52,7 @@
 - (void) setData:(NSArray *)data
 {
 	_data = data;
-	UITableView *tableview = [[self subviews] objectAtIndex:0];
-	[tableview reloadData];
+	[_tableView reloadData];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

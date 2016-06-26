@@ -24,34 +24,43 @@
 		[view tc_with:^(UIView *o) {
 			o.backgroundColor = [UIColor whiteColor];
 
-			__unused UIImageView *photo = _photo = [UIImageView tc_with:^(UIImageView *oo) {
+			__unused UIImageView *photo = _photo  = [UIImageView tc_with:^(UIImageView *oo) {
 				[o addSubview:oo];
-				oo.keepLeftInset.equal = 20;
-				oo.keepTopInset.equal  = 5;
-				oo.keepWidth.equal     = 95;
-				oo.keepHeight.equal    = 95;
+				oo.keepTopMarginInset.equal  = 0;
+				oo.keepBottomMarginInset.min = 0;
+				oo.keepLeftMarginInset.equal = 0;
+				oo.keepWidth.max = 95;
+				//AAAAAAAAAAAAAA I DONT KNOW HOW TO KEEP RIGHT INSET!!!
 			}];
 
-			__unused UILabel *nameLabel = _nameLabel = [UILabel tc_with:^(UILabel *oo) {
+			__unused UIView  *viewWithNameAndRang = [UIView tc_with:^(UIView *oo) {
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
-				oo.keepHorizontalCenter.equal = 0.5;
-				oo.keepTopInset.equal         = 5;
-			}];
+				oo.keepTopMarginInset.equal = 10;
+				oo.keepLeftOffsetTo(photo).equal = 10;
 
-			__unused UILabel *rangLabel = _rangLabel = [UILabel tc_with:^(UILabel *oo) {
-				oo.backgroundColor = [UIColor whiteColor];
-				[o addSubview:oo];
-				oo.keepHorizontalCenter.equal       = 0.5;
-				oo.keepTopOffsetTo(nameLabel).equal = 5;
+				__unused UILabel *nameLabel = _nameLabel = [UILabel tc_with:^(UILabel *ooo) {
+					ooo.backgroundColor = [UIColor whiteColor];
+					[oo addSubview:ooo];
+					ooo.keepHorizontalCenter.equal = 0.5;
+					ooo.keepTopInset.equal         = 5;
+				}];
+
+				__unused UILabel *rangLabel = _rangLabel = [UILabel tc_with:^(UILabel *ooo) {
+					ooo.backgroundColor = [UIColor whiteColor];
+					[oo addSubview:ooo];
+					ooo.keepHorizontalCenter.equal       = 0.5;
+					ooo.keepTopOffsetTo(nameLabel).equal = 5;
+				}];
 			}];
 
 			__unused UILabel *registrationDateLabel = _registrationDateLabel = [UILabel tc_with:^(UILabel *oo) {
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
-				oo.keepHorizontalCenter.equal       = 0.5;
-				oo.keepTopOffsetTo(rangLabel).equal = 5;
-				oo.keepBottomInset.equal            = 5;
+				oo.keepRightMarginInset.equal = 0;
+				oo.keepBottomMarginInset.equal = 0;
+				oo.keepTopOffsetTo(viewWithNameAndRang).equal = 10;
+				oo.keepLeftOffsetTo(viewWithNameAndRang).equal = 10;
 			}];
 		}];
 	}
