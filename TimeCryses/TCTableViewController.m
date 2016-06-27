@@ -45,8 +45,14 @@
 	userYoulya.registrationDate = [NSDate dateFromString:@"01.04.2016"];
 	userYoulya.photo            = [UIImage imageNamed:@"Youlya"];
 
+	TCUser *userVladimir = [TCUser new];
+	userVladimir.name             = @"Владимир Олегович";
+	userVladimir.rang             = @"препод";
+	userVladimir.registrationDate = [NSDate dateFromString:@"11.04.2016"];
+	userVladimir.photo            = [UIImage imageNamed:@"Vladimir"];
+
 	TCViewWithTable *view = self.view;
-	view.data = @[ userAnastasia, userAnton, userRuslan, userYoulya ];
+	view.data = @[ userAnastasia, userAnton, userRuslan, userYoulya, userVladimir ];
 }
 
 - (void) updateOnClassInjection

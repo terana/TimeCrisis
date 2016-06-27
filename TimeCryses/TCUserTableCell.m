@@ -38,29 +38,32 @@
 				[o addSubview:oo];
 				oo.keepTopMarginInset.equal = 10;
 				oo.keepLeftOffsetTo(photo).equal = 10;
+				oo.keepRightMarginInset.equal = 0;
 
 				__unused UILabel *nameLabel = _nameLabel = [UILabel tc_with:^(UILabel *ooo) {
 					ooo.backgroundColor = [UIColor whiteColor];
 					[oo addSubview:ooo];
 					ooo.keepHorizontalCenter.equal = 0.5;
+					ooo.keepLeftInset.equal = 0;
 					ooo.keepTopInset.equal         = 5;
 				}];
 
 				__unused UILabel *rangLabel = _rangLabel = [UILabel tc_with:^(UILabel *ooo) {
 					ooo.backgroundColor = [UIColor whiteColor];
 					[oo addSubview:ooo];
+					ooo.keepLeftInset.equal = 0;
 					ooo.keepHorizontalCenter.equal       = 0.5;
 					ooo.keepTopOffsetTo(nameLabel).equal = 5;
 				}];
-			}];
 
-			__unused UILabel *registrationDateLabel = _registrationDateLabel = [UILabel tc_with:^(UILabel *oo) {
-				oo.backgroundColor = [UIColor whiteColor];
-				[o addSubview:oo];
-				oo.keepRightMarginInset.equal = 0;
-				oo.keepBottomMarginInset.equal = 0;
-				oo.keepTopOffsetTo(viewWithNameAndRang).equal = 10;
-				oo.keepLeftOffsetTo(viewWithNameAndRang).equal = 10;
+				__unused UILabel *registrationDateLabel = _registrationDateLabel = [UILabel tc_with:^(UILabel *ooo) {
+					ooo.backgroundColor = [UIColor whiteColor];
+					[oo addSubview:ooo];
+					ooo.keepBottomInset.equal = 0;
+					ooo.keepTopOffsetTo(rangLabel).equal = 5;
+					ooo.keepRightInset.equal = 0;
+				}];
+
 			}];
 		}];
 	}
