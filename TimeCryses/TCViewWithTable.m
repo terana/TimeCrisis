@@ -22,6 +22,7 @@
 	{
 		__unused UITableView *table = _tableView = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] tc_with:^(UITableView *o) {
 			o.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.1];
+			o.separatorInset  = UIEdgeInsetsMake(0, 110, 0, 0);
 			o.delegate        = self;
 			o.dataSource      = self;
 			[o registerClass:[TCUserTableCell class] forCellReuseIdentifier:@"Cell"];
