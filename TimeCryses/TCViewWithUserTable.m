@@ -2,15 +2,15 @@
 // Created by Anastasia on 6/25/16.
 //
 
-#import "TCViewWithTable.h"
+#import "TCViewWithUserTable.h"
 #import "KeepLayout/KeepLayout.h"
 #import "NSObject+TCDoWith.h"
 #import "TCUserTableCell.h"
 
-@interface TCViewWithTable (TableView) <UITableViewDelegate, UITableViewDataSource>
+@interface TCViewWithUserTable (TableView) <UITableViewDelegate, UITableViewDataSource>
 @end
 
-@implementation TCViewWithTable
+@implementation TCViewWithUserTable
 {
 	UITableView *_tableView;
 }

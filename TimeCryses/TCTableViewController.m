@@ -5,7 +5,7 @@
 #import <KeepLayout/KeepLayout.h>
 #import "TCTableViewController.h"
 #import "NSObject+TCDoWith.h"
-#import "TCViewWithTable.h"
+#import "TCViewWithUserTable.h"
 #import "TCUser.h"
 #import "NSDate+TCDateString.h"
 
@@ -14,7 +14,7 @@
 }
 - (void) loadView
 {
-	self.view = [TCViewWithTable tc_with:^(TCViewWithTable *o) {
+	self.view = [TCViewWithUserTable tc_with:^(TCViewWithUserTable *o) {
 		o.backgroundColor = [UIColor whiteColor];
 	}];
 }
@@ -51,7 +51,7 @@
 	userVladimir.registrationDate = [NSDate dateFromString:@"11.04.2016"];
 	userVladimir.photo            = [UIImage imageNamed:@"Vladimir"];
 
-	TCViewWithTable *view = self.view;
+	TCViewWithUserTable *view = self.view;
 	view.data = @[ userAnastasia, userAnton, userRuslan, userYoulya, userVladimir ];
 }
 

@@ -1,9 +1,9 @@
 //
-// Created by Anastasia on 6/25/16.
+// Created by Anastasia on 6/27/16.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface TCViewWithTable : UIView
+@interface TCViewWithGistTable : UIView
 @property (strong, nonatomic) NSArray *data;
 @end

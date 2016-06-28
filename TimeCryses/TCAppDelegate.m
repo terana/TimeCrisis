@@ -4,6 +4,7 @@
 
 #import "TCAppDelegate.h"
 #import "TCMainMenuViewController.h"
+#import "TCTableWithGistsViewController.h"
 
 @implementation TCAppDelegate
 {
@@ -13,7 +14,7 @@
 - (BOOL) application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-	window.rootViewController = [TCMainMenuViewController new];
+	window.rootViewController = [TCTableWithGistsViewController new];
 	[window makeKeyAndVisible];
 	_window = window;
 	return YES;

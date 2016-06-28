@@ -9,6 +9,7 @@
 #import "TCButton.h"
 #import "TCDraggableView.h"
 #import "TCTableViewController.h"
+#import "TCTableWithGistsViewController.h"
 
 @implementation TCMainMenuViewController
 - (void) loadView
@@ -64,10 +65,10 @@
 
 - (void) nextView:(UIView *)sender
 {
-	TCTableViewController *tableViewController = [TCTableViewController new];
-	tableViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-	tableViewController.modalTransitionStyle   = UIModalTransitionStyleCoverVertical;
-	[self presentViewController:tableViewController animated:YES completion:nil];
+	TCTableWithGistsViewController *tableWithGistsViewController = [TCTableWithGistsViewController new];
+	tableWithGistsViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+	tableWithGistsViewController.modalTransitionStyle   = UIModalTransitionStyleCoverVertical;
+	[self presentViewController:tableWithGistsViewController animated:YES completion:nil];
 }
 
 - (void) methodForButton:(UIView *)sender
