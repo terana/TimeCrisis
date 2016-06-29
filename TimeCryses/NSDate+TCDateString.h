@@ -7,4 +7,6 @@
 @interface NSDate (TCDateString)
 + (NSDate *) dateFromString:(NSString *)str;
 - (NSString *) stringFromDate;
+- (NSString *) stringFromDateWithTime;
++ (NSDate *) dateFromStringWithTime:(NSString *)str;
 @end

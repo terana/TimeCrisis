@@ -60,7 +60,7 @@
 	if (indexPath.section)
 	{
 		TCGistTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-		cell.data = _data[indexPath.row];
+		cell.gist = _data[indexPath.row];
 		return cell;
 	}
 	else

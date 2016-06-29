@@ -3,7 +3,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TCGist.h"
 
 @interface TCGistTableCell : UITableViewCell
-@property (strong, nonatomic) NSDictionary *data;
+@property (strong, nonatomic) TCGist *gist;
 @end

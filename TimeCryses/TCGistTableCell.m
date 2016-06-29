@@ -6,6 +6,8 @@
 #import <KeepLayout/KeepAttribute.h>
 #import "TCGistTableCell.h"
 #import "NSObject+TCDoWith.h"
+#import "TCGist.h"
+#import "NSDate+TCDateString.h"
 
 @implementation TCGistTableCell
 {
@@ -76,16 +78,12 @@
 	return self;
 }
 
-- (void) setData:(NSDictionary *)data
+- (void) setGist:(TCGist *)gist
 {
-	_data = data;
+	_gist = gist;
 
-	id(^stripNull)(NSString *) = ^(NSString *key) {
-		id obj = data[key];
-		return obj == [NSNull null] ? nil : obj;
-	};
-	_urlLabel.text          = stripNull(@"url");
-	_idLabel.text           = stripNull(@"id");
-	_creationDateLabel.text = stripNull(@"created_at");
+	_urlLabel.text          = gist.url.absoluteString;
+	_idLabel.text           = gist.id;
+	_creationDateLabel.text = [gist.creationDate stringFromDate];
 }
 @end
