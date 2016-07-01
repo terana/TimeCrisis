@@ -6,6 +6,7 @@
 #import "KeepLayout/KeepLayout.h"
 #import "NSObject+TCDoWith.h"
 #import "TCGistTableCell.h"
+#import "TCGistSelected.h"
 
 @interface TCViewWithGistTable (UITableViewProtocols) <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -26,9 +27,7 @@
 			o.dataSource      = self;
 			[o registerClass:[TCGistTableCell class] forCellReuseIdentifier:@"Cell"];
 			[self addSubview:o];
-			o.keepHorizontalInsets.equal = 0;
-			o.keepTopInset.equal         = 15;
-			o.keepBottomInset.equal      = 0;
+			o.keepInsets.equal = 0;
 		}];
 	}
 	return self;
@@ -37,15 +36,11 @@
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 2;
+	return 1;
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	if (section == 0)
-	{
-		return 1;
-	}
 	return [_data count];
 }
 
@@ -57,27 +52,18 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.section)
-	{
 		TCGistTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 		cell.gist = _data[indexPath.row];
 		return cell;
-	}
-	else
-	{
-		UITableViewCell *cell = [UITableViewCell new];
-		cell.textLabel.text = @"Table";
-		return cell;
-	}
-	return nil;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.section)
-	{
 		return 100.f;
-	}
-	return 20.f;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[_delegate gistIsSelected:_data[indexPath.row]];
 }
 @end

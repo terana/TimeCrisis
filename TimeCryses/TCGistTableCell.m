@@ -8,6 +8,7 @@
 #import "NSObject+TCDoWith.h"
 #import "TCGist.h"
 #import "NSDate+TCDateString.h"
+#import "UIView+TCTapAction.h"
 
 @implementation TCGistTableCell
 {
@@ -86,4 +87,12 @@
 	_idLabel.text           = gist.id;
 	_creationDateLabel.text = [gist.creationDate stringFromDate];
 }
+
+- (void) setTarget:(id)object withAction:(SEL)action
+{
+	self.tc_tapAction = ^(UIView *sender) {
+		[object performSelector:action withObject:sender];
+	};
+}
+
 @end

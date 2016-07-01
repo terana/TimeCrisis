@@ -8,39 +8,53 @@
 #import "TCViewWithGistTable.h"
 #import "TCGist.h"
 #import "NSDate+TCDateString.h"
+#import "NSDictionary+DictionaryWithoutNSNull.h"
+#import "TCTableWithGistFilesViewController.h"
 
 @implementation TCTableWithGistsViewController
 {
 }
 - (void) loadView
 {
+	self.title = @"Gist";
 	self.view = [TCViewWithGistTable tc_with:^(TCViewWithGistTable *o) {
 		o.backgroundColor = [UIColor whiteColor];
 	}];
 }
 
+
 - (void) viewDidLoad
 {
-	NSData  *urlData    = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"https://api.github.com/gists/public"]];
-	NSError *error      = nil;
-	NSArray *parsedData = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
+	NSData         *urlData    = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"https://api.github.com/gists/public"]];
+	NSError        *error      = nil;
+	NSArray        *parsedData = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
 	NSMutableArray *gistsArray = [NSMutableArray new];
-	NSUInteger i;
-	NSUInteger count = parsedData.count;
-	id(^stripNull)(NSString *) = ^(NSString *key){
-		id obj = parsedData[i][key];
-		return obj == [NSNull null] ? nil : obj;
-	};
-	for(i = 0; i < count; i++)
+	for (id object in parsedData)
 	{
 		TCGist *gist = [TCGist new];
-		gist.url = [NSURL URLWithString:stripNull(@"url")];
-		gist.id = stripNull(@"id");
-		gist.creationDate = [NSDate dateFromStringWithTime:stripNull(@"created_at")];
-		gist.updatingDate = [NSDate dateFromStringWithTime:stripNull(@"updated_at")];
+		NSDictionary *dictionary = [object dictionaryWithoutNSNull];
+		gist.url             = [NSURL URLWithString:dictionary[@"url"]];
+		gist.id              = dictionary[@"id"];
+		gist.creationDate    = [NSDate dateFromStringWithTime:dictionary[@"created_at"]];
+		gist.updatingDate    = [NSDate dateFromStringWithTime:dictionary[@"updated_at"]];
+		gist.gistDescription = dictionary[@"description"];
+		NSMutableArray *files = [NSMutableArray new];
+		for (id file in dictionary[@"files"])
+		{
+			[files addObject:file];
+		}
+		gist.files = files;
 		[gistsArray addObject:gist];
 	}
 	TCViewWithGistTable *view = self.view;
+	view.delegate = self;
 	view.data = gistsArray;
+}
+
+- (void) gistIsSelected:(TCGist *)gist
+{
+	TCTableWithGistFilesViewController *vc = [TCTableWithGistFilesViewController new];
+	vc.gist = gist;
+	[self.navigationController pushViewController:vc animated:YES];
 }
 @end

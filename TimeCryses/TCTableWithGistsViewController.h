@@ -3,6 +3,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TCGistSelected.h"
 
-@interface TCTableWithGistsViewController : UIViewController
+@interface TCTableWithGistsViewController : UIViewController <TCGistSelected>
 @end
