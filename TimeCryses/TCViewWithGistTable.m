@@ -54,6 +54,7 @@
 {
 	TCGistTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 	cell.gist = _data[indexPath.row];
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	return cell;
 }
 

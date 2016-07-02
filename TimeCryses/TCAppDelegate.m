@@ -14,7 +14,8 @@
 - (BOOL) application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	UIWindow               *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-	UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCTableWithGistsViewController new]];
+	UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCMainMenuViewController new]];
+	[nc setNavigationBarHidden:NO animated:YES];
 	window.rootViewController = nc;
 	[window makeKeyAndVisible];
 	_window = window;

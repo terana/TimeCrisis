@@ -3,10 +3,8 @@
 //
 
 #import "TCTableWithGistsViewController.h"
-#import "TCViewWithUserTable.h"
 #import "NSObject+TCDoWith.h"
 #import "TCViewWithGistTable.h"
-#import "TCGist.h"
 #import "NSDate+TCDateString.h"
 #import "NSDictionary+DictionaryWithoutNSNull.h"
 #import "TCTableWithGistFilesViewController.h"

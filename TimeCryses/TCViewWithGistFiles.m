@@ -50,6 +50,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 	TCFile          *file = _gist.files[indexPath.row];
 	cell.textLabel.text = file.filename;
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	return cell;
 }
 

@@ -65,10 +65,7 @@
 
 - (void) nextView:(UIView *)sender
 {
-	TCTableWithGistsViewController *tableWithGistsViewController = [TCTableWithGistsViewController new];
-	tableWithGistsViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-	tableWithGistsViewController.modalTransitionStyle   = UIModalTransitionStyleCoverVertical;
-	[self presentViewController:tableWithGistsViewController animated:YES completion:nil];
+	[self.navigationController pushViewController:[TCTableWithGistsViewController new] animated:YES];
 }
 
 - (void) methodForButton:(UIView *)sender
