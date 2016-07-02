@@ -7,5 +7,4 @@
 
 @interface TCGistTableCell : UITableViewCell
 @property (strong, nonatomic) TCGist *gist;
-- (void) setTarget:(id)object withAction:(SEL)action;
 @end

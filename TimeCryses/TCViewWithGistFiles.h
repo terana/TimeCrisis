@@ -3,9 +3,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class TCGist;
+#import "TCGist.h"
+#import "TCFileSelected.h"
 
 @interface TCViewWithGistFiles : UIView
-@property (strong, nonatomic) TCGist *gist;
+@property (strong, nonatomic) TCGist                      *gist;
+@property (weak, nonatomic, nullable) id <TCFileSelected> delegate;
 @end

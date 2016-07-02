@@ -6,5 +6,5 @@
 #import "TCGist.h"
 
 @protocol TCGistSelected <NSObject>
-- (void) gistIsSelected: (TCGist *) gist;
+- (void) gistIsSelected:(TCGist *)gist;
 @end

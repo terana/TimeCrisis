@@ -7,6 +7,8 @@
 #import "TCViewWithGistFiles.h"
 #import "TCGist.h"
 #import "NSObject+TCDoWith.h"
+#import "TCFileSelected.h"
+#import "TCFile.h"
 
 @interface TCViewWithGistFiles () <UITableViewDataSource, UITableViewDelegate>
 @end
@@ -46,7 +48,8 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-	cell.textLabel.text = _gist.files[indexPath.row];
+	TCFile          *file = _gist.files[indexPath.row];
+	cell.textLabel.text = file.filename;
 	return cell;
 }
 
@@ -54,5 +57,10 @@
 {
 	_gist = gist;
 	[_tableView reloadData];
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[self.delegate fileIsSelected:_gist.files[indexPath.row]];
 }
 @end

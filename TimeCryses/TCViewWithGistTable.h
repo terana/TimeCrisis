@@ -6,6 +6,6 @@
 #import "TCGistSelected.h"
 
 @interface TCViewWithGistTable : UIView
-@property (strong, nonatomic) NSArray *data;
-@property (nonatomic, weak, nullable) id  <TCGistSelected> delegate;
+@property (strong, nonatomic) NSArray                     *data;
+@property (nonatomic, weak, nullable) id <TCGistSelected> delegate;
 @end

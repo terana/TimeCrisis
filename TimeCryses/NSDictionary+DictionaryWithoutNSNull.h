@@ -5,5 +5,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (DictionaryWithoutNSNull)
--(NSDictionary *)dictionaryWithoutNSNull;
+- (NSDictionary *) dictionaryWithoutNSNull;
 @end

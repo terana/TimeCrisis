@@ -16,22 +16,22 @@
 			if ([object isMemberOfClass:[NSDictionary class]])
 			{
 				NSDictionary *dictionaryObject = [self dictionaryWithoutNSNull];
-				for(id key in [self allKeysForObject:object])
+				for (id      key in [self allKeysForObject:object])
 				{
 					dictionary[key] = dictionaryObject;
 				}
 			}
 			else
 			{
-					for(id key in [self allKeysForObject:object])
-					{
-						dictionary[key] = object;
-					}
+				for (id key in [self allKeysForObject:object])
+				{
+					dictionary[key] = object;
+				}
 			}
 		}
 		else
 		{
-			for(id key in [self allKeysForObject:object])
+			for (id key in [self allKeysForObject:object])
 			{
 				dictionary[key] = nil;
 			}

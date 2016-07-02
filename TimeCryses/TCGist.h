@@ -10,5 +10,5 @@
 @property (strong, nonatomic) NSDate   *creationDate;
 @property (strong, nonatomic) NSDate   *updatingDate;
 @property (strong, nonatomic) NSString *gistDescription;
-@property (strong, nonatomic) NSArray*files;
+@property (strong, nonatomic) NSArray  *files;
 @end

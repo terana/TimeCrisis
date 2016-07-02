@@ -52,14 +52,14 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-		TCGistTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-		cell.gist = _data[indexPath.row];
-		return cell;
+	TCGistTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+	cell.gist = _data[indexPath.row];
+	return cell;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-		return 100.f;
+	return 100.f;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
