@@ -18,6 +18,7 @@
 		o.backgroundColor             = [UIColor whiteColor];
 		o.text                        = fileContent;
 		o.textContainer.lineBreakMode = NSLineBreakByCharWrapping;
+		o.editable = NO;
 	}];
 }
 
