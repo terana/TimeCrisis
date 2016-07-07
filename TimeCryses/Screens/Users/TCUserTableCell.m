@@ -24,7 +24,7 @@
 		[view tc_with:^(UIView *o) {
 			o.backgroundColor = [UIColor whiteColor];
 
-			__unused UIImageView *photo = _photo                             = [UIImageView tc_with:^(UIImageView *oo) {
+			__unused UIImageView *photo = _photo = [UIImageView tc_with:^(UIImageView *oo) {
 				oo.contentMode = UIViewContentModeScaleAspectFit;
 				[o addSubview:oo];
 				oo.keepTopMarginInset.equal    = 0;
@@ -74,9 +74,8 @@
 {
 	_user = user;
 
-	_photo.image                = user.photo;
-	_nameLabel.text             = user.name;
-	_rangLabel.text             = user.rang;
+	_photo.image                = user.avatar;
+	_nameLabel.text             = user.login;
 	_registrationDateLabel.text = [user.registrationDate stringFromDate];
 }
 @end

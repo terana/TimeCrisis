@@ -22,34 +22,29 @@
 - (void) viewDidLoad
 {
 	TCUser *userRuslan = [TCUser new];
-	userRuslan.name             = @"Ruslan";
-	userRuslan.rang             = @"loh";
+	userRuslan.login             = @"Ruslan";
 	userRuslan.registrationDate = [NSDate dateFromString:@"01.01.2016"];
-	userRuslan.photo            = [UIImage imageNamed:@"Ruslan"];
+	userRuslan.avatar            = [UIImage imageNamed:@"Ruslan"];
 
 	TCUser *userAnastasia = [TCUser new];
-	userAnastasia.name             = @"Anastasia";
-	userAnastasia.rang             = @"molodec";
+	userAnastasia.login             = @"Anastasia";
 	userAnastasia.registrationDate = [NSDate dateFromString:@"01.03.2016"];
-	userAnastasia.photo            = [UIImage imageNamed:@"Anastasia"];
+	userAnastasia.avatar            = [UIImage imageNamed:@"Anastasia"];
 
 	TCUser *userAnton = [TCUser new];
-	userAnton.name             = @"Anton";
-	userAnton.rang             = @"nyashka";
+	userAnton.login             = @"Anton";
 	userAnton.registrationDate = [NSDate dateFromString:@"01.03.2016"];
-	userAnton.photo            = [UIImage imageNamed:@"Anton"];
+	userAnton.avatar            = [UIImage imageNamed:@"Anton"];
 
 	TCUser *userYoulya = [TCUser new];
-	userYoulya.name             = @"Youlya";
-	userYoulya.rang             = @"youlya";
+	userYoulya.login             = @"Youlya";
 	userYoulya.registrationDate = [NSDate dateFromString:@"01.04.2016"];
-	userYoulya.photo            = [UIImage imageNamed:@"Youlya"];
+	userYoulya.avatar            = [UIImage imageNamed:@"Youlya"];
 
 	TCUser *userVladimir = [TCUser new];
-	userVladimir.name             = @"Владимир Олегович";
-	userVladimir.rang             = @"препод";
+	userVladimir.login             = @"Владимир Олегович";
 	userVladimir.registrationDate = [NSDate dateFromString:@"11.04.2016"];
-	userVladimir.photo            = [UIImage imageNamed:@"Vladimir"];
+	userVladimir.avatar            = [UIImage imageNamed:@"Vladimir"];
 
 	TCViewWithUserTable *view = self.view;
 	view.data = @[ userAnastasia, userAnton, userRuslan, userYoulya, userVladimir ];

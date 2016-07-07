@@ -5,4 +5,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TCMainMenuViewController : UIViewController
+@property (strong, nonatomic) 	NSDictionary *authenticationParametrs;
 @end

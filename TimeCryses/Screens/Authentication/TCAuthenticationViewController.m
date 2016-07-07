@@ -17,7 +17,7 @@
 	self.view = [UIView tc_with:^(UIView *o) {
 		o.backgroundColor               = [UIColor whiteColor];
 		__unused TCButton *signInButton = [TCButton tc_with:^(TCButton *oo) {
-			oo.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.1];
+			oo.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
 			oo.label.text      = @"Sign in";
 			[oo setTarget:self withAction:@selector(authentication:)];
 			[o addSubview:oo];
@@ -32,7 +32,7 @@
 			@"client_id=dc665db234579172b3b8"
 			@"&redirect_uri=gister://"
 			@"&scope=user%2Cgist"
-			@"&state=123"
+			@"&state=1234"
 			@"&allow_signup=true"];
 	[[UIApplication sharedApplication] openURL:url];
 }
