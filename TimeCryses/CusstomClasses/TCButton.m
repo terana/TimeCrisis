@@ -25,11 +25,11 @@
 
 	return self;
 }
-
-- (void) setTarget:(id)object withAction:(SEL)action
-{
-	self.tc_tapAction = ^(UIView *sender) {
-		[object performSelector:action withObject:sender];
-	};
-}
+//
+//- (void) setTarget:(id)object withAction:(SEL)action
+//{
+//	self.tc_tapAction = ^(UIView *sender) {
+//		[object performSelector:action withObject:sender];
+//	};
+//}
 @end

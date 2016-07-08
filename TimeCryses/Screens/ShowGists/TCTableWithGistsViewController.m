@@ -24,7 +24,7 @@
 
 - (void) viewDidLoad
 {
-	NSData              *urlData    = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"https://api.github.com/gists/public"]];
+	NSData              *urlData    = [[NSData alloc] initWithContentsOfURL:_gistsURL];
 	NSError             *error      = nil;
 	NSArray             *parsedData = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
 	NSMutableArray      *gistsArray = [NSMutableArray new];

@@ -3,6 +3,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TCUserInformatiobSelection.h"
 
-@interface TCTmpViewController : UIViewController
+@interface TCTmpViewController : UIViewController <TCUserInformatiobSelection>
 @end

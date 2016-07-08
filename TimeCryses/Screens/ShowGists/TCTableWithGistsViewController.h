@@ -6,4 +6,5 @@
 #import "TCGistSelected.h"
 
 @interface TCTableWithGistsViewController : UIViewController <TCGistSelected>
+@property (strong, nonatomic) NSURL *gistsURL;
 @end

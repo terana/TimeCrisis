@@ -62,6 +62,7 @@
 		CBB6B28B5C9AEB32225FFFE1 /* TCUserInformationTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserInformationTableView.h; sourceTree = "<group>"; };
 		CBB6B2A9B2FC07650DD42F3D /* TCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCButton.h; sourceTree = "<group>"; };
 		CBB6B2CD69B57F4F1CCA0F87 /* TCUserPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserPageView.h; sourceTree = "<group>"; };
+		CBB6B2F65B78EAC48F7EA25A /* TCUserInformatiobSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserInformatiobSelection.h; sourceTree = "<group>"; };
 		CBB6B30F8973CF0863F1BCDD /* TCUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserViewController.h; sourceTree = "<group>"; };
 		CBB6B3432F43CBB8D8F5796C /* TCUserTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserTableCell.h; sourceTree = "<group>"; };
 		CBB6B3BAEE201F9345706795 /* TCViewWithGistTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithGistTable.m; sourceTree = "<group>"; };
@@ -205,6 +206,7 @@
 				CBB6BA544638784C2CEEA5DC /* TCTmpViewController.h */,
 				CBB6B3C3522D4DBDB20D4CBE /* TCUserGistPreView.m */,
 				CBB6BB4CCD8600F61DFDC09B /* TCUserGistPreView.h */,
+				CBB6B2F65B78EAC48F7EA25A /* TCUserInformatiobSelection.h */,
 			);
 			path = UserScreen;
 			sourceTree = "<group>";

@@ -45,4 +45,11 @@
 {
 	objc_setAssociatedObject(self, @selector(tc_tapGestureRecognizer), recognizer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
+- (void) setTarget:(id)object withAction:(SEL)action
+{
+	self.tc_tapAction = ^(UIView *sender) {
+		[object performSelector:action withObject:sender];
+	};
+}
 @end

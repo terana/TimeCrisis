@@ -7,6 +7,7 @@
 #import "NSObject+TCDoWith.h"
 #import "NSDate+TCDateString.h"
 #import "UIScrollView+scrollingEnabled.h"
+#import "TCUserInformatiobSelection.h"
 
 @interface TCUserInformationTableView (TableView) <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -22,9 +23,9 @@
 	if (self)
 	{
 		__unused UITableView *table = _tableView = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] tc_with:^(UITableView *o) {
-			o.backgroundColor = [UIColor whiteColor];
-			o.delegate        = self;
-			o.dataSource      = self;
+			o.backgroundColor     = [UIColor whiteColor];
+			o.delegate            = self;
+			o.dataSource          = self;
 			o.tc_scrollingEnabled = NO;
 			[o registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 			[self addSubview:o];
@@ -49,7 +50,6 @@
 {
 	_user = user;
 
-	[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]].textLabel.text = _user.login;
 	[_tableView reloadData];
 }
 
@@ -83,9 +83,36 @@
 			cell.textLabel.text = @"Followings";
 			break;
 		}
-		default: break;
+		default:
+			break;
 	}
 	return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	switch (indexPath.row)
+	{
+		case 0:
+		{
+			[_delegate openGitHubPage:_user.gitURL];
+			break;
+		}
+		case 2:
+		{
+			[_delegate openFollowers:_user.followersURL];
+			break;
+		}
+		case 3:
+		{
+			[_delegate openFollowings:_user.followingsURL];
+			break;
+		}
+		default:
+		{
+			break;
+		}
+	}
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
