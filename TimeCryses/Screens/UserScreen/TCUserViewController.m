@@ -9,6 +9,7 @@
 #import "NSObject+TCDoWith.h"
 #import "TCImageView.h"
 #import "TCUserPageView.h"
+#import "NSDictionary+DictionaryWithoutNSNull.h"
 
 @implementation TCUserViewController
 {
@@ -17,10 +18,11 @@
 - (void) loadView
 {
 	NSURL        *url        = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.github.com/user?access_token=%@", _authenticationParametrs[@"access_token"]]];
-	//NSURL        *url        = [NSURL URLWithString:@"https://api.github.com/user?access_token=89d907e7b258d8799a66dd8a4944b4616adbe3a3"];
+	//NSURL        *url        = [NSURL URLWithString:@"https://api.github.com/user?access_token=8322ba05bd52fb90b32421c132f73070d61ca532"];
 	NSData       *userData   = [[NSData alloc] initWithContentsOfURL:url];
 	NSError      *error      = nil;
 	NSDictionary *parsedData = [NSJSONSerialization JSONObjectWithData:userData options:kNilOptions error:&error];
+	parsedData = [parsedData dictionaryWithoutNSNull];
 	TCUser *user = [TCUser new];
 
 	NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:parsedData[@"avatar_url"]]];

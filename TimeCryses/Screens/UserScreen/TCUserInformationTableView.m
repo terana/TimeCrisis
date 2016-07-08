@@ -6,6 +6,7 @@
 #import "KeepLayout/KeepLayout.h"
 #import "NSObject+TCDoWith.h"
 #import "NSDate+TCDateString.h"
+#import "UIScrollView+scrollingEnabled.h"
 
 @interface TCUserInformationTableView (TableView) <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -24,6 +25,7 @@
 			o.backgroundColor = [UIColor whiteColor];
 			o.delegate        = self;
 			o.dataSource      = self;
+			o.tc_scrollingEnabled = NO;
 			[o registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 			[self addSubview:o];
 			o.keepInsets.equal = 0;
@@ -54,6 +56,7 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+	cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	switch (indexPath.row)
 	{
 		case 0:
@@ -65,6 +68,7 @@
 		case 1:
 		{
 			cell.textLabel.text = [NSString stringWithFormat:@"Joined on %@", [_user.registrationDate stringFromDate]];
+			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			break;
 		}
 		case 2:
@@ -79,12 +83,13 @@
 			cell.textLabel.text = @"Followings";
 			break;
 		}
+		default: break;
 	}
 	return cell;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 20.f;
+	return 25.f;
 }
 @end
