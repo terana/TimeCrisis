@@ -1,0 +1,736 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2DDE4B2888DC52D879CF9FC5 /* Pods_Gister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E76B3B9EFBF73A484C8C4 /* Pods_Gister.framework */; };
+		CBB6B04253C841DDD74BF697 /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B1CE4189F18EC9399B9F /* TCAppDelegate.m */; };
+		CBB6B0F1CEDE2FDCEE36F27E /* NSDictionary+TCParseURL.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B532197DA15225FFBF8F /* NSDictionary+TCParseURL.m */; };
+		CBB6B1AEA3E61EC19EA7879C /* TCUserPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B17031F11F8C143BCFCA /* TCUserPageView.m */; };
+		CBB6B206EAE8D13791945D09 /* TCViewWithGistTable.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B717DB44C0A1BB569DC3 /* TCViewWithGistTable.m */; };
+		CBB6B218DC7BC96FF0CC4743 /* TCUserTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B5D966DF824D63FF79B3 /* TCUserTableCell.m */; };
+		CBB6B2C06EA21F167C877D10 /* TCGistTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BCAA6AFEB07A9E536A70 /* TCGistTableCell.m */; };
+		CBB6B31CD3E04EE782166DD2 /* TCViewWithGistFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BFBF0CD711241A9533F0 /* TCViewWithGistFiles.m */; };
+		CBB6B33204C61A71D3F5F4D8 /* NSDictionary+DictionaryWithoutNSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B4C51590CCDAF2F9A10D /* NSDictionary+DictionaryWithoutNSNull.m */; };
+		CBB6B56A480EC78CEA7F4C76 /* TCTmpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BC9896F62C25C4E513CB /* TCTmpViewController.m */; };
+		CBB6B599B76B91D7DF458764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B6AAFF61504861ACB241 /* main.m */; };
+		CBB6B5E7301FFE6C3111BAC2 /* UIScrollView+scrollingEnabled.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B3D04142B79F3CF1252B /* UIScrollView+scrollingEnabled.m */; };
+		CBB6B5FFEF9565D518D7CEA6 /* TCUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B4DF427E7AD3905273E8 /* TCUserViewController.m */; };
+		CBB6B68CDA7AC49E35D217B1 /* TCDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B6EE96EEB7E0B173B966 /* TCDraggableView.m */; };
+		CBB6B750F496EBEB0B5ACD24 /* TCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BC505070CE2101319C20 /* TCUser.m */; };
+		CBB6B7B50ADE4E7CD21BA91B /* TCViewWithUserTable.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B73ED6785BEEEDDAFAB0 /* TCViewWithUserTable.m */; };
+		CBB6B7F1B938E3B0A0F51D09 /* TCAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BCC1E2218F66CBAD90AC /* TCAuthenticationViewController.m */; };
+		CBB6B7F61B1489912827CDCE /* UIView+TCTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B419009747CE186EE89E /* UIView+TCTapAction.m */; };
+		CBB6B909DADEB57DF46511F5 /* TCTableWithGistFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B490B0B2B4797D81B022 /* TCTableWithGistFilesViewController.m */; };
+		CBB6B936EDC8E25DCBD5CCD9 /* TCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B9AEEB364A561BD46AF9 /* TCButton.m */; };
+		CBB6B9451CAB77EBFB283A2B /* TCTableWithGistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BFC69B42952E9CB8E9F0 /* TCTableWithGistsViewController.m */; };
+		CBB6B967172F7988259E8B7B /* TCUserInformationTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BAAEBAC31EE1908DF037 /* TCUserInformationTableView.m */; };
+		CBB6B97DA4604D5A7D1463F5 /* NSDate+TCDateString.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BE5337F34CD13A385374 /* NSDate+TCDateString.m */; };
+		CBB6BA12AD22B5D46B44C688 /* TCMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B222F58132C0CF77E432 /* TCMainMenuViewController.m */; };
+		CBB6BA682243C32F9D80EFAE /* TCUserGistPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B5EAE2E27BBBDF8B61FC /* TCUserGistPreView.m */; };
+		CBB6BA857778C2088FF9E920 /* TCViewWithFileContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BA717D9F2318E6A1A8B5 /* TCViewWithFileContentController.m */; };
+		CBB6BBA15D928753AC265AFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB6BF7998BEF69FBD579376 /* Assets.xcassets */; };
+		CBB6BCF1FC2E6AD57092278B /* TCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BA6A71B87393B5F68334 /* TCImageView.m */; };
+		CBB6BDCE96052A3D482B4AA3 /* NSObject+TCDoWith.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BB6774B6143CF2D4F07B /* NSObject+TCDoWith.m */; };
+		CBB6BE8C812ED806CA2F3C09 /* TCGist.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BD4D12057A996BC7E2A9 /* TCGist.m */; };
+		CBB6BE8D33E9F79A556F13EC /* TCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BB2DA269B8AD2D9E793C /* TCTableViewController.m */; };
+		CBB6BE918573896DE97552FA /* TCFile.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B79F4C515CF5BD1681E9 /* TCFile.m */; };
+		CBB6BEFC507AEFE843E3E3EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB6B41F012FFC32B65CE057 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		076931D81D18575000D24A35 /* Gister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gister.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8E76B3B9EFBF73A484C8C4 /* Pods_Gister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		210C68684CC01E81EE07FBEE /* Pods-Gister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gister.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gister/Pods-Gister.release.xcconfig"; sourceTree = "<group>"; };
+		41594FA01906A40B2CF127EE /* Pods-Gister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gister.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gister/Pods-Gister.debug.xcconfig"; sourceTree = "<group>"; };
+		CBB6B0CF1D4192F4DCA9C120 /* TCMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMainMenuViewController.h; sourceTree = "<group>"; };
+		CBB6B17031F11F8C143BCFCA /* TCUserPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUserPageView.m; sourceTree = "<group>"; };
+		CBB6B1CE4189F18EC9399B9F /* TCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
+		CBB6B222F58132C0CF77E432 /* TCMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMainMenuViewController.m; sourceTree = "<group>"; };
+		CBB6B2A03ED0FEA38A3A6287 /* NSDate+TCDateString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TCDateString.h"; sourceTree = "<group>"; };
+		CBB6B3656D17956808C01228 /* TCViewWithGistTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithGistTable.h; sourceTree = "<group>"; };
+		CBB6B3D04142B79F3CF1252B /* UIScrollView+scrollingEnabled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+scrollingEnabled.m"; sourceTree = "<group>"; };
+		CBB6B40A3B81A939F9CCE8FC /* TCViewWithFileContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithFileContentController.h; sourceTree = "<group>"; };
+		CBB6B419009747CE186EE89E /* UIView+TCTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TCTapAction.m"; sourceTree = "<group>"; };
+		CBB6B4338AC94107F0F6155A /* TCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
+		CBB6B490B0B2B4797D81B022 /* TCTableWithGistFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTableWithGistFilesViewController.m; sourceTree = "<group>"; };
+		CBB6B4BFB44368CBEE0055DF /* TCViewWithGistFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithGistFiles.h; sourceTree = "<group>"; };
+		CBB6B4C51590CCDAF2F9A10D /* NSDictionary+DictionaryWithoutNSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DictionaryWithoutNSNull.m"; sourceTree = "<group>"; };
+		CBB6B4DF427E7AD3905273E8 /* TCUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUserViewController.m; sourceTree = "<group>"; };
+		CBB6B532197DA15225FFBF8F /* NSDictionary+TCParseURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TCParseURL.m"; sourceTree = "<group>"; };
+		CBB6B575C1C53CC5FCCB6F9F /* TCDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDraggableView.h; sourceTree = "<group>"; };
+		CBB6B584C433063E1084F81D /* TCUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserViewController.h; sourceTree = "<group>"; };
+		CBB6B5D966DF824D63FF79B3 /* TCUserTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUserTableCell.m; sourceTree = "<group>"; };
+		CBB6B5EAE2E27BBBDF8B61FC /* TCUserGistPreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUserGistPreView.m; sourceTree = "<group>"; };
+		CBB6B69136891F7B82CB2214 /* TCTmpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTmpViewController.h; sourceTree = "<group>"; };
+		CBB6B6AAFF61504861ACB241 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CBB6B6EE96EEB7E0B173B966 /* TCDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCDraggableView.m; sourceTree = "<group>"; };
+		CBB6B714BE5F3878D93E57F3 /* TCUserGistPreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserGistPreView.h; sourceTree = "<group>"; };
+		CBB6B717DB44C0A1BB569DC3 /* TCViewWithGistTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithGistTable.m; sourceTree = "<group>"; };
+		CBB6B73B634C0FD1E20AD32C /* TCUserTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserTableCell.h; sourceTree = "<group>"; };
+		CBB6B73ED6785BEEEDDAFAB0 /* TCViewWithUserTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithUserTable.m; sourceTree = "<group>"; };
+		CBB6B74D7C1BCC2E7E80CE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CBB6B778884830759441554A /* TCFileSelected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFileSelected.h; sourceTree = "<group>"; };
+		CBB6B77EE033E7A8E154E8EE /* TCTableWithGistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTableWithGistsViewController.h; sourceTree = "<group>"; };
+		CBB6B79F4C515CF5BD1681E9 /* TCFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCFile.m; sourceTree = "<group>"; };
+		CBB6B7A6062DDE063635C95B /* TCGistTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGistTableCell.h; sourceTree = "<group>"; };
+		CBB6B81A89B84A1A3A440CA3 /* UIScrollView+scrollingEnabled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+scrollingEnabled.h"; sourceTree = "<group>"; };
+		CBB6B93421865865198ABFE5 /* TCUserInformatiobSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserInformatiobSelection.h; sourceTree = "<group>"; };
+		CBB6B94056F65D03B6ACE5D8 /* UIView+TCTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TCTapAction.h"; sourceTree = "<group>"; };
+		CBB6B99C7270DA0A9DBB8F4A /* TCFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFile.h; sourceTree = "<group>"; };
+		CBB6B9AEEB364A561BD46AF9 /* TCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCButton.m; sourceTree = "<group>"; };
+		CBB6BA47CB32BA719067424C /* NSDictionary+DictionaryWithoutNSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DictionaryWithoutNSNull.h"; sourceTree = "<group>"; };
+		CBB6BA5A72EB9E6923C48DCE /* TCTableWithGistFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTableWithGistFilesViewController.h; sourceTree = "<group>"; };
+		CBB6BA69CD1390B357727929 /* TCUserPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserPageView.h; sourceTree = "<group>"; };
+		CBB6BA6A71B87393B5F68334 /* TCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCImageView.m; sourceTree = "<group>"; };
+		CBB6BA717D9F2318E6A1A8B5 /* TCViewWithFileContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithFileContentController.m; sourceTree = "<group>"; };
+		CBB6BA7CA1982036C904BF09 /* NSDictionary+TCParseURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TCParseURL.h"; sourceTree = "<group>"; };
+		CBB6BAAEBAC31EE1908DF037 /* TCUserInformationTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUserInformationTableView.m; sourceTree = "<group>"; };
+		CBB6BB2DA269B8AD2D9E793C /* TCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTableViewController.m; sourceTree = "<group>"; };
+		CBB6BB601ED89220B933B9D2 /* TCUserInformationTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserInformationTableView.h; sourceTree = "<group>"; };
+		CBB6BB6774B6143CF2D4F07B /* NSObject+TCDoWith.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TCDoWith.m"; sourceTree = "<group>"; };
+		CBB6BBB980A3710D84DEE008 /* TCGistSelected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGistSelected.h; sourceTree = "<group>"; };
+		CBB6BC505070CE2101319C20 /* TCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUser.m; sourceTree = "<group>"; };
+		CBB6BC5EC8D428F05AE9C56C /* TCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCImageView.h; sourceTree = "<group>"; };
+		CBB6BC75727BD701A1B8F3A2 /* TCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUser.h; sourceTree = "<group>"; };
+		CBB6BC88F7D70EFAE4B48FBC /* NSObject+TCDoWith.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TCDoWith.h"; sourceTree = "<group>"; };
+		CBB6BC8A7BCDEF9680747D9F /* TCAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAuthenticationViewController.h; sourceTree = "<group>"; };
+		CBB6BC9896F62C25C4E513CB /* TCTmpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTmpViewController.m; sourceTree = "<group>"; };
+		CBB6BCAA6AFEB07A9E536A70 /* TCGistTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCGistTableCell.m; sourceTree = "<group>"; };
+		CBB6BCC1E2218F66CBAD90AC /* TCAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAuthenticationViewController.m; sourceTree = "<group>"; };
+		CBB6BCF806B35EB5F71DB48E /* TCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCButton.h; sourceTree = "<group>"; };
+		CBB6BCFA15AAB22ED2927EB3 /* TCViewWithUserTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithUserTable.h; sourceTree = "<group>"; };
+		CBB6BD4D12057A996BC7E2A9 /* TCGist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCGist.m; sourceTree = "<group>"; };
+		CBB6BE081F6871D63D884315 /* TCGist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGist.h; sourceTree = "<group>"; };
+		CBB6BE5337F34CD13A385374 /* NSDate+TCDateString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TCDateString.m"; sourceTree = "<group>"; };
+		CBB6BE7F3C8C4C5F823A46C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		CBB6BF7998BEF69FBD579376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBB6BFA58357ECC5A6564D1D /* TCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTableViewController.h; sourceTree = "<group>"; };
+		CBB6BFBF0CD711241A9533F0 /* TCViewWithGistFiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithGistFiles.m; sourceTree = "<group>"; };
+		CBB6BFC69B42952E9CB8E9F0 /* TCTableWithGistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTableWithGistsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		076931D51D18575000D24A35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DDE4B2888DC52D879CF9FC5 /* Pods_Gister.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		076931CD1D1856A200D24A35 = {
+			isa = PBXGroup;
+			children = (
+				076931D91D18575000D24A35 /* Products */,
+				CC1BBFB452037EF55978D64E /* Pods */,
+				17691315698EA5B505D5491A /* Frameworks */,
+				CBB6BC29A36C458ABEF502CB /* Gister */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 1;
+		};
+		076931D91D18575000D24A35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				076931D81D18575000D24A35 /* Gister.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17691315698EA5B505D5491A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A8E76B3B9EFBF73A484C8C4 /* Pods_Gister.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBB6B033B6FA98EA5CA49FFA /* ShowRecentGists */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ShowRecentGists;
+			path = Gister/ShowRecentGists;
+			sourceTree = SOURCE_ROOT;
+		};
+		CBB6B09B13AEEA7D95F34704 /* UserScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6B584C433063E1084F81D /* TCUserViewController.h */,
+				CBB6B4DF427E7AD3905273E8 /* TCUserViewController.m */,
+				CBB6B17031F11F8C143BCFCA /* TCUserPageView.m */,
+				CBB6BA69CD1390B357727929 /* TCUserPageView.h */,
+				CBB6BAAEBAC31EE1908DF037 /* TCUserInformationTableView.m */,
+				CBB6BB601ED89220B933B9D2 /* TCUserInformationTableView.h */,
+				CBB6BC9896F62C25C4E513CB /* TCTmpViewController.m */,
+				CBB6B69136891F7B82CB2214 /* TCTmpViewController.h */,
+				CBB6B5EAE2E27BBBDF8B61FC /* TCUserGistPreView.m */,
+				CBB6B714BE5F3878D93E57F3 /* TCUserGistPreView.h */,
+				CBB6B93421865865198ABFE5 /* TCUserInformatiobSelection.h */,
+			);
+			path = UserScreen;
+			sourceTree = "<group>";
+		};
+		CBB6B0F41B2AAFD5303BFFED /* ShowFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6BA5A72EB9E6923C48DCE /* TCTableWithGistFilesViewController.h */,
+				CBB6B490B0B2B4797D81B022 /* TCTableWithGistFilesViewController.m */,
+				CBB6B778884830759441554A /* TCFileSelected.h */,
+				CBB6BFBF0CD711241A9533F0 /* TCViewWithGistFiles.m */,
+				CBB6B4BFB44368CBEE0055DF /* TCViewWithGistFiles.h */,
+			);
+			path = ShowFiles;
+			sourceTree = "<group>";
+		};
+		CBB6B27F9FB05833A7A67EB0 /* ShowFileContent */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6BA717D9F2318E6A1A8B5 /* TCViewWithFileContentController.m */,
+				CBB6B40A3B81A939F9CCE8FC /* TCViewWithFileContentController.h */,
+			);
+			path = ShowFileContent;
+			sourceTree = "<group>";
+		};
+		CBB6B337B2DBE1C54DF3241E /* ShowGists */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6BBB980A3710D84DEE008 /* TCGistSelected.h */,
+				CBB6BCAA6AFEB07A9E536A70 /* TCGistTableCell.m */,
+				CBB6B7A6062DDE063635C95B /* TCGistTableCell.h */,
+				CBB6B77EE033E7A8E154E8EE /* TCTableWithGistsViewController.h */,
+				CBB6BFC69B42952E9CB8E9F0 /* TCTableWithGistsViewController.m */,
+				CBB6B3656D17956808C01228 /* TCViewWithGistTable.h */,
+				CBB6B717DB44C0A1BB569DC3 /* TCViewWithGistTable.m */,
+			);
+			path = ShowGists;
+			sourceTree = "<group>";
+		};
+		CBB6B352F7AA3A152DB94196 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6BCC1E2218F66CBAD90AC /* TCAuthenticationViewController.m */,
+				CBB6BC8A7BCDEF9680747D9F /* TCAuthenticationViewController.h */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		CBB6B3919FE2BC170B35A424 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6B222F58132C0CF77E432 /* TCMainMenuViewController.m */,
+				CBB6B0CF1D4192F4DCA9C120 /* TCMainMenuViewController.h */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		CBB6B53476E18F7DBD20C58C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6B6AAFF61504861ACB241 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBB6B932E8EA21B13CBAC496 /* CusstomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6BCF806B35EB5F71DB48E /* TCButton.h */,
+				CBB6B99C7270DA0A9DBB8F4A /* TCFile.h */,
+				CBB6B575C1C53CC5FCCB6F9F /* TCDraggableView.h */,
+				CBB6B9AEEB364A561BD46AF9 /* TCButton.m */,
+				CBB6B6EE96EEB7E0B173B966 /* TCDraggableView.m */,
+				CBB6B79F4C515CF5BD1681E9 /* TCFile.m */,
+				CBB6BD4D12057A996BC7E2A9 /* TCGist.m */,
+				CBB6BE081F6871D63D884315 /* TCGist.h */,
+				CBB6BC505070CE2101319C20 /* TCUser.m */,
+				CBB6BC75727BD701A1B8F3A2 /* TCUser.h */,
+				CBB6BA6A71B87393B5F68334 /* TCImageView.m */,
+				CBB6BC5EC8D428F05AE9C56C /* TCImageView.h */,
+			);
+			path = CusstomClasses;
+			sourceTree = "<group>";
+		};
+		CBB6BAC12AA6072E2B478754 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6B033B6FA98EA5CA49FFA /* ShowRecentGists */,
+				CBB6B352F7AA3A152DB94196 /* Authentication */,
+				CBB6B337B2DBE1C54DF3241E /* ShowGists */,
+				CBB6B3919FE2BC170B35A424 /* MainMenu */,
+				CBB6B0F41B2AAFD5303BFFED /* ShowFiles */,
+				CBB6BE2172F09B25C365A056 /* Users */,
+				CBB6B27F9FB05833A7A67EB0 /* ShowFileContent */,
+				CBB6BF65BF0FB404B8A43C09 /* UserPage */,
+				CBB6B09B13AEEA7D95F34704 /* UserScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CBB6BC29A36C458ABEF502CB /* Gister */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6BF7998BEF69FBD579376 /* Assets.xcassets */,
+				CBB6B41F012FFC32B65CE057 /* LaunchScreen.storyboard */,
+				CBB6BE7F3C8C4C5F823A46C9 /* Info.plist */,
+				CBB6B53476E18F7DBD20C58C /* Supporting Files */,
+				CBB6B1CE4189F18EC9399B9F /* TCAppDelegate.m */,
+				CBB6B4338AC94107F0F6155A /* TCAppDelegate.h */,
+				CBB6BFFA5FAA7D5C6B621B4C /* Categories */,
+				CBB6BAC12AA6072E2B478754 /* Screens */,
+				CBB6B932E8EA21B13CBAC496 /* CusstomClasses */,
+			);
+			path = Gister;
+			sourceTree = "<group>";
+		};
+		CBB6BE2172F09B25C365A056 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6BB2DA269B8AD2D9E793C /* TCTableViewController.m */,
+				CBB6BFA58357ECC5A6564D1D /* TCTableViewController.h */,
+				CBB6B73B634C0FD1E20AD32C /* TCUserTableCell.h */,
+				CBB6B5D966DF824D63FF79B3 /* TCUserTableCell.m */,
+				CBB6B73ED6785BEEEDDAFAB0 /* TCViewWithUserTable.m */,
+				CBB6BCFA15AAB22ED2927EB3 /* TCViewWithUserTable.h */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		CBB6BF65BF0FB404B8A43C09 /* UserPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserPage;
+			sourceTree = "<group>";
+		};
+		CBB6BFFA5FAA7D5C6B621B4C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6B4C51590CCDAF2F9A10D /* NSDictionary+DictionaryWithoutNSNull.m */,
+				CBB6BA47CB32BA719067424C /* NSDictionary+DictionaryWithoutNSNull.h */,
+				CBB6B532197DA15225FFBF8F /* NSDictionary+TCParseURL.m */,
+				CBB6BA7CA1982036C904BF09 /* NSDictionary+TCParseURL.h */,
+				CBB6BE5337F34CD13A385374 /* NSDate+TCDateString.m */,
+				CBB6B2A03ED0FEA38A3A6287 /* NSDate+TCDateString.h */,
+				CBB6BC88F7D70EFAE4B48FBC /* NSObject+TCDoWith.h */,
+				CBB6BB6774B6143CF2D4F07B /* NSObject+TCDoWith.m */,
+				CBB6B94056F65D03B6ACE5D8 /* UIView+TCTapAction.h */,
+				CBB6B419009747CE186EE89E /* UIView+TCTapAction.m */,
+				CBB6B3D04142B79F3CF1252B /* UIScrollView+scrollingEnabled.m */,
+				CBB6B81A89B84A1A3A440CA3 /* UIScrollView+scrollingEnabled.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		CC1BBFB452037EF55978D64E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41594FA01906A40B2CF127EE /* Pods-Gister.debug.xcconfig */,
+				210C68684CC01E81EE07FBEE /* Pods-Gister.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		076931D71D18575000D24A35 /* Gister */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 076931ED1D18575100D24A35 /* Build configuration list for PBXNativeTarget "Gister" */;
+			buildPhases = (
+				75F63BBB560FBEF1E0C22478 /* 📦 Check Pods Manifest.lock */,
+				F0BDA8051A15D0BA04DAA525 /* uD83DuDCE6 Check Pods Manifest.lock */,
+				4B8F921EFCD36F4F3A894FEA /* uD83DuDCE6 Check Pods Manifest.lock */,
+				076931D41D18575000D24A35 /* Sources */,
+				076931D51D18575000D24A35 /* Frameworks */,
+				076931D61D18575000D24A35 /* Resources */,
+				FACF5BEF63EC3E20A779260C /* uD83DuDCE6 Embed Pods Frameworks */,
+				37A7DD51658E7C73C3BA22EC /* uD83DuDCE6 Copy Pods Resources */,
+				E19ADB689FC2727786AC22FA /* uD83DuDCE6 Embed Pods Frameworks */,
+				143BDF55C8ACA1E4524DB006 /* uD83DuDCE6 Copy Pods Resources */,
+				BB8677FB5F9722BC527D4E2E /* 📦 Embed Pods Frameworks */,
+				25130D3E2922A61816D69D21 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gister;
+			productName = Gister;
+			productReference = 076931D81D18575000D24A35 /* Gister.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		076931CE1D1856A200D24A35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				TargetAttributes = {
+					076931D71D18575000D24A35 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 076931D11D1856A200D24A35 /* Build configuration list for PBXProject "Gister" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 076931CD1D1856A200D24A35;
+			productRefGroup = 076931D91D18575000D24A35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				076931D71D18575000D24A35 /* Gister */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		076931D61D18575000D24A35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB6BBA15D928753AC265AFE /* Assets.xcassets in Resources */,
+				CBB6BEFC507AEFE843E3E3EC /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		143BDF55C8ACA1E4524DB006 /* uD83DuDCE6 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "uD83DuDCE6 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gister/Pods-Gister-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25130D3E2922A61816D69D21 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gister/Pods-Gister-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37A7DD51658E7C73C3BA22EC /* uD83DuDCE6 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "uD83DuDCE6 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gister/Pods-Gister-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B8F921EFCD36F4F3A894FEA /* uD83DuDCE6 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "uD83DuDCE6 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75F63BBB560FBEF1E0C22478 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BB8677FB5F9722BC527D4E2E /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gister/Pods-Gister-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E19ADB689FC2727786AC22FA /* uD83DuDCE6 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "uD83DuDCE6 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gister/Pods-Gister-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0BDA8051A15D0BA04DAA525 /* uD83DuDCE6 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "uD83DuDCE6 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FACF5BEF63EC3E20A779260C /* uD83DuDCE6 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "uD83DuDCE6 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gister/Pods-Gister-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		076931D41D18575000D24A35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB6B599B76B91D7DF458764 /* main.m in Sources */,
+				CBB6B04253C841DDD74BF697 /* TCAppDelegate.m in Sources */,
+				CBB6B33204C61A71D3F5F4D8 /* NSDictionary+DictionaryWithoutNSNull.m in Sources */,
+				CBB6B0F1CEDE2FDCEE36F27E /* NSDictionary+TCParseURL.m in Sources */,
+				CBB6B97DA4604D5A7D1463F5 /* NSDate+TCDateString.m in Sources */,
+				CBB6BDCE96052A3D482B4AA3 /* NSObject+TCDoWith.m in Sources */,
+				CBB6B7F61B1489912827CDCE /* UIView+TCTapAction.m in Sources */,
+				CBB6B5E7301FFE6C3111BAC2 /* UIScrollView+scrollingEnabled.m in Sources */,
+				CBB6B7F1B938E3B0A0F51D09 /* TCAuthenticationViewController.m in Sources */,
+				CBB6B2C06EA21F167C877D10 /* TCGistTableCell.m in Sources */,
+				CBB6B9451CAB77EBFB283A2B /* TCTableWithGistsViewController.m in Sources */,
+				CBB6B206EAE8D13791945D09 /* TCViewWithGistTable.m in Sources */,
+				CBB6BA12AD22B5D46B44C688 /* TCMainMenuViewController.m in Sources */,
+				CBB6B909DADEB57DF46511F5 /* TCTableWithGistFilesViewController.m in Sources */,
+				CBB6B31CD3E04EE782166DD2 /* TCViewWithGistFiles.m in Sources */,
+				CBB6BE8D33E9F79A556F13EC /* TCTableViewController.m in Sources */,
+				CBB6B218DC7BC96FF0CC4743 /* TCUserTableCell.m in Sources */,
+				CBB6B7B50ADE4E7CD21BA91B /* TCViewWithUserTable.m in Sources */,
+				CBB6BA857778C2088FF9E920 /* TCViewWithFileContentController.m in Sources */,
+				CBB6B5FFEF9565D518D7CEA6 /* TCUserViewController.m in Sources */,
+				CBB6B1AEA3E61EC19EA7879C /* TCUserPageView.m in Sources */,
+				CBB6B967172F7988259E8B7B /* TCUserInformationTableView.m in Sources */,
+				CBB6B56A480EC78CEA7F4C76 /* TCTmpViewController.m in Sources */,
+				CBB6BA682243C32F9D80EFAE /* TCUserGistPreView.m in Sources */,
+				CBB6B936EDC8E25DCBD5CCD9 /* TCButton.m in Sources */,
+				CBB6B68CDA7AC49E35D217B1 /* TCDraggableView.m in Sources */,
+				CBB6BE918573896DE97552FA /* TCFile.m in Sources */,
+				CBB6BE8C812ED806CA2F3C09 /* TCGist.m in Sources */,
+				CBB6B750F496EBEB0B5ACD24 /* TCUser.m in Sources */,
+				CBB6BCF1FC2E6AD57092278B /* TCImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CBB6B41F012FFC32B65CE057 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBB6B74D7C1BCC2E7E80CE8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		076931D21D1856A200D24A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		076931D31D1856A200D24A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		076931EE1D18575100D24A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41594FA01906A40B2CF127EE /* Pods-Gister.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Gister/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = terana.Gister;
+				PRODUCT_NAME = Gister;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		076931EF1D18575100D24A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 210C68684CC01E81EE07FBEE /* Pods-Gister.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Gister/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = terana.Gister;
+				PRODUCT_NAME = Gister;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		076931D11D1856A200D24A35 /* Build configuration list for PBXProject "Gister" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				076931D21D1856A200D24A35 /* Debug */,
+				076931D31D1856A200D24A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		076931ED1D18575100D24A35 /* Build configuration list for PBXNativeTarget "Gister" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				076931EE1D18575100D24A35 /* Debug */,
+				076931EF1D18575100D24A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 076931CE1D1856A200D24A35 /* Project object */;
+}
