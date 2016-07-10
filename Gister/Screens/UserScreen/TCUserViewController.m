@@ -52,16 +52,16 @@
 	[self loadView];
 }
 
-- (void) openGitHubPage:(NSURL *)url
+- (void) openGitHubPage
 {
-	[[UIApplication sharedApplication] openURL:url];
+	[[UIApplication sharedApplication] openURL:_user.gitURL];
 }
 
-- (void) openFollowers:(NSURL *)followers_url
+- (void) openFollowers
 {
 }
 
-- (void) openFollowings:(NSURL *)following_url
+- (void) openFollowings
 {
 }
 

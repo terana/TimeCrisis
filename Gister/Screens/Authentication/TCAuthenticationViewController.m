@@ -6,6 +6,7 @@
 #import "TCAuthenticationViewController.h"
 #import "NSObject+TCDoWith.h"
 #import "TCButton.h"
+#import "TCImageView.h"
 
 @implementation TCAuthenticationViewController
 {
@@ -15,12 +16,47 @@
 {
 	self.view = [UIView tc_with:^(UIView *o) {
 		o.backgroundColor               = [UIColor whiteColor];
-		__unused TCButton *signInButton = [TCButton tc_with:^(TCButton *oo) {
-			oo.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
-			oo.label.text      = @"Sign in";
-			[oo setTarget:self withAction:@selector(authentication:)];
+		NSUInteger inset = 50;
+		if([[self navigationController] isNavigationBarHidden] == NO)
+		{
+			inset += self.navigationController.navigationBar.frame.size.height;
+		}
+
+		__unused UIView *viewWithLogo = [UIView tc_with:^(UIView *oo) {
+			oo.backgroundColor = [UIColor whiteColor];
 			[o addSubview:oo];
-			oo.keepCenter.equal = 0.5;
+			//oo.keepTopMarginInset.equal = inset;
+			oo.keepHeight.equal = 100;
+			oo.keepWidth.min = 100;
+			oo.keepLeftMarginInset.equal = 0;
+
+			__unused TCImageView *logo = [TCImageView tc_with:^(TCImageView *ooo) {
+				ooo.image = [UIImage imageNamed:@"ninja_octocat"];
+				[oo addSubview:ooo];
+				ooo.keepVerticalInsets.equal = 0;
+				ooo.keepLeftInset.equal = 0;
+			}];
+
+			__unused UILabel *name = [UILabel tc_with:^(UILabel *ooo) {
+				ooo.text = @"Gister";
+				ooo.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.3];
+				[oo addSubview:ooo];
+				ooo.keepTopMarginInset.equal = 0;
+				ooo.keepLeftOffsetTo(logo).equal = 5;
+				ooo.keepRightMarginInset.equal = 0;
+			}];
+
+			__unused TCButton *signIn = [TCButton tc_with:^(TCButton *ooo) {
+				ooo.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.3];
+				ooo.label.text      = @" Sign in ";
+				[ooo setTarget:self withAction:@selector(authentication:)];
+				[oo addSubview:ooo];
+				ooo.keepTopOffsetTo(name).equal = 5;
+				ooo.keepLeftOffsetTo(logo).equal = 5;
+				ooo.keepRightMarginInset.min = 0;
+			}];
+			oo.keepVerticalCenter.equal = 0;
+
 		}];
 	}];
 }

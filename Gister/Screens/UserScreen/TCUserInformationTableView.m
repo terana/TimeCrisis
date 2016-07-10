@@ -95,17 +95,17 @@
 	{
 		case 0:
 		{
-			[_delegate openGitHubPage:_user.gitURL];
+			[_delegate openGitHubPage];
 			break;
 		}
 		case 2:
 		{
-			[_delegate openFollowers:_user.followersURL];
+			[_delegate openFollowers];
 			break;
 		}
 		case 3:
 		{
-			[_delegate openFollowings:_user.followingsURL];
+			[_delegate openFollowings];
 			break;
 		}
 		default:

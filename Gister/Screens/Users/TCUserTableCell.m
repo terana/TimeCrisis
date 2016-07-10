@@ -11,7 +11,6 @@
 {
 	UIImageView *_photo;
 	UILabel     *_nameLabel;
-	UILabel     *_rangLabel;
 	UILabel     *_registrationDateLabel;
 }
 - (id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -48,14 +47,6 @@
 					ooo.keepRightInset.min  = 0;
 				}];
 
-				__unused UILabel *rangLabel = _rangLabel = [UILabel tc_with:^(UILabel *ooo) {
-					ooo.backgroundColor = [UIColor whiteColor];
-					[oo addSubview:ooo];
-					ooo.keepTopOffsetTo(nameLabel).equal = 5;
-					ooo.keepBottomInset.min              = 0;
-					ooo.keepLeftInset.equal              = 0;
-					ooo.keepRightInset.min               = 0;
-				}];
 			}];
 			__unused UILabel *registrationDateLabel = _registrationDateLabel = [UILabel tc_with:^(UILabel *oo) {
 				oo.backgroundColor = [UIColor whiteColor];

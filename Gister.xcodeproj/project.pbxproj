@@ -52,6 +52,7 @@
 		CBB6B1CE4189F18EC9399B9F /* TCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
 		CBB6B222F58132C0CF77E432 /* TCMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMainMenuViewController.m; sourceTree = "<group>"; };
 		CBB6B2A03ED0FEA38A3A6287 /* NSDate+TCDateString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TCDateString.h"; sourceTree = "<group>"; };
+		CBB6B33790A5C21E35778B72 /* TCFileSelected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFileSelected.h; sourceTree = "<group>"; };
 		CBB6B3656D17956808C01228 /* TCViewWithGistTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithGistTable.h; sourceTree = "<group>"; };
 		CBB6B3D04142B79F3CF1252B /* UIScrollView+scrollingEnabled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+scrollingEnabled.m"; sourceTree = "<group>"; };
 		CBB6B40A3B81A939F9CCE8FC /* TCViewWithFileContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithFileContentController.h; sourceTree = "<group>"; };
@@ -74,12 +75,10 @@
 		CBB6B73B634C0FD1E20AD32C /* TCUserTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserTableCell.h; sourceTree = "<group>"; };
 		CBB6B73ED6785BEEEDDAFAB0 /* TCViewWithUserTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithUserTable.m; sourceTree = "<group>"; };
 		CBB6B74D7C1BCC2E7E80CE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CBB6B778884830759441554A /* TCFileSelected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFileSelected.h; sourceTree = "<group>"; };
 		CBB6B77EE033E7A8E154E8EE /* TCTableWithGistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTableWithGistsViewController.h; sourceTree = "<group>"; };
 		CBB6B79F4C515CF5BD1681E9 /* TCFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCFile.m; sourceTree = "<group>"; };
 		CBB6B7A6062DDE063635C95B /* TCGistTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGistTableCell.h; sourceTree = "<group>"; };
 		CBB6B81A89B84A1A3A440CA3 /* UIScrollView+scrollingEnabled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+scrollingEnabled.h"; sourceTree = "<group>"; };
-		CBB6B93421865865198ABFE5 /* TCUserInformatiobSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserInformatiobSelection.h; sourceTree = "<group>"; };
 		CBB6B94056F65D03B6ACE5D8 /* UIView+TCTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TCTapAction.h"; sourceTree = "<group>"; };
 		CBB6B99C7270DA0A9DBB8F4A /* TCFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFile.h; sourceTree = "<group>"; };
 		CBB6B9AEEB364A561BD46AF9 /* TCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCButton.m; sourceTree = "<group>"; };
@@ -93,7 +92,6 @@
 		CBB6BB2DA269B8AD2D9E793C /* TCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTableViewController.m; sourceTree = "<group>"; };
 		CBB6BB601ED89220B933B9D2 /* TCUserInformationTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserInformationTableView.h; sourceTree = "<group>"; };
 		CBB6BB6774B6143CF2D4F07B /* NSObject+TCDoWith.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TCDoWith.m"; sourceTree = "<group>"; };
-		CBB6BBB980A3710D84DEE008 /* TCGistSelected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGistSelected.h; sourceTree = "<group>"; };
 		CBB6BC505070CE2101319C20 /* TCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUser.m; sourceTree = "<group>"; };
 		CBB6BC5EC8D428F05AE9C56C /* TCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCImageView.h; sourceTree = "<group>"; };
 		CBB6BC75727BD701A1B8F3A2 /* TCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUser.h; sourceTree = "<group>"; };
@@ -105,9 +103,11 @@
 		CBB6BCF806B35EB5F71DB48E /* TCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCButton.h; sourceTree = "<group>"; };
 		CBB6BCFA15AAB22ED2927EB3 /* TCViewWithUserTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithUserTable.h; sourceTree = "<group>"; };
 		CBB6BD4D12057A996BC7E2A9 /* TCGist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCGist.m; sourceTree = "<group>"; };
+		CBB6BDA18CF2BAD33BA73DFC /* TCUserInformatiobSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUserInformatiobSelection.h; sourceTree = "<group>"; };
 		CBB6BE081F6871D63D884315 /* TCGist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGist.h; sourceTree = "<group>"; };
 		CBB6BE5337F34CD13A385374 /* NSDate+TCDateString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TCDateString.m"; sourceTree = "<group>"; };
 		CBB6BE7F3C8C4C5F823A46C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		CBB6BF2F362DA404993B09C5 /* TCGistSelected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGistSelected.h; sourceTree = "<group>"; };
 		CBB6BF7998BEF69FBD579376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBB6BFA58357ECC5A6564D1D /* TCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTableViewController.h; sourceTree = "<group>"; };
 		CBB6BFBF0CD711241A9533F0 /* TCViewWithGistFiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithGistFiles.m; sourceTree = "<group>"; };
@@ -153,14 +153,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CBB6B033B6FA98EA5CA49FFA /* ShowRecentGists */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ShowRecentGists;
-			path = Gister/ShowRecentGists;
-			sourceTree = SOURCE_ROOT;
-		};
 		CBB6B09B13AEEA7D95F34704 /* UserScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +166,6 @@
 				CBB6B69136891F7B82CB2214 /* TCTmpViewController.h */,
 				CBB6B5EAE2E27BBBDF8B61FC /* TCUserGistPreView.m */,
 				CBB6B714BE5F3878D93E57F3 /* TCUserGistPreView.h */,
-				CBB6B93421865865198ABFE5 /* TCUserInformatiobSelection.h */,
 			);
 			path = UserScreen;
 			sourceTree = "<group>";
@@ -184,7 +175,6 @@
 			children = (
 				CBB6BA5A72EB9E6923C48DCE /* TCTableWithGistFilesViewController.h */,
 				CBB6B490B0B2B4797D81B022 /* TCTableWithGistFilesViewController.m */,
-				CBB6B778884830759441554A /* TCFileSelected.h */,
 				CBB6BFBF0CD711241A9533F0 /* TCViewWithGistFiles.m */,
 				CBB6B4BFB44368CBEE0055DF /* TCViewWithGistFiles.h */,
 			);
@@ -203,7 +193,6 @@
 		CBB6B337B2DBE1C54DF3241E /* ShowGists */ = {
 			isa = PBXGroup;
 			children = (
-				CBB6BBB980A3710D84DEE008 /* TCGistSelected.h */,
 				CBB6BCAA6AFEB07A9E536A70 /* TCGistTableCell.m */,
 				CBB6B7A6062DDE063635C95B /* TCGistTableCell.h */,
 				CBB6B77EE033E7A8E154E8EE /* TCTableWithGistsViewController.h */,
@@ -259,17 +248,25 @@
 			path = CusstomClasses;
 			sourceTree = "<group>";
 		};
+		CBB6B9390CAA0CE2796AF96B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6BDA18CF2BAD33BA73DFC /* TCUserInformatiobSelection.h */,
+				CBB6B33790A5C21E35778B72 /* TCFileSelected.h */,
+				CBB6BF2F362DA404993B09C5 /* TCGistSelected.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		CBB6BAC12AA6072E2B478754 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				CBB6B033B6FA98EA5CA49FFA /* ShowRecentGists */,
 				CBB6B352F7AA3A152DB94196 /* Authentication */,
 				CBB6B337B2DBE1C54DF3241E /* ShowGists */,
 				CBB6B3919FE2BC170B35A424 /* MainMenu */,
 				CBB6B0F41B2AAFD5303BFFED /* ShowFiles */,
 				CBB6BE2172F09B25C365A056 /* Users */,
 				CBB6B27F9FB05833A7A67EB0 /* ShowFileContent */,
-				CBB6BF65BF0FB404B8A43C09 /* UserPage */,
 				CBB6B09B13AEEA7D95F34704 /* UserScreen */,
 			);
 			path = Screens;
@@ -287,6 +284,7 @@
 				CBB6BFFA5FAA7D5C6B621B4C /* Categories */,
 				CBB6BAC12AA6072E2B478754 /* Screens */,
 				CBB6B932E8EA21B13CBAC496 /* CusstomClasses */,
+				CBB6B9390CAA0CE2796AF96B /* Protocols */,
 			);
 			path = Gister;
 			sourceTree = "<group>";
@@ -302,13 +300,6 @@
 				CBB6BCFA15AAB22ED2927EB3 /* TCViewWithUserTable.h */,
 			);
 			path = Users;
-			sourceTree = "<group>";
-		};
-		CBB6BF65BF0FB404B8A43C09 /* UserPage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserPage;
 			sourceTree = "<group>";
 		};
 		CBB6BFFA5FAA7D5C6B621B4C /* Categories */ = {
