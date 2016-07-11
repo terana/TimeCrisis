@@ -3,12 +3,13 @@
 //
 
 #import "TCAppDelegate.h"
-#import "TCMainMenuViewController.h"
 #import "NSDictionary+TCParseURL.h"
 #import "TCAuthenticationViewController.h"
 #import "TCUserViewController.h"
 #import "TCTmpViewController.h"
 #import "TCTableViewController.h"
+#import "TCTableWithGistsViewController.h"
+#import "TCTmpViewWithHeaderController.h"
 
 @implementation TCAppDelegate
 {
@@ -19,13 +20,17 @@
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
 	UIWindow               *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-	//UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCAuthenticationViewController new]];
-	//UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCTableViewController new]];
-	UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController: _authentication ? [TCTmpViewController new] : [TCAuthenticationViewController new]];
+	//UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCUserViewController new]];
+	UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCTmpViewController new]];
+	//UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController: _authentication ? [TCTmpViewController new] : [TCAuthenticationViewController new]];
 	[nc setNavigationBarHidden:NO animated:YES];
 
 	window.rootViewController = _navigationController = nc;
+	CGFloat inset            = _navigationController.navigationBarHidden ? 5 : _navigationController.navigationBar.frame.size.height + 25;
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setFloat:inset forKey:@"inset"];
 	[window makeKeyAndVisible];
 	_window = window;
 	return YES;

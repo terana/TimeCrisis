@@ -7,6 +7,7 @@
 #import "NSObject+TCDoWith.h"
 #import "TCGistTableCell.h"
 #import "TCGistSelected.h"
+#import "TCMyPageHeaderView.h"
 
 @interface TCViewWithGistTable (UITableViewProtocols) <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -21,13 +22,22 @@
 	self = [super init];
 	if (self)
 	{
+		__unused TCMyPageHeaderView *headerView = [TCMyPageHeaderView tc_with:^(TCMyPageHeaderView *o) {
+			[self addSubview:o];
+			o.keepTopMarginInset.equal =0;
+			o.keepHorizontalMarginInsets.equal = 0;
+			o.keepHeight.equal = 20;
+		}];
+
 		__unused UITableView *table = _tableView = [[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain] tc_with:^(UITableView *o) {
-			o.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.1];
+			o.backgroundColor = [UIColor whiteColor];
 			o.delegate        = self;
 			o.dataSource      = self;
 			[o registerClass:[TCGistTableCell class] forCellReuseIdentifier:@"Cell"];
 			[self addSubview:o];
-			o.keepInsets.equal = 0;
+			o.keepTopOffsetTo(headerView).equal = 0;
+			o.keepBottomInset.equal = 0;
+			o.keepHorizontalInsets.equal = 0;
 		}];
 	}
 	return self;

@@ -23,7 +23,7 @@
 	user.gistsURL = [NSURL URLWithString:@"http://github.com"];
 	user.registrationDate = [NSDate dateFromString:@"01.10.10"];
 	_user = user;
-	TCUserPageView *view = [[TCUserPageView alloc] initWithTopInset:self.navigationController.navigationBar.frame.size.height + 30];
+	TCUserPageView *view = [TCUserPageView new];
 	view.user = user;
 	view.delegate = self;
 	self.view = view;

@@ -14,20 +14,15 @@
 
 - (void) loadView
 {
+
 	self.view = [UIView tc_with:^(UIView *o) {
 		o.backgroundColor               = [UIColor whiteColor];
-		NSUInteger inset = 50;
-		if([[self navigationController] isNavigationBarHidden] == NO)
-		{
-			inset += self.navigationController.navigationBar.frame.size.height;
-		}
 
 		__unused UIView *viewWithLogo = [UIView tc_with:^(UIView *oo) {
 			oo.backgroundColor = [UIColor whiteColor];
 			[o addSubview:oo];
-			//oo.keepTopMarginInset.equal = inset;
+			oo.keepTopMarginInset.equal = [[NSUserDefaults standardUserDefaults] floatForKey:@"inset"] + 30;
 			oo.keepHeight.equal = 100;
-			oo.keepWidth.min = 100;
 			oo.keepLeftMarginInset.equal = 0;
 
 			__unused TCImageView *logo = [TCImageView tc_with:^(TCImageView *ooo) {
@@ -38,8 +33,9 @@
 			}];
 
 			__unused UILabel *name = [UILabel tc_with:^(UILabel *ooo) {
-				ooo.text = @"Gister";
+				ooo.text = @" Gister ";
 				ooo.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.3];
+				ooo.layer.cornerRadius = 105;
 				[oo addSubview:ooo];
 				ooo.keepTopMarginInset.equal = 0;
 				ooo.keepLeftOffsetTo(logo).equal = 5;
@@ -55,8 +51,6 @@
 				ooo.keepLeftOffsetTo(logo).equal = 5;
 				ooo.keepRightMarginInset.min = 0;
 			}];
-			oo.keepVerticalCenter.equal = 0;
-
 		}];
 	}];
 }

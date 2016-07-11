@@ -13,23 +13,21 @@
 
 @implementation TCUserPageView
 {
-	CGFloat                    _topInset;
 	TCImageView                *_avatar;
 	TCUserInformationTableView *_userInfo;
 	TCUserGistPreView          *_gists;
 }
 
-- (TCUserPageView *) initWithTopInset:(CGFloat)topInset
+- (TCUserPageView *) init
 {
 	self = [super init];
 	if (self)
 	{
-		_topInset = topInset;
 		self.backgroundColor = [UIColor whiteColor];
 		__unused UIView            *userInformationview = [UIView tc_with:^(UIView *o) {
 			o.backgroundColor = [UIColor whiteColor];
 			[self addSubview:o];
-			o.keepTopMarginInset.equal   = _topInset;
+			o.keepTopMarginInset.equal   = [[NSUserDefaults standardUserDefaults] floatForKey:@"inset"];
 			o.keepLeftMarginInset.equal  = 0;
 			o.keepRightMarginInset.equal = 0;
 

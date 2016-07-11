@@ -15,7 +15,7 @@
 }
 - (void) loadView
 {
-	self.title = @"Gist";
+	self.title = @"Recent gists";
 	self.view  = [TCViewWithGistTable tc_with:^(TCViewWithGistTable *o) {
 		o.backgroundColor = [UIColor whiteColor];
 	}];

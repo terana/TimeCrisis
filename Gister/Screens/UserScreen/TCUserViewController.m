@@ -24,6 +24,14 @@
 
 - (void) loadView
 {
+	TCUserPageView *view = [TCUserPageView new];
+	view.delegate = self;
+	view.user = _user;
+	self.view = view;
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
 	NSURL        *url        = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.github.com/user?access_token=%@", _authenticationParametrs[@"access_token"]]];
 	//NSURL        *url        = [NSURL URLWithString:@"https://api.github.com/user?access_token=8322ba05bd52fb90b32421c132f73070d61ca532"];
 	NSData       *userData   = [[NSData alloc] initWithContentsOfURL:url];
@@ -40,11 +48,7 @@
 	user.gistsURL = [NSURL URLWithString:parsedData[@"gists_url"]];
 	user.registrationDate = [NSDate dateFromStringWithTime:parsedData[@"created_at"]];
 	_user = user;
-
-	TCUserPageView *view = [[TCUserPageView alloc] initWithTopInset:self.navigationController.navigationBar.frame.size.height + 30];
-	view.delegate = self;
-	view.user = user;
-	self.view = view;
+	[super viewWillAppear:animated];
 }
 
 - (void) updateOnClassInjection
