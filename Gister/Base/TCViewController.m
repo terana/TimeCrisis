@@ -53,6 +53,13 @@
 		return;
 	}
 
+	/*
+	 * insets are:
+	 * top = navigationBar.heigh if any or 0
+	 * left = right = 16
+	 * bottom = tapBar.height if any or 0
+	 */
+
 	UIEdgeInsets superMargins = self.view.superview.layoutMargins;
 	insets.top += superMargins.top;
 	insets.bottom += superMargins.bottom;
