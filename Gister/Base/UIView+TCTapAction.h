@@ -4,7 +4,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^TCTapActionBlock)(__kindof UIView *sender);
+typedef void(^TCTapActionBlock)();
 
 @interface UIView (TCTapAction)
 @property (nonatomic, strong) TCTapActionBlock tc_tapAction;

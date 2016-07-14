@@ -3,16 +3,14 @@
 //
 
 #import <KeepLayout/KeepLayout.h>
-#import "TCAuthenticationViewController.h"
-#import "NSObject+TCDoWith.h"
-#import "TCButton.h"
-#import "TCImageView.h"
+#import "TCAuthenticationScreenViewController.h"
+#import "TCGithubAuthenticationViewController.h"
 
-@implementation TCAuthenticationViewController
+@implementation TCAuthenticationScreenViewController
 {
 }
 
-- (void) loadView
+/*- (void) loadView
 {
 
 	self.view = [UIView tc_with:^(UIView *o) {
@@ -53,16 +51,11 @@
 			}];
 		}];
 	}];
+}*/
+
+- (void) signIn
+{
+	[[self navigationController] pushViewController:[TCGithubAuthenticationViewController new] animated:YES];
 }
 
-- (void) authentication:(UIView *)sender
-{
-	NSURL *url = [NSURL URLWithString:@"https://github.com/login/oauth/authorize/?"
-			@"client_id=dc665db234579172b3b8"
-			@"&redirect_uri=gister://"
-			@"&scope=user%2Cgist"
-			@"&state=1234"
-			@"&allow_signup=true"];
-	[[UIApplication sharedApplication] openURL:url];
-}
-@end
+	@end

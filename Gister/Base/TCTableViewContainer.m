@@ -48,12 +48,6 @@
 	return nil;
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	NSAssert(0, @"Implement this method in the subclass");
-	return 0;
-}
-
 - (void) setLayoutMargins:(UIEdgeInsets)layoutMargins
 {
 	[super setLayoutMargins:layoutMargins];
@@ -61,6 +55,12 @@
 	UIEdgeInsets topandBottom = UIEdgeInsetsMake(layoutMargins.top, 0, layoutMargins.bottom, 0);
 	_tableView.contentInset          = topandBottom;
 	_tableView.scrollIndicatorInsets = topandBottom;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	NSAssert(0, @"Implement this method in the subclass");
+	return 0;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

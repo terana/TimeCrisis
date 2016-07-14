@@ -32,7 +32,7 @@
 	TCTapActionBlock action = self.tc_tapAction;
 	if (action != nil)
 	{
-		action(self);
+		action;
 	}
 }
 
@@ -48,8 +48,8 @@
 
 - (void) setTarget:(id)object withAction:(SEL)action
 {
-	self.tc_tapAction = ^(UIView *sender) {
-		[object performSelector:action withObject:sender];
+	self.tc_tapAction = ^{
+		[object performSelector:action];
 	};
 }
 @end

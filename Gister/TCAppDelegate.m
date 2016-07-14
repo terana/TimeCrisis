@@ -4,7 +4,7 @@
 
 #import "TCAppDelegate.h"
 #import "NSDictionary+TCParseURL.h"
-#import "TCAuthenticationViewController.h"
+#import "TCAuthenticationScreenViewController.h"
 #import "TCUserViewController.h"
 #import "TCTmpViewController.h"
 #import "TCTableViewController.h"
@@ -23,8 +23,8 @@
 
 	UIWindow               *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 	//UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCUserViewController new]];
-	UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCTmpViewController new]];
-	//UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController: _authentication ? [TCTmpViewController new] : [TCAuthenticationViewController new]];
+	UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCAuthenticationScreenViewController new]];
+	//UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController: _authentication ? [TCTmpViewController new] : [TCAuthenticationScreenViewController new]];
 	[nc setNavigationBarHidden:NO animated:YES];
 
 	window.rootViewController = _navigationController = nc;
