@@ -2,21 +2,21 @@
 // Created by Anastasia on 6/27/16.
 //
 
-#import "TCTableWithGistsViewController.h"
+#import "TCPublicGistsListViewController.h"
 #import "NSObject+TCDoWith.h"
-#import "TCViewWithGistTable.h"
+#import "TCGistsListView.h"
 #import "NSDate+TCDateString.h"
 #import "NSDictionary+DictionaryWithoutNSNull.h"
 #import "TCTableWithGistFilesViewController.h"
 #import "TCFile.h"
 
-@implementation TCTableWithGistsViewController
+@implementation TCPublicGistsListViewController
 {
 }
 - (void) loadView
 {
-	self.title = @"Recent gists";
-	self.view  = [TCViewWithGistTable tc_with:^(TCViewWithGistTable *o) {
+	self.title = @"Gists";
+	self.view  = [TCGistsListView tc_with:^(TCGistsListView *o) {
 		o.backgroundColor = [UIColor whiteColor];
 	}];
 }
@@ -32,7 +32,6 @@
 	{
 		TCGist       *gist       = [TCGist new];
 		NSDictionary *dictionary = [object dictionaryWithoutNSNull];
-		gist.url             = [NSURL URLWithString:dictionary[@"url"]];
 		gist.id              = dictionary[@"id"];
 		gist.creationDate    = [NSDate dateFromStringWithTime:dictionary[@"created_at"]];
 		gist.updatingDate    = [NSDate dateFromStringWithTime:dictionary[@"updated_at"]];
@@ -52,9 +51,15 @@
 		gist.files            = files;
 		[gistsArray addObject:gist];
 	}
-	TCViewWithGistTable *view       = self.view;
+	TCGistsListView *view       = self.view;
 	view.delegate = self;
 	view.data     = gistsArray;
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+
 }
 
 - (void) gistIsSelected:(TCGist *)gist

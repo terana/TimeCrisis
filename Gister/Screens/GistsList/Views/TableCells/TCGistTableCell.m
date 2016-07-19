@@ -24,27 +24,11 @@
 		[view tc_with:^(UIView *o) {
 			o.backgroundColor = [UIColor whiteColor];
 
-			__unused UILabel *urlString = [UILabel tc_with:^(UILabel *oo) {
-				oo.backgroundColor = [UIColor whiteColor];
-				oo.text            = @"url:";
-				[o addSubview:oo];
-				oo.keepTopMarginInset.equal  = 0;
-				oo.keepWidth.max             = 100;
-				oo.keepLeftMarginInset.equal = 0;
-			}];
-			__unused UILabel *urlLabel  = _urlLabel                  = [UILabel tc_with:^(UILabel *oo) {
-				oo.backgroundColor = [UIColor whiteColor];
-				[o addSubview:oo];
-				oo.keepTopMarginInset.equal  = 0;
-				oo.keepRightMarginInset.min  = 0;
-				oo.keepLeftMarginInset.equal = 105;
-			}];
-
 			__unused UILabel *idString = [UILabel tc_with:^(UILabel *oo) {
 				oo.text            = @"id:";
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
-				oo.keepTopOffsetTo(_urlLabel).equal = 10;
+				oo.keepTopMarginInset.equal = 10;
 				oo.keepWidth.max                    = 100;
 				oo.keepLeftMarginInset.equal        = 0;
 			}];
@@ -81,7 +65,6 @@
 {
 	_gist = gist;
 
-	_urlLabel.text          = gist.url.absoluteString;
 	_idLabel.text           = gist.id;
 	_creationDateLabel.text = [gist.creationDate stringFromDate];
 }

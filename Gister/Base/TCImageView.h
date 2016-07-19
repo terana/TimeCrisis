@@ -5,5 +5,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TCImageView : UIImageView
-
+@property (strong, nonatomic) NSString *imageURL;
 @end

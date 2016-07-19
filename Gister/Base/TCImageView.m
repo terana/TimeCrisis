@@ -5,6 +5,7 @@
 #import <objc/runtime.h>
 #import "TCImageView.h"
 #import "KeepLayout/KeepLayout.h"
+#import "TCServerManager.h"
 
 @implementation TCImageView
 {
@@ -32,5 +33,16 @@
 	{
 		[self updateAspectConstraints];
 	}
+}
+
+-(void) setImageURL:(NSString *)imageURL
+{
+	_imageURL = imageURL;
+	[[TCServerManager shared] getImageWithURL:imageURL callback:^(UIImage *image, NSError *error){
+		if(error == nil)
+		{
+			self.image = image;
+		}
+	}];
 }
 @end

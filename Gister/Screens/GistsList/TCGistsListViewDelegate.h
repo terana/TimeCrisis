@@ -5,6 +5,6 @@
 #import <UIKit/UIKit.h>
 #import "TCGist.h"
 
-@protocol TCGistSelected <NSObject>
+@protocol TCGistsListViewDelegate <NSObject>
 - (void) gistIsSelected:(TCGist *)gist;
 @end

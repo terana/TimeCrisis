@@ -64,7 +64,6 @@
 {
 	_user = user;
 
-	_photo.image                = user.avatar;
 	_nameLabel.text             = user.login;
 	_registrationDateLabel.text = [user.registrationDate stringFromDate];
 }

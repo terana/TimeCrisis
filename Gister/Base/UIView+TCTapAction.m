@@ -32,7 +32,7 @@
 	TCTapActionBlock action = self.tc_tapAction;
 	if (action != nil)
 	{
-		action;
+		action();
 	}
 }
 

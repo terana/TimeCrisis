@@ -7,4 +7,5 @@
 @interface TCServer : NSObject
 -(instancetype)initWithServerURL:(NSString *)URL;
 -(void)doGet:(NSString *)path withParameters:(NSDictionary *)parameters callback:(void(^)(id, NSError *))callback;
+-(void)doGetWithURL:(NSString *)url callback:(void(^)(id, NSError *))callback;
 @end

@@ -4,6 +4,8 @@
 
 #import "TCServerManager.h"
 #import "TCServer.h"
+#import "TCImageView.h"
+#import "TCGist.h"
 
 @implementation TCServerManager
 {
@@ -19,23 +21,77 @@
 	return staticInstance;
 }
 
-- (void) getInformationForUser:(TCUser *)user callback:(void (^)(TCUser *, NSError *))callback
+- (instancetype) init
 {
-	[_server doGet:@"/user" withParameters:@{@"access_token": [[NSUserDefaults standardUserDefaults] stringForKey:@"access_token"]} callback:[self callbackParsingClass:[TCUser class] andSendingTo:callback]];
-}
--(void(^)(id, NSError *)) callbackParsingClass:(Class)cl andSendingTo:(void(^)(id, NSError *))callback
-{
-return ^(id result, NSError *error) {
-	if (error)
+	self = [super init];
+	if (self)
 	{
-		callback(nil, error);
+		_server = [[TCServer alloc] initWithServerURL:@"https://api.github.com"];
 	}
-	callback([self parse:result as:cl], nil);
-};
+	return self;
 }
 
--(id)parse:(id)primitives as:(Class)cl
+- (void) getInformationForUserWithCallback:(void (^)(TCUser *, NSError *))callback
 {
-	return [TCUser unmap:primitives];
+	[_server doGet:@"/user" withParameters:@{ @"access_token" : [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"] } callback:[self callbackParsingClass:[TCUser class] andSendingTo:callback]];
+}
+
+- (void (^)(id, NSError *)) callbackParsingClass:(Class)cl andSendingTo:(void (^)(id, NSError *))callback
+{
+	return ^(id result, NSError *error) {
+		if (error)
+		{
+			callback(nil, error);
+		}
+		callback([self parse:result as:cl], nil);
+	};
+}
+
+- (id) parse:(id)primitives as:(Class)cl
+{
+	return [cl unmap:primitives];
 };
+
+- (void) getImageWithURL:(NSString *)imageURL callback:(void (^)(UIImage *, NSError *))callback
+{
+	[_server doGetWithURL:imageURL callback:[self callbackCreatingImageAndSendingTo:callback]];
+}
+
+- (void (^)(id, NSError *)) callbackCreatingImageAndSendingTo:(void (^)(UIImage *, NSError *))callback
+{
+	return ^(NSData *data, NSError *error) {
+		if (error)
+		{
+			callback(nil, error);
+		}
+		callback([UIImage imageWithData:data], error);
+	};
+}
+
+
+- (void) getGistsForUser:(TCUser *)user callback:(void (^)(NSArray *, NSError *))callback
+{
+	[_server doGet:[NSString stringWithFormat:@"/users/%@/gists", user.login] withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
+}
+
+-(void(^)(id, NSError *)) callbackParsingCollectionOfClass:(Class)cl andSendingTo:(void (^)(id, NSError *))callback
+{
+	return ^(id result, NSError *error) {
+		if (error)
+		{
+			callback(nil, error);
+		}
+		NSMutableArray *array = [NSMutableArray new];
+		for(__strong id object in result)
+		{
+			[array addObject:[self parse:object as:cl]];
+		}
+		callback(array, error);
+	};
+}
+
+- (void) getPublicGistsWithCallback:(void (^)(NSArray *, NSError *))callback
+{
+}
+
 @end

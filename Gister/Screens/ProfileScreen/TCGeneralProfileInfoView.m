@@ -12,9 +12,9 @@
 @implementation TCGeneralProfileInfoView
 {
 	TCImageView *_avatar;
-	UILabel *_login;
-	UILabel *_joinedOn;
-	UILabel *_numberOfGists;
+	UILabel     *_login;
+	UILabel     *_joinedOn;
+	UILabel     *_numberOfGists;
 }
 - (instancetype) init
 {
@@ -33,6 +33,7 @@
 			[self addSubview:o];
 			o.keepTopInset.equal             = 5;
 			o.keepLeftOffsetTo(avatar).equal = 10;
+			o.keepLeftInset.equal            = KeepFitting(110);
 			o.keepRightInset.min             = 0;
 		}];
 
@@ -56,13 +57,14 @@
 	return self;
 }
 
--(void) setUser:(TCUser *)user
+- (void) setUser:(TCUser *)user
 {
 	_user = user;
 
-	_avatar.image = user.avatar;
-	_login.text = user.login;
-	_joinedOn.text = [NSString stringWithFormat:@"Joined on %@", [_user.registrationDate stringFromDate]];
-	_numberOfGists.text = [NSString stringWithFormat:@"%d", user.gists.count];
+	_avatar.imageURL    = user.avatarURL;
+	_login.text         = user.login;
+	_joinedOn.text      = [NSString stringWithFormat:@"Joined on %@", [_user.registrationDate stringFromDate]];
+	_numberOfGists.text = [NSString stringWithFormat:@"%d gists", user.gists.count];
+	[self reloadInputViews];
 }
 @end

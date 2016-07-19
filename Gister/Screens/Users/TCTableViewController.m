@@ -24,27 +24,27 @@
 	TCUser *userRuslan = [TCUser new];
 	userRuslan.login             = @"Ruslan";
 	userRuslan.registrationDate = [NSDate dateFromString:@"01.01.2016"];
-	userRuslan.avatar            = [UIImage imageNamed:@"Ruslan"];
+
 
 	TCUser *userAnastasia = [TCUser new];
 	userAnastasia.login             = @"Anastasia";
 	userAnastasia.registrationDate = [NSDate dateFromString:@"01.03.2016"];
-	userAnastasia.avatar            = [UIImage imageNamed:@"Anastasia"];
+
 
 	TCUser *userAnton = [TCUser new];
 	userAnton.login             = @"Anton";
 	userAnton.registrationDate = [NSDate dateFromString:@"01.03.2016"];
-	userAnton.avatar            = [UIImage imageNamed:@"Anton"];
+
 
 	TCUser *userYoulya = [TCUser new];
 	userYoulya.login             = @"Youlya";
 	userYoulya.registrationDate = [NSDate dateFromString:@"01.04.2016"];
-	userYoulya.avatar            = [UIImage imageNamed:@"Youlya"];
+
 
 	TCUser *userVladimir = [TCUser new];
 	userVladimir.login             = @"Владимир Олегович";
 	userVladimir.registrationDate = [NSDate dateFromString:@"11.04.2016"];
-	userVladimir.avatar            = [UIImage imageNamed:@"Vladimir"];
+
 
 	TCViewWithUserTable *view = self.view;
 	view.data = @[ userAnastasia, userAnton, userRuslan, userYoulya, userVladimir ];

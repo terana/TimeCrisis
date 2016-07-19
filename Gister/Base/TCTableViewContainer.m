@@ -45,6 +45,7 @@
 
 + (NSDictionary *) cellIdentifiers
 {
+	//return @{@"Cell":[UITableViewCell class]};
 	return nil;
 }
 
