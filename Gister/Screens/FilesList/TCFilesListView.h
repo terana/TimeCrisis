@@ -4,9 +4,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TCGist.h"
-#import "TCFileSelected.h"
+#import "TCFilesListViewDelegate.h"
 
 @interface TCFilesListView : UIView
 @property (strong, nonatomic) TCGist                      *gist;
-@property (weak, nonatomic, nullable) id <TCFileSelected> delegate;
+@property (weak, nonatomic, nullable) id <TCFilesListViewDelegate> delegate;
 @end

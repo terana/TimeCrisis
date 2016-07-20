@@ -7,7 +7,7 @@
 #import "TCFilesListView.h"
 #import "TCGist.h"
 #import "NSObject+TCDoWith.h"
-#import "TCFileSelected.h"
+#import "TCFilesListViewDelegate.h"
 #import "TCFile.h"
 
 @interface TCFilesListView () <UITableViewDataSource, UITableViewDelegate>

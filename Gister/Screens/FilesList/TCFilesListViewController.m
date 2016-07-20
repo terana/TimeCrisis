@@ -7,7 +7,7 @@
 #import "NSObject+TCDoWith.h"
 #import "TCFileContentView.h"
 
-@interface TCFilesListViewController () <TCFileSelected>
+@interface TCFilesListViewController () <TCFilesListViewDelegate>
 @end
 
 @implementation TCFilesListViewController

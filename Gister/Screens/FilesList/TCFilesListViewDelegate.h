@@ -5,6 +5,6 @@
 #import <UIKit/UIKit.h>
 #import "TCFile.h"
 
-@protocol TCFileSelected <NSObject>
+@protocol TCFilesListViewDelegate <NSObject>
 - (void) fileIsSelected:(TCFile *)file;
 @end
