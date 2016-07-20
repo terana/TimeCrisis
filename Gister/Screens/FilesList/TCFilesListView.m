@@ -4,16 +4,16 @@
 
 #import <KeepLayout/KeepLayout.h>
 #import <KeepLayout/KeepAttribute.h>
-#import "TCViewWithGistFiles.h"
+#import "TCFilesListView.h"
 #import "TCGist.h"
 #import "NSObject+TCDoWith.h"
 #import "TCFileSelected.h"
 #import "TCFile.h"
 
-@interface TCViewWithGistFiles () <UITableViewDataSource, UITableViewDelegate>
+@interface TCFilesListView () <UITableViewDataSource, UITableViewDelegate>
 @end
 
-@implementation TCViewWithGistFiles
+@implementation TCFilesListView
 {
 	UITableView *_tableView;
 }

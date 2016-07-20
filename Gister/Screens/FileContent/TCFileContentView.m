@@ -3,15 +3,34 @@
 //
 
 #import <KeepLayout/KeepLayout.h>
-#import "TCViewWithFileContentController.h"
+#import "TCFileContentView.h"
 #import "NSObject+TCDoWith.h"
 
-@implementation TCViewWithFileContentController
+@implementation TCFileContentView
 {
+}
+-(instancetype) init
+{
+	self = [super init];
+	if (self)
+	{
+		self.title = _file.filename;
+
+		self.navigationItem.rightBarButtonItem = [UIBarButtonItem tc_with:^(UIBarButtonItem *o){
+			o.title = @"Edit";
+			o.action = @selector(editFile);
+		}];
+	}
+	return self;
+}
+
+-(void) editFile
+{
+
 }
 - (void) loadView
 {
-	self.title = _file.filename;
+
 	NSError  *error       = nil;
 	NSString *fileContent = [NSString stringWithContentsOfURL:_file.rawURL encoding:NSASCIIStringEncoding error:&error];
 	self.view = [UITextView tc_with:^(UITextView *o) {
@@ -21,11 +40,5 @@
 		o.editable = NO;
 	}];
 }
-
-//- (void) viewWillAppear:(BOOL)animated
-//{
-//	UITextView *view = self.view;
-//	view.contentInset = UIEdgeInsetsMake(view.contentInset.top + self.navigationController.navigationBar.frame.size.height, view.contentInset.left, view.contentInset.bottom, view.contentInset.right);
-//}
 
 @end

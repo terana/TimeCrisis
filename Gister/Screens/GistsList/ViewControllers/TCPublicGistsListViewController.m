@@ -7,7 +7,7 @@
 #import "TCGistsListView.h"
 #import "NSDate+TCDateString.h"
 #import "NSDictionary+DictionaryWithoutNSNull.h"
-#import "TCTableWithGistFilesViewController.h"
+#import "TCFilesListViewController.h"
 #import "TCFile.h"
 
 @implementation TCPublicGistsListViewController
@@ -64,7 +64,7 @@
 
 - (void) gistIsSelected:(TCGist *)gist
 {
-	TCTableWithGistFilesViewController *vc = [TCTableWithGistFilesViewController new];
+	TCFilesListViewController *vc = [TCFilesListViewController new];
 	vc.gist = gist;
 	[self.navigationController pushViewController:vc animated:YES];
 }

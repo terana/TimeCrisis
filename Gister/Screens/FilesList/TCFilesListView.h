@@ -6,7 +6,7 @@
 #import "TCGist.h"
 #import "TCFileSelected.h"
 
-@interface TCViewWithGistFiles : UIView
+@interface TCFilesListView : UIView
 @property (strong, nonatomic) TCGist                      *gist;
 @property (weak, nonatomic, nullable) id <TCFileSelected> delegate;
 @end

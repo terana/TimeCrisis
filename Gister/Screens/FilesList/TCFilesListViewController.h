@@ -5,6 +5,6 @@
 #import <UIKit/UIKit.h>
 #import "TCGist.h"
 
-@interface TCTableWithGistFilesViewController : UIViewController
+@interface TCFilesListViewController : UIViewController
 @property (strong, nonatomic) TCGist *gist;
 @end

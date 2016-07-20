@@ -16,10 +16,10 @@
 		CBB6B2701E65A30FFE137BF7 /* TCPublicGistsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B06C59AFDA4D165341C5 /* TCPublicGistsListViewController.m */; };
 		CBB6B2A8D73AAB416C9D4B65 /* TCServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BF0EA8825F3CD942F6F5 /* TCServerManager.m */; };
 		CBB6B2F7755665C3E515DFFD /* TCProfileScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B7E4F245508BF8A02265 /* TCProfileScreenViewController.m */; };
-		CBB6B31CD3E04EE782166DD2 /* TCViewWithGistFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BFBF0CD711241A9533F0 /* TCViewWithGistFiles.m */; };
+		CBB6B31CD3E04EE782166DD2 /* TCFilesListView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BFBF0CD711241A9533F0 /* TCFilesListView.m */; };
 		CBB6B33204C61A71D3F5F4D8 /* NSDictionary+DictionaryWithoutNSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B4C51590CCDAF2F9A10D /* NSDictionary+DictionaryWithoutNSNull.m */; };
 		CBB6B381B499904B4E5BC37F /* TCMyPageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B0BC69A609F4AB6414C0 /* TCMyPageHeaderView.m */; };
-		CBB6B3BEE8AE40C0DEB6A4E3 /* TCUsersGistListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B3FD5FD36D28B91537FF /* TCUsersGistListViewController.m */; };
+		CBB6B3BEE8AE40C0DEB6A4E3 /* TCUsersGistsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B3FD5FD36D28B91537FF /* TCUsersGistsListViewController.m */; };
 		CBB6B599B76B91D7DF458764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B6AAFF61504861ACB241 /* main.m */; };
 		CBB6B636D7D6D1A69B64CC64 /* TCAuthenticationScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BE2E1182087D0C45BB11 /* TCAuthenticationScreenView.m */; };
 		CBB6B68CDA7AC49E35D217B1 /* TCDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B6EE96EEB7E0B173B966 /* TCDraggableView.m */; };
@@ -30,17 +30,16 @@
 		CBB6B7F1B938E3B0A0F51D09 /* TCAuthenticationScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BCC1E2218F66CBAD90AC /* TCAuthenticationScreenViewController.m */; };
 		CBB6B8050252E10A4DF47FAD /* TCProfileScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B4287988CD6FEBF74F63 /* TCProfileScreenView.m */; };
 		CBB6B8BA7A756F6327EB7CD5 /* UIView+TCTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B63FF72771DD4BC126C9 /* UIView+TCTapAction.m */; };
-		CBB6B909DADEB57DF46511F5 /* TCTableWithGistFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B490B0B2B4797D81B022 /* TCTableWithGistFilesViewController.m */; };
+		CBB6B909DADEB57DF46511F5 /* TCFilesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B490B0B2B4797D81B022 /* TCFilesListViewController.m */; };
 		CBB6B94EE3D808689408A1B2 /* TCGithubAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B2BFA52A1C55E1A269F4 /* TCGithubAuthenticationViewController.m */; };
 		CBB6B97DA4604D5A7D1463F5 /* NSDate+TCDateString.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BE5337F34CD13A385374 /* NSDate+TCDateString.m */; };
 		CBB6B9C31A4082617C141CE6 /* TCGistsListView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B9518FE3DE0B5111DECD /* TCGistsListView.m */; };
 		CBB6B9F007B71C7460594A7D /* TCGistTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B885DD16AE63DACE2DDD /* TCGistTableCell.m */; };
 		CBB6BA1ABCF01902EE9CFAEE /* UIScrollView+scrollingEnabled.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BC5B762B6EC667EDF3F7 /* UIScrollView+scrollingEnabled.m */; };
-		CBB6BA857778C2088FF9E920 /* TCViewWithFileContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BA717D9F2318E6A1A8B5 /* TCViewWithFileContentController.m */; };
+		CBB6BA857778C2088FF9E920 /* TCFileContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BA717D9F2318E6A1A8B5 /* TCFileContentView.m */; };
 		CBB6BB567F9C43BDAF894D2D /* TCGeneralProfileInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BCE5547F69961D300A9D /* TCGeneralProfileInfoView.m */; };
 		CBB6BBA15D928753AC265AFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB6BF7998BEF69FBD579376 /* Assets.xcassets */; };
 		CBB6BBEC52F0F4BCE3E6217B /* TCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6B38D314196211EB13A67 /* TCImageView.m */; };
-		CBB6BBFC477EA648CF742837 /* TCTmpViewWithHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BBAE3F764203FBDC0EA4 /* TCTmpViewWithHeaderController.m */; };
 		CBB6BC497AB57B1F0F3EDE12 /* TCGithubAuthenticationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BFFF48BB2272E11D2B63 /* TCGithubAuthenticationView.m */; };
 		CBB6BE8C812ED806CA2F3C09 /* TCGist.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BD4D12057A996BC7E2A9 /* TCGist.m */; };
 		CBB6BE8D33E9F79A556F13EC /* TCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB6BB2DA269B8AD2D9E793C /* TCTableViewController.m */; };
@@ -65,16 +64,15 @@
 		CBB6B35716C7AE3B882661CB /* TCProfileScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCProfileScreenViewController.h; sourceTree = "<group>"; };
 		CBB6B38D314196211EB13A67 /* TCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCImageView.m; sourceTree = "<group>"; };
 		CBB6B3CA839868C4C03795DB /* TCGithubAuthenticationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGithubAuthenticationView.h; sourceTree = "<group>"; };
-		CBB6B3FD5FD36D28B91537FF /* TCUsersGistListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUsersGistListViewController.m; sourceTree = "<group>"; };
-		CBB6B40A3B81A939F9CCE8FC /* TCViewWithFileContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithFileContentController.h; sourceTree = "<group>"; };
+		CBB6B3FD5FD36D28B91537FF /* TCUsersGistsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUsersGistsListViewController.m; sourceTree = "<group>"; };
+		CBB6B40A3B81A939F9CCE8FC /* TCFileContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFileContentView.h; sourceTree = "<group>"; };
 		CBB6B4287988CD6FEBF74F63 /* TCProfileScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCProfileScreenView.m; sourceTree = "<group>"; };
 		CBB6B4338AC94107F0F6155A /* TCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
 		CBB6B48783F3D1CCA764A5B9 /* TCServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCServerManager.h; sourceTree = "<group>"; };
-		CBB6B490B0B2B4797D81B022 /* TCTableWithGistFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTableWithGistFilesViewController.m; sourceTree = "<group>"; };
+		CBB6B490B0B2B4797D81B022 /* TCFilesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCFilesListViewController.m; sourceTree = "<group>"; };
 		CBB6B495C7C2A193938AE44E /* TCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewController.h; sourceTree = "<group>"; };
-		CBB6B4BFB44368CBEE0055DF /* TCViewWithGistFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewWithGistFiles.h; sourceTree = "<group>"; };
+		CBB6B4BFB44368CBEE0055DF /* TCFilesListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFilesListView.h; sourceTree = "<group>"; };
 		CBB6B4C51590CCDAF2F9A10D /* NSDictionary+DictionaryWithoutNSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DictionaryWithoutNSNull.m"; sourceTree = "<group>"; };
-		CBB6B4E9830397E92E6D1D0F /* TCTmpViewWithHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTmpViewWithHeaderController.h; sourceTree = "<group>"; };
 		CBB6B532197DA15225FFBF8F /* NSDictionary+TCParseURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TCParseURL.m"; sourceTree = "<group>"; };
 		CBB6B5495D9C7223DB8FA0A7 /* TCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCButton.h; sourceTree = "<group>"; };
 		CBB6B575C1C53CC5FCCB6F9F /* TCDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDraggableView.h; sourceTree = "<group>"; };
@@ -102,14 +100,13 @@
 		CBB6B99C7270DA0A9DBB8F4A /* TCFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFile.h; sourceTree = "<group>"; };
 		CBB6B9A7E4661EFFF70EE382 /* TCAuthenticationScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAuthenticationScreenView.h; sourceTree = "<group>"; };
 		CBB6BA47CB32BA719067424C /* NSDictionary+DictionaryWithoutNSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DictionaryWithoutNSNull.h"; sourceTree = "<group>"; };
-		CBB6BA5A72EB9E6923C48DCE /* TCTableWithGistFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTableWithGistFilesViewController.h; sourceTree = "<group>"; };
-		CBB6BA717D9F2318E6A1A8B5 /* TCViewWithFileContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithFileContentController.m; sourceTree = "<group>"; };
+		CBB6BA5A72EB9E6923C48DCE /* TCFilesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFilesListViewController.h; sourceTree = "<group>"; };
+		CBB6BA717D9F2318E6A1A8B5 /* TCFileContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCFileContentView.m; sourceTree = "<group>"; };
 		CBB6BA7CA1982036C904BF09 /* NSDictionary+TCParseURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TCParseURL.h"; sourceTree = "<group>"; };
 		CBB6BAAEBFA7FA86BD803847 /* TCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewController.m; sourceTree = "<group>"; };
 		CBB6BB160CDD2EC5A6F58D0F /* UIScrollView+scrollingEnabled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+scrollingEnabled.h"; sourceTree = "<group>"; };
 		CBB6BB2DA269B8AD2D9E793C /* TCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTableViewController.m; sourceTree = "<group>"; };
-		CBB6BB3C64966005F8DA1B83 /* TCUsersGistListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUsersGistListViewController.h; sourceTree = "<group>"; };
-		CBB6BBAE3F764203FBDC0EA4 /* TCTmpViewWithHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTmpViewWithHeaderController.m; sourceTree = "<group>"; };
+		CBB6BB3C64966005F8DA1B83 /* TCUsersGistsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUsersGistsListViewController.h; sourceTree = "<group>"; };
 		CBB6BBCD89EE1C4FC48052AF /* TCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCImageView.h; sourceTree = "<group>"; };
 		CBB6BBEF04D918591CF4F4F3 /* TCProfileScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCProfileScreenView.h; sourceTree = "<group>"; };
 		CBB6BC505070CE2101319C20 /* TCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUser.m; sourceTree = "<group>"; };
@@ -134,7 +131,7 @@
 		CBB6BF501433E3C73A9C5732 /* TCServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCServer.m; sourceTree = "<group>"; };
 		CBB6BF7998BEF69FBD579376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBB6BFA58357ECC5A6564D1D /* TCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTableViewController.h; sourceTree = "<group>"; };
-		CBB6BFBF0CD711241A9533F0 /* TCViewWithGistFiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewWithGistFiles.m; sourceTree = "<group>"; };
+		CBB6BFBF0CD711241A9533F0 /* TCFilesListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCFilesListView.m; sourceTree = "<group>"; };
 		CBB6BFFF48BB2272E11D2B63 /* TCGithubAuthenticationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCGithubAuthenticationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,10 +177,10 @@
 		CBB6B0F41B2AAFD5303BFFED /* FilesList */ = {
 			isa = PBXGroup;
 			children = (
-				CBB6BA5A72EB9E6923C48DCE /* TCTableWithGistFilesViewController.h */,
-				CBB6B490B0B2B4797D81B022 /* TCTableWithGistFilesViewController.m */,
-				CBB6BFBF0CD711241A9533F0 /* TCViewWithGistFiles.m */,
-				CBB6B4BFB44368CBEE0055DF /* TCViewWithGistFiles.h */,
+				CBB6BA5A72EB9E6923C48DCE /* TCFilesListViewController.h */,
+				CBB6B490B0B2B4797D81B022 /* TCFilesListViewController.m */,
+				CBB6BFBF0CD711241A9533F0 /* TCFilesListView.m */,
+				CBB6B4BFB44368CBEE0055DF /* TCFilesListView.h */,
 			);
 			path = FilesList;
 			sourceTree = "<group>";
@@ -212,8 +209,8 @@
 		CBB6B27F9FB05833A7A67EB0 /* FileContent */ = {
 			isa = PBXGroup;
 			children = (
-				CBB6BA717D9F2318E6A1A8B5 /* TCViewWithFileContentController.m */,
-				CBB6B40A3B81A939F9CCE8FC /* TCViewWithFileContentController.h */,
+				CBB6BA717D9F2318E6A1A8B5 /* TCFileContentView.m */,
+				CBB6B40A3B81A939F9CCE8FC /* TCFileContentView.h */,
 			);
 			path = FileContent;
 			sourceTree = "<group>";
@@ -245,8 +242,8 @@
 			children = (
 				CBB6B7B97FDB90CB792102E7 /* TCPublicGistsListViewController.h */,
 				CBB6B06C59AFDA4D165341C5 /* TCPublicGistsListViewController.m */,
-				CBB6B3FD5FD36D28B91537FF /* TCUsersGistListViewController.m */,
-				CBB6BB3C64966005F8DA1B83 /* TCUsersGistListViewController.h */,
+				CBB6B3FD5FD36D28B91537FF /* TCUsersGistsListViewController.m */,
+				CBB6BB3C64966005F8DA1B83 /* TCUsersGistsListViewController.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -368,8 +365,6 @@
 				CBB6BAC12AA6072E2B478754 /* Screens */,
 				CBB6B932E8EA21B13CBAC496 /* CusstomClasses */,
 				CBB6B9390CAA0CE2796AF96B /* Protocols */,
-				CBB6BBAE3F764203FBDC0EA4 /* TCTmpViewWithHeaderController.m */,
-				CBB6B4E9830397E92E6D1D0F /* TCTmpViewWithHeaderController.h */,
 				CBB6B1B8F843336D53E2A4B6 /* HeaderViews */,
 				CBB6BAD8DC2EE337B4B0508F /* Base */,
 			);
@@ -632,17 +627,16 @@
 				CBB6B0F1CEDE2FDCEE36F27E /* NSDictionary+TCParseURL.m in Sources */,
 				CBB6B97DA4604D5A7D1463F5 /* NSDate+TCDateString.m in Sources */,
 				CBB6B7F1B938E3B0A0F51D09 /* TCAuthenticationScreenViewController.m in Sources */,
-				CBB6B909DADEB57DF46511F5 /* TCTableWithGistFilesViewController.m in Sources */,
-				CBB6B31CD3E04EE782166DD2 /* TCViewWithGistFiles.m in Sources */,
+				CBB6B909DADEB57DF46511F5 /* TCFilesListViewController.m in Sources */,
+				CBB6B31CD3E04EE782166DD2 /* TCFilesListView.m in Sources */,
 				CBB6BE8D33E9F79A556F13EC /* TCTableViewController.m in Sources */,
 				CBB6B218DC7BC96FF0CC4743 /* TCUserTableCell.m in Sources */,
 				CBB6B7B50ADE4E7CD21BA91B /* TCViewWithUserTable.m in Sources */,
-				CBB6BA857778C2088FF9E920 /* TCViewWithFileContentController.m in Sources */,
+				CBB6BA857778C2088FF9E920 /* TCFileContentView.m in Sources */,
 				CBB6B68CDA7AC49E35D217B1 /* TCDraggableView.m in Sources */,
 				CBB6BE918573896DE97552FA /* TCFile.m in Sources */,
 				CBB6BE8C812ED806CA2F3C09 /* TCGist.m in Sources */,
 				CBB6B750F496EBEB0B5ACD24 /* TCUser.m in Sources */,
-				CBB6BBFC477EA648CF742837 /* TCTmpViewWithHeaderController.m in Sources */,
 				CBB6B381B499904B4E5BC37F /* TCMyPageHeaderView.m in Sources */,
 				CBB6B8BA7A756F6327EB7CD5 /* UIView+TCTapAction.m in Sources */,
 				CBB6BA1ABCF01902EE9CFAEE /* UIScrollView+scrollingEnabled.m in Sources */,
@@ -662,7 +656,7 @@
 				CBB6B9C31A4082617C141CE6 /* TCGistsListView.m in Sources */,
 				CBB6B2701E65A30FFE137BF7 /* TCPublicGistsListViewController.m in Sources */,
 				CBB6B9F007B71C7460594A7D /* TCGistTableCell.m in Sources */,
-				CBB6B3BEE8AE40C0DEB6A4E3 /* TCUsersGistListViewController.m in Sources */,
+				CBB6B3BEE8AE40C0DEB6A4E3 /* TCUsersGistsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

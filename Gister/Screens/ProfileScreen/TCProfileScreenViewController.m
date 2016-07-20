@@ -6,7 +6,7 @@
 #import "TCProfileScreenView.h"
 #import "TCServerManager.h"
 #import "TCPublicGistsListViewController.h"
-#import "TCUsersGistListViewController.h"
+#import "TCUsersGistsListViewController.h"
 #import "TCAuthenticationScreenViewController.h"
 
 @implementation TCProfileScreenViewController
@@ -39,7 +39,7 @@
 
 - (void) openGists
 {
-	TCUsersGistListViewController *vc = [TCUsersGistListViewController new];
+	TCUsersGistsListViewController *vc = [TCUsersGistsListViewController new];
 	vc.user = _user;
 	[[self navigationController] pushViewController:vc animated:YES];
 }

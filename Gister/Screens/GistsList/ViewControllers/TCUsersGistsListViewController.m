@@ -2,12 +2,13 @@
 // Created by Anastasia on 7/19/16.
 //
 
-#import "TCUsersGistListViewController.h"
+#import "TCUsersGistsListViewController.h"
 #import "TCGistsListView.h"
 #import "TCServerManager.h"
-#import "TCTableWithGistFilesViewController.h"
+#import "TCFilesListViewController.h"
+#import "NSObject+TCDoWith.h"
 
-@implementation TCUsersGistListViewController
+@implementation TCUsersGistsListViewController
 {
 }
 + (Class) viewClass
@@ -21,10 +22,19 @@
 	if (self)
 	{
 		self.title = @"Gists";
+
+		self.navigationItem.rightBarButtonItem = [UIBarButtonItem tc_with:^(UIBarButtonItem *o){
+			o.title = @"New gist";
+			o.action = @selector(createNewGist);
+		}];
 	}
 	return self;
 }
 
+-(void) createNewGist
+{
+
+}
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
@@ -40,7 +50,7 @@
 
 - (void) gistIsSelected:(TCGist *)gist
 {
-	TCTableWithGistFilesViewController *vc = [TCTableWithGistFilesViewController new];
+	TCFilesListViewController *vc = [TCFilesListViewController new];
 	vc.gist = gist;
 	[self.navigationController pushViewController:vc animated:YES];
 }

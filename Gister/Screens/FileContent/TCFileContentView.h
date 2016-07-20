@@ -5,6 +5,6 @@
 #import <UIKit/UIKit.h>
 #import "TCFile.h"
 
-@interface TCViewWithFileContentController : UIViewController
+@interface TCFileContentView : UIViewController
 @property (strong, nonatomic) TCFile *file;
 @end
