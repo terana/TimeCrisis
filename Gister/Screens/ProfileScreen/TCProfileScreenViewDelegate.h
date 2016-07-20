@@ -9,4 +9,5 @@
 -(void)openFollowers;
 -(void)openFollowing;
 -(void)openStarred;
+-(void)signOut;
 @end

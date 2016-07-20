@@ -18,18 +18,18 @@
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-	UIWindow               *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-	//UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCUserViewController new]];
-	UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController:[TCAuthenticationScreenViewController new]];
-	//UINavigationController *nc     = [[UINavigationController alloc] initWithRootViewController: _authentication ? [TCTmpViewController new] : [TCAuthenticationScreenViewController new]];
-	[nc setNavigationBarHidden:NO animated:YES];
-	//window.rootViewController = _navigationController = nc;
+
+	UINavigationController *navigationController = _navigationController = [UINavigationController new];
+	[navigationController initWithRootViewController:[TCAuthenticationScreenViewController new]];
+
+	TCProfileScreenViewController *viewController1 = [TCProfileScreenViewController new];
+	TCPublicGistsListViewController *viewController2 = [TCPublicGistsListViewController new];
 
 	UITabBarController *tabBarController = [UITabBarController new];
+	[tabBarController setViewControllers:@[navigationController, viewController1, viewController2]];
 
-	[tabBarController setViewControllers:@[nc]animated:YES];
+	UIWindow               *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 	window.rootViewController = tabBarController;
-
 	[window makeKeyAndVisible];
 	_window = window;
 	return YES;

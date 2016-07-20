@@ -7,6 +7,7 @@
 #import "TCServerManager.h"
 #import "TCPublicGistsListViewController.h"
 #import "TCUsersGistListViewController.h"
+#import "TCAuthenticationScreenViewController.h"
 
 @implementation TCProfileScreenViewController
 {
@@ -18,7 +19,6 @@
 	if (self)
 	{
 		UITabBarItem *tabBarItem = [self tabBarItem];
-
 		[tabBarItem setTitle:@"My profile"];
 	}
 	return self;
@@ -27,7 +27,7 @@
 - (void) viewWillAppear:(BOOL)animated
 {
 	[[TCServerManager shared] getInformationForUserWithCallback:^(TCUser *user, NSError *error) {
-		if (user)
+		if (error == nil)
 		{
 			_user                     = user;
 			TCProfileScreenView *view = self.view;
@@ -56,4 +56,15 @@
 {
 }
 
+- (void) signOut
+{
+	NSHTTPCookie *cookie;
+	NSHTTPCookieStorage *storage =[NSHTTPCookieStorage sharedHTTPCookieStorage];
+	for (cookie in [storage cookies]) {
+		NSLog(@"%@",cookie);
+		[storage deleteCookie:cookie];
+	}
+	TCAuthenticationScreenViewController *vc = [TCAuthenticationScreenViewController new];
+	[[self navigationController] pushViewController:vc animated:YES];
+}
 @end

@@ -45,13 +45,6 @@
 			o.keepRightInset.min             = 0;
 		}];
 
-		__unused UILabel *numberOfGists = _numberOfGists = [UILabel tc_with:^(UILabel *o) {
-			o.backgroundColor = [UIColor whiteColor];
-			[self addSubview:o];
-			o.keepTopOffsetTo(joinedOn).equal = 5;
-			o.keepLeftOffsetTo(avatar).equal  = 10;
-			o.keepRightInset.min              = 0;
-		}];
 	}
 
 	return self;

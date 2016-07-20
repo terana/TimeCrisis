@@ -23,12 +23,12 @@
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 2;
+	return 3;
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	if (section == 0)
+	if (section == 0 || section == 2)
 	{
 		return 1;
 	}
@@ -39,50 +39,60 @@
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-	if (indexPath.section == 0)
+	switch (indexPath.section)
 	{
-		__unused TCGeneralProfileInfoView *view = [TCGeneralProfileInfoView tc_with:^(TCGeneralProfileInfoView *o) {
-			if (_user)
-			{o.user = _user;}
-			UIView *view = cell.contentView;
-			[view addSubview:o];
-			o.keepInsets.equal = 0;
-		}];
-	}
-	else
-	{
-		switch (indexPath.row)
+		case 0:
 		{
-			case 0:
+			__unused TCGeneralProfileInfoView *view = [TCGeneralProfileInfoView tc_with:^(TCGeneralProfileInfoView *o) {
+				if (_user)
+				{o.user = _user;}
+				UIView *view = cell.contentView;
+				[view addSubview:o];
+				o.keepInsets.equal = 0;
+			}];
+			break;
+		}
+		case 1:
+		{
+
+			switch (indexPath.row)
 			{
-				cell.textLabel.text = @"Gists";
-				cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
-				break;
+				case 0:
+				{
+					cell.textLabel.text = @"Gists";
+					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
+					break;
+				}
+				case 1:
+				{
+					cell.textLabel.text = @"Followers";
+					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
+					break;
+				}
+				case 2:
+				{
+					cell.textLabel.text = @"Following";
+					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
+					break;
+				}
+				case 3:
+				{
+					cell.textLabel.text = @"Starred";
+					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
+					break;
+				}
+				default:
+				{
+					cell.textLabel.text = @"";
+					cell.accessoryType  = UITableViewCellAccessoryNone;
+					break;
+				}
 			}
-			case 1:
-			{
-				cell.textLabel.text = @"Followers";
-				cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
-				break;
-			}
-			case 2:
-			{
-				cell.textLabel.text = @"Following";
-				cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
-				break;
-			}
-			case 3:
-			{
-				cell.textLabel.text = @"Starred";
-				cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
-				break;
-			}
-			default:
-			{
-				cell.textLabel.text = @"";
-				cell.accessoryType  = UITableViewCellAccessoryNone;
-				break;
-			}
+			break;
+		}
+		case 2:
+		{
+			cell.textLabel.text = @"Sign out";
 		}
 	}
 	return cell;
@@ -100,33 +110,44 @@
 - (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSLog(@"#### selected row %d at section %d ####", indexPath.row, indexPath.section);
-	if (indexPath.section)
+	switch (indexPath.section)
 	{
-		switch (indexPath.row)
+		case 1:
 		{
-			case 0:
+
+			switch (indexPath.row)
 			{
-				[_delegate openGists];
-				break;
+				case 0:
+				{
+					[_delegate openGists];
+					break;
+				}
+				case 1:
+				{
+					[_delegate openFollowers];
+					break;
+				}
+				case 2:
+				{
+					[_delegate openFollowing];
+					break;
+				}
+				case 3:
+				{
+					[_delegate openStarred];
+					break;
+				}
+				default:
+					break;
 			}
-			case 1:
-			{
-				[_delegate openFollowers];
-				break;
-			}
-			case 2:
-			{
-				[_delegate openFollowing];
-				break;
-			}
-			case 3:
-			{
-				[_delegate openStarred];
-				break;
-			}
-			default:
-				break;
+			break;
 		}
+		case 2:
+		{
+			[_delegate signOut];
+			break;
+		}
+		default: break;
 	}
 }
 

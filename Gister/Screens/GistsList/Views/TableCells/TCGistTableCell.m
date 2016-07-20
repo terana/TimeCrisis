@@ -35,7 +35,7 @@
 			__unused UILabel *idLabel  = _idLabel                    = [UILabel tc_with:^(UILabel *oo) {
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
-				oo.keepTopOffsetTo(_urlLabel).equal = 10;
+				oo.keepTopMarginInset.equal = 10;
 				oo.keepRightMarginInset.min         = 0;
 				oo.keepLeftMarginInset.equal        = 105;
 			}];
