@@ -2,15 +2,17 @@
   "images": [
     {
       "idiom": "universal",
-      "filename": "Ruslan.jpg",
+      "filename": "github_logo_30pxl.png",
       "scale": "1x"
     },
     {
       "idiom": "universal",
+      "filename": "github_logo_60pxl.png",
       "scale": "2x"
     },
     {
       "idiom": "universal",
+      "filename": "github_logo_90pxl.png",
       "scale": "3x"
     }
   ],

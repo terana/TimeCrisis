@@ -9,6 +9,6 @@
 @protocol TCProfileScreenViewDelegate;
 
 @interface TCProfileScreenView : TCTableViewContainer
-@property (strong, nonatomic) TCUser *user;
+@property (strong, nonatomic) TCUser                         *user;
 @property (weak, nonatomic) id <TCProfileScreenViewDelegate> delegate;
 @end

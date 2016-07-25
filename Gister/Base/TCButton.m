@@ -4,7 +4,6 @@
 
 #import <KeepLayout/KeepLayout.h>
 #import "TCButton.h"
-#import "UIView+TCTapAction.h"
 #import "NSObject+TCDoWith.h"
 
 @implementation TCButton
@@ -25,5 +24,4 @@
 
 	return self;
 }
-
 @end

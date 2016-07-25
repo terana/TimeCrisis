@@ -5,5 +5,5 @@
 #import <UIKit/UIKit.h>
 
 @protocol TCAuthenticationScreenViewDelegate <NSObject>
--(void) signIn;
+- (void) signIn;
 @end

@@ -28,16 +28,16 @@
 				oo.text            = @"id:";
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
-				oo.keepTopMarginInset.equal = 10;
-				oo.keepWidth.max                    = 100;
-				oo.keepLeftMarginInset.equal        = 0;
+				oo.keepTopMarginInset.equal  = 10;
+				oo.keepWidth.max             = 100;
+				oo.keepLeftMarginInset.equal = 0;
 			}];
 			__unused UILabel *idLabel  = _idLabel                    = [UILabel tc_with:^(UILabel *oo) {
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
-				oo.keepTopMarginInset.equal = 10;
-				oo.keepRightMarginInset.min         = 0;
-				oo.keepLeftMarginInset.equal        = 105;
+				oo.keepTopMarginInset.equal  = 10;
+				oo.keepRightMarginInset.min  = 0;
+				oo.keepLeftMarginInset.equal = 105;
 			}];
 
 			__unused UILabel *dateString        = [UILabel tc_with:^(UILabel *oo) {

@@ -6,7 +6,6 @@
 #import "TCAuthenticationScreenView.h"
 #import "TCButton.h"
 #import "UIView+TCTapAction.h"
-#import "TCAuthenticationScreenViewDelegate.h"
 #import "NSObject+TCDoWith.h"
 
 @implementation TCAuthenticationScreenView

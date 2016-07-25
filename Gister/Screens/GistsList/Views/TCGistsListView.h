@@ -7,6 +7,6 @@
 #import "TCTableViewContainer.h"
 
 @interface TCGistsListView : TCTableViewContainer
-@property (strong, nonatomic) NSArray                     *data;
-@property (nonatomic, weak, nullable) id <TCGistsListViewDelegate> delegate;
+@property (strong, nonatomic) NSArray                              *data;
+@property (nonatomic, weak) id <TCGistsListViewDelegate> delegate;
 @end

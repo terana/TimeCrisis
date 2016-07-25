@@ -4,7 +4,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TCGistsListViewDelegate.h"
+#import "TCViewController.h"
 
-@interface TCPublicGistsListViewController : UIViewController <TCGistsListViewDelegate>
-@property (strong, nonatomic) NSString *gistsURL;
+@interface TCPublicGistsListViewController : TCViewController <TCGistsListViewDelegate>
 @end

@@ -8,7 +8,7 @@
 + (NSDictionary *) dictionaryFromURLString:(NSString *)urlString
 {
 	NSRange range = [urlString rangeOfString:@"?"];
-	if(range.location != NSNotFound )
+	if (range.location != NSNotFound)
 	{
 		urlString = [urlString substringFromIndex:range.location + 1];
 	}

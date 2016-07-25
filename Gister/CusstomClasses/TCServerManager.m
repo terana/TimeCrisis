@@ -4,8 +4,6 @@
 
 #import "TCServerManager.h"
 #import "TCServer.h"
-#import "TCImageView.h"
-#import "TCGist.h"
 
 @implementation TCServerManager
 {
@@ -74,15 +72,15 @@
 	[_server doGet:[NSString stringWithFormat:@"/users/%@/gists", user.login] withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
 }
 
--(void(^)(id, NSError *)) callbackParsingCollectionOfClass:(Class)cl andSendingTo:(void (^)(id, NSError *))callback
+- (void (^)(id, NSError *)) callbackParsingCollectionOfClass:(Class)cl andSendingTo:(void (^)(id, NSError *))callback
 {
 	return ^(id result, NSError *error) {
 		if (error)
 		{
 			callback(nil, error);
 		}
-		NSMutableArray *array = [NSMutableArray new];
-		for(__strong id object in result)
+		NSMutableArray   *array = [NSMutableArray new];
+		for (__strong id object in result)
 		{
 			[array addObject:[self parse:object as:cl]];
 		}
@@ -92,6 +90,62 @@
 
 - (void) getPublicGistsWithCallback:(void (^)(NSArray *, NSError *))callback
 {
+	[_server doGet:@"/gists/public" withParameters:@{ } callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
 }
 
+- (void) createGist:(TCGist *)gist callback:(void (^)(TCGist *, NSError *))callback
+{
+	NSMutableDictionary *dictionary = [NSMutableDictionary new];
+	dictionary[@"description"] = gist.gistDescription;
+	dictionary[@"public"]      = @(gist.public);
+	NSMutableDictionary *files = [NSMutableDictionary new];
+	for (TCFile         *file in gist.files)
+	{
+		files[file.filename] = @{ @"content" : file.content };
+	}
+	dictionary[@"files"]       = files;
+	[_server doPost:@"/gists" withParameters:nil body:dictionary callback:[self callbackParsingClass:[TCGist class] andSendingTo:callback]];
+}
+
+- (void) editGist:(TCGist *)gist withCallback:(void (^)(TCGist *, NSError *))callback
+{
+	NSMutableDictionary *dictionary = [NSMutableDictionary new];
+	dictionary[@"description"] = gist.gistDescription;
+	NSMutableDictionary *files = [NSMutableDictionary new];
+	for (TCFile         *file in gist.files)
+	{
+		if (file.changed)
+		{
+			if (file.content)
+			{
+				files[file.filename] = file.changedName ? @{ @"content" : file.content, @"filename" : file.changedName } : @{ @"content" : file.content };
+			}
+			else
+			{
+				files[file.filename] = @{ };
+			}
+			file.changed = NO;
+		}
+	}
+	dictionary[@"files"] = files;
+	NSString *path = [NSString stringWithFormat:@"/gists/%@", gist.id];
+
+	[_server doPatch:path withParameters:nil body:dictionary callback:[self callbackParsingClass:[TCGist class] andSendingTo:callback]];
+}
+
+- (void) getFileContentForFile:(TCFile *)file withCallback:(void (^)(NSString *, NSError *))callback
+{
+	[_server doGetWithURL:file.rawURL callback:[self callbackCreatingStringAndSendingTo:callback]];
+}
+
+- (void (^)(id, NSError *)) callbackCreatingStringAndSendingTo:(void (^)(NSString *, NSError *))callback
+{
+	return ^(NSData *data, NSError *error) {
+		if (error)
+		{
+			callback(nil, error);
+		}
+		callback([[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding], error);
+	};
+}
 @end

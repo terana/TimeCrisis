@@ -10,5 +10,6 @@
 @property (strong, nonatomic) NSDate   *updatingDate;
 @property (strong, nonatomic) NSString *gistDescription;
 @property (strong, nonatomic) NSArray  *files;
+@property (nonatomic) BOOL public;
 + (instancetype) unmap:(NSDictionary *)dictionary;
 @end

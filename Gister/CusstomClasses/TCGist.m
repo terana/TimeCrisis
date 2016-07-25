@@ -3,7 +3,6 @@
 //
 
 #import "TCGist.h"
-#import "NSDictionary+DictionaryWithoutNSNull.h"
 #import "NSDate+TCDateString.h"
 #import "TCFile.h"
 
@@ -26,7 +25,8 @@
 		file.fileSize = [str integerValue];
 		file.fileType = dictFile[@"type"];
 		file.language = dictFile[@"language"];
-		file.rawURL   = [NSURL URLWithString:dictFile[@"raw_url"]];
+		file.rawURL   = dictFile[@"raw_url"];
+		file.gist     = gist;
 		[files addObject:file];
 	}
 	gist.files            = files;

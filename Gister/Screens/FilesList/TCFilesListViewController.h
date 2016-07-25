@@ -4,7 +4,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TCGist.h"
+#import "TCViewController.h"
 
-@interface TCFilesListViewController : UIViewController
+@interface TCFilesListViewController : TCViewController
 @property (strong, nonatomic) TCGist *gist;
 @end

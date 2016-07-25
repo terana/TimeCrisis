@@ -147,7 +147,8 @@
 			[_delegate signOut];
 			break;
 		}
-		default: break;
+		default:
+			break;
 	}
 }
 

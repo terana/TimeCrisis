@@ -5,6 +5,8 @@
 #import <UIKit/UIKit.h>
 #import "TCUser.h"
 #import "TCImageView.h"
+#import "TCGist.h"
+#import "TCFile.h"
 
 @interface TCServerManager : NSObject
 + (instancetype) shared;
@@ -12,4 +14,7 @@
 - (void) getImageWithURL:(NSString *)imageURL callback:(void (^)(UIImage *, NSError *))callback;
 - (void) getGistsForUser:(TCUser *)user callback:(void (^)(NSArray *, NSError *))callback;
 - (void) getPublicGistsWithCallback:(void (^)(NSArray *, NSError *))callback;
+- (void) createGist:(TCGist *)gist callback:(void (^)(TCGist *, NSError *))callback;
+- (void) editGist:(TCGist *)gist withCallback:(void (^)(TCGist *, NSError *))callback;
+- (void) getFileContentForFile:(TCFile *)file withCallback:(void (^)(NSString *, NSError *))callback;
 @end

@@ -9,19 +9,9 @@
 @implementation TCAuthenticationScreenViewController
 {
 }
- -(instancetype) init
- {
-	 self = [super init];
-	 if (self)
-	 {
-		 self.tabBarController.tabBar.hidden = YES; //TODO
-	 }
-	 return self;
- }
 
 - (void) signIn
 {
 	[[self navigationController] pushViewController:[TCGithubAuthenticationViewController new] animated:YES];
 }
-
-	@end
+@end

@@ -10,13 +10,12 @@
 {
 	for (id object in self.gestureRecognizers)
 	{
-		if ([object  isKindOfClass:[UIPanGestureRecognizer class]])
+		if ([object isKindOfClass:[UIPanGestureRecognizer class]])
 		{
 			return YES;
 		}
 	}
 	return NO;
-
 }
 
 - (void) setTc_scrollingEnabled:(BOOL)tc_scrollingEnabled
@@ -28,12 +27,12 @@
 		self.gestureRecognizers = array;
 		return;
 	}
-	if(tc_scrollingEnabled == NO && enabled == YES)
+	if (tc_scrollingEnabled == NO && enabled == YES)
 	{
-		NSMutableArray *array = [NSMutableArray new];
-		for (id object in self.gestureRecognizers)
+		NSMutableArray *array   = [NSMutableArray new];
+		for (id        object in self.gestureRecognizers)
 		{
-			if ([object  isKindOfClass:[UIPanGestureRecognizer class]] == NO)
+			if ([object isKindOfClass:[UIPanGestureRecognizer class]] == NO)
 			{
 				[array addObject:object];
 			}

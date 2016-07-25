@@ -3,6 +3,7 @@
 //
 
 #import "TCFile.h"
+#import "TCGist.h"
 
 @implementation TCFile
 {

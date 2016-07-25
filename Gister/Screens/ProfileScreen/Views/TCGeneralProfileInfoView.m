@@ -4,7 +4,6 @@
 
 #import "TCGeneralProfileInfoView.h"
 #import "TCUser.h"
-#import "TCImageView.h"
 #import "KeepLayout/KeepLayout.h"
 #import "NSObject+TCDoWith.h"
 #import "NSDate+TCDateString.h"
@@ -44,7 +43,6 @@
 			o.keepLeftOffsetTo(avatar).equal = 10;
 			o.keepRightInset.min             = 0;
 		}];
-
 	}
 
 	return self;

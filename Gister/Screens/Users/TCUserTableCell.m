@@ -22,7 +22,7 @@
 		[view tc_with:^(UIView *o) {
 			o.backgroundColor = [UIColor whiteColor];
 
-			__unused UIImageView *photo = _photo = [UIImageView tc_with:^(UIImageView *oo) {
+			__unused UIImageView *photo = _photo                             = [UIImageView tc_with:^(UIImageView *oo) {
 				oo.contentMode = UIViewContentModeScaleAspectFit;
 				[o addSubview:oo];
 				oo.keepTopMarginInset.equal    = 0;
@@ -46,7 +46,6 @@
 					ooo.keepLeftInset.equal = 0;
 					ooo.keepRightInset.min  = 0;
 				}];
-
 			}];
 			__unused UILabel *registrationDateLabel = _registrationDateLabel = [UILabel tc_with:^(UILabel *oo) {
 				oo.backgroundColor = [UIColor whiteColor];

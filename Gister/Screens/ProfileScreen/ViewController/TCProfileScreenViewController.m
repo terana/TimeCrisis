@@ -8,12 +8,13 @@
 #import "TCPublicGistsListViewController.h"
 #import "TCUsersGistsListViewController.h"
 #import "TCAuthenticationScreenViewController.h"
+#import "UIViewController+ShowError.h"
 
 @implementation TCProfileScreenViewController
 {
 }
 
--(instancetype)init
+- (instancetype) init
 {
 	self = [super init];
 	if (self)
@@ -33,6 +34,12 @@
 			TCProfileScreenView *view = self.view;
 			view.user = _user;
 			[[NSUserDefaults standardUserDefaults] setObject:user.login forKey:@"login"];
+		}
+		else
+		{
+			[self showMessageWithError:error callback:^{
+				[[self navigationController] popViewControllerAnimated:YES];
+			}];
 		}
 	}];
 }
@@ -58,10 +65,11 @@
 
 - (void) signOut
 {
-	NSHTTPCookie *cookie;
-	NSHTTPCookieStorage *storage =[NSHTTPCookieStorage sharedHTTPCookieStorage];
-	for (cookie in [storage cookies]) {
-		NSLog(@"%@",cookie);
+	NSHTTPCookie        *cookie;
+	NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+	for (cookie in [storage cookies])
+	{
+		NSLog(@"%@", cookie);
 		[storage deleteCookie:cookie];
 	}
 	TCAuthenticationScreenViewController *vc = [TCAuthenticationScreenViewController new];

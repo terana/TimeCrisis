@@ -16,25 +16,25 @@
 	return [TCGistsListView class];
 }
 
--(instancetype) init
+- (instancetype) init
 {
 	self = [super init];
 	if (self)
 	{
 		self.title = @"Gists";
 
-		self.navigationItem.rightBarButtonItem = [UIBarButtonItem tc_with:^(UIBarButtonItem *o){
-			o.title = @"New gist";
+		self.navigationItem.rightBarButtonItem = [UIBarButtonItem tc_with:^(UIBarButtonItem *o) {
+			o.title  = @"New gist";
 			o.action = @selector(createNewGist);
 		}];
 	}
 	return self;
 }
 
--(void) createNewGist
+- (void) createNewGist
 {
-
 }
+
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];

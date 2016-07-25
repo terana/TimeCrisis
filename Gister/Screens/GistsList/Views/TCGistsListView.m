@@ -3,8 +3,6 @@
 //
 
 #import "TCGistsListView.h"
-#import "KeepLayout/KeepLayout.h"
-#import "NSObject+TCDoWith.h"
 #import "TCGistTableCell.h"
 
 @implementation TCGistsListView
@@ -12,8 +10,8 @@
 }
 + (NSDictionary *) cellIdentifiers
 {
-	return @{   @"Cell" : [TCGistTableCell class] ,
-				@"NoGists":[UITableViewCell class]};
+	return @{ @"Cell" : [TCGistTableCell class],
+			@"NoGists" : [UITableViewCell class] };
 }
 
 
@@ -35,7 +33,7 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if([_data count] == 0)
+	if ([_data count] == 0)
 	{
 		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoGists"];
 		cell.textLabel.text = @"No gists";

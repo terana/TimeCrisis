@@ -3,12 +3,8 @@
 //
 
 #import <KeepLayout/KeepLayout.h>
-#import <KeepLayout/KeepAttribute.h>
 #import "TCFilesListView.h"
-#import "TCGist.h"
 #import "NSObject+TCDoWith.h"
-#import "TCFilesListViewDelegate.h"
-#import "TCFile.h"
 
 @interface TCFilesListView () <UITableViewDataSource, UITableViewDelegate>
 @end
@@ -50,7 +46,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 	TCFile          *file = _gist.files[indexPath.row];
 	cell.textLabel.text = file.filename;
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 	return cell;
 }
 

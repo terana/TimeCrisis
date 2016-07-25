@@ -18,7 +18,7 @@
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	NSURL        *url     = [NSURL URLWithString:@"https://github.com/login/oauth/authorize/?"
+	NSURL               *url     = [NSURL URLWithString:@"https://github.com/login/oauth/authorize/?"
 			@"client_id=dc665db234579172b3b8"
 			@"&redirect_uri=gister://"
 			@"&scope=user%2Cgist"
@@ -27,17 +27,15 @@
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	[request setHTTPShouldHandleCookies:YES];
 
-	TCGithubAuthenticationView   *webView = self.view;
+	TCGithubAuthenticationView *webView = self.view;
 	[webView loadRequest:request];
-
-
 }
 
--(void) viewDidLoad
+- (void) viewDidLoad
 {
 	__unused UIActivityIndicatorView *activityIndicator = _activityIndicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] tc_with:^(UIActivityIndicatorView *o) {
-		o.hidden = YES;
-		o.color = [UIColor grayColor];
+		o.hidden           = YES;
+		o.color            = [UIColor grayColor];
 		o.hidesWhenStopped = YES;
 		[self.view addSubview:o];
 		o.keepCenter.equal = 0.5;
@@ -63,5 +61,4 @@
 {
 	[self hideActivityIndicator];
 }
-
 @end

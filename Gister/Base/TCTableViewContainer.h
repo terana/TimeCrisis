@@ -10,6 +10,6 @@
 	UITableView *_tableView;
 }
 @property (readonly, nonatomic) UITableView *tableView;
-+(UITableViewStyle)tableViewStyle;
-+(NSDictionary *) cellIdentifiers;
++ (UITableViewStyle) tableViewStyle;
++ (NSDictionary *) cellIdentifiers;
 @end

@@ -35,11 +35,11 @@
 	}
 }
 
--(void) setImageURL:(NSString *)imageURL
+- (void) setImageURL:(NSString *)imageURL
 {
 	_imageURL = imageURL;
-	[[TCServerManager shared] getImageWithURL:imageURL callback:^(UIImage *image, NSError *error){
-		if(error == nil)
+	[[TCServerManager shared] getImageWithURL:imageURL callback:^(UIImage *image, NSError *error) {
+		if (error == nil)
 		{
 			self.image = image;
 		}

@@ -7,5 +7,5 @@
 
 @interface TCAuthenticationScreenView : UIView
 @property (strong, nonatomic) id <TCAuthenticationScreenViewDelegate> delegate;
--(void) signIn;
+- (void) signIn;
 @end

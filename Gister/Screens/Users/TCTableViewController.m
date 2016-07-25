@@ -22,29 +22,24 @@
 - (void) viewDidLoad
 {
 	TCUser *userRuslan = [TCUser new];
-	userRuslan.login             = @"Ruslan";
+	userRuslan.login            = @"Ruslan";
 	userRuslan.registrationDate = [NSDate dateFromString:@"01.01.2016"];
 
-
 	TCUser *userAnastasia = [TCUser new];
-	userAnastasia.login             = @"Anastasia";
+	userAnastasia.login            = @"Anastasia";
 	userAnastasia.registrationDate = [NSDate dateFromString:@"01.03.2016"];
 
-
 	TCUser *userAnton = [TCUser new];
-	userAnton.login             = @"Anton";
+	userAnton.login            = @"Anton";
 	userAnton.registrationDate = [NSDate dateFromString:@"01.03.2016"];
 
-
 	TCUser *userYoulya = [TCUser new];
-	userYoulya.login             = @"Youlya";
+	userYoulya.login            = @"Youlya";
 	userYoulya.registrationDate = [NSDate dateFromString:@"01.04.2016"];
 
-
 	TCUser *userVladimir = [TCUser new];
-	userVladimir.login             = @"Владимир Олегович";
+	userVladimir.login            = @"Владимир Олегович";
 	userVladimir.registrationDate = [NSDate dateFromString:@"11.04.2016"];
-
 
 	TCViewWithUserTable *view = self.view;
 	view.data = @[ userAnastasia, userAnton, userRuslan, userYoulya, userVladimir ];
