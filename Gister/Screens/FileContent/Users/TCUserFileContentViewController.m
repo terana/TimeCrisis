@@ -6,7 +6,7 @@
 #import "TCUserFileContentViewController.h"
 #import "TCServerManager.h"
 #import "TCUserFileContentView.h"
-#import "TCFilesListViewController.h"
+#import "TCUsersFilesListViewController.h"
 
 @implementation TCUserFileContentViewController
 {
@@ -80,7 +80,7 @@
 			if (error == nil)
 			{
 				_file.gist                    = gist;
-				TCFilesListViewController *vc = [TCFilesListViewController new];
+				TCUsersFilesListViewController *vc = [TCUsersFilesListViewController new];
 				vc.gist = gist;
 				[[self navigationController] pushViewController:vc animated:YES];
 			}

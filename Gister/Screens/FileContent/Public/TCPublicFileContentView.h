@@ -4,7 +4,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TCScrollViewContainer.h"
+#import "TCTextViewContainer.h"
 
-@interface TCPublicFileContentView : TCScrollViewContainer
+@interface TCPublicFileContentView : TCTextViewContainer
 @property (strong, nonatomic) NSString *fileContent;
 @end

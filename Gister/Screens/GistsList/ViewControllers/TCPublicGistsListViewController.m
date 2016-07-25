@@ -4,8 +4,9 @@
 
 #import "TCPublicGistsListViewController.h"
 #import "TCGistsListView.h"
-#import "TCFilesListViewController.h"
+#import "TCUsersFilesListViewController.h"
 #import "TCServerManager.h"
+#import "TCPublicFilesListViewController.h"
 
 @implementation TCPublicGistsListViewController
 {
@@ -27,7 +28,7 @@
 
 - (void) gistIsSelected:(TCGist *)gist
 {
-	TCFilesListViewController *vc = [TCFilesListViewController new];
+	TCPublicFilesListViewController *vc = [TCPublicFilesListViewController new];
 	vc.gist = gist;
 	[self.navigationController pushViewController:vc animated:YES];
 }

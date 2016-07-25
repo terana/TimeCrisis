@@ -6,30 +6,15 @@
 #import "TCFilesListView.h"
 #import "NSObject+TCDoWith.h"
 
-@interface TCFilesListView () <UITableViewDataSource, UITableViewDelegate>
+@interface TCFilesListView ()
 @end
 
 @implementation TCFilesListView
++ (NSDictionary *) cellIdentifiers
 {
-	UITableView *_tableView;
+	return @{ @"Cell" : [UITableViewCell class] };
 }
 
-- (instancetype) init
-{
-	self = [super init];
-	if (self)
-	{
-		__unused UITableView *tableView = _tableView = [UITableView tc_with:^(UITableView *o) {
-			o.backgroundColor = [UIColor whiteColor];
-			o.delegate        = self;
-			o.dataSource      = self;
-			[o registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-			[self addSubview:o];
-			o.keepInsets.equal = 0;
-		}];
-	}
-	return self;
-}
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {

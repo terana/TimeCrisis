@@ -5,7 +5,7 @@
 #import "TCUsersGistsListViewController.h"
 #import "TCGistsListView.h"
 #import "TCServerManager.h"
-#import "TCFilesListViewController.h"
+#import "TCUsersFilesListViewController.h"
 #import "NSObject+TCDoWith.h"
 
 @implementation TCUsersGistsListViewController
@@ -23,10 +23,7 @@
 	{
 		self.title = @"Gists";
 
-		self.navigationItem.rightBarButtonItem = [UIBarButtonItem tc_with:^(UIBarButtonItem *o) {
-			o.title  = @"New gist";
-			o.action = @selector(createNewGist);
-		}];
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewGist)];
 	}
 	return self;
 }
@@ -50,7 +47,7 @@
 
 - (void) gistIsSelected:(TCGist *)gist
 {
-	TCFilesListViewController *vc = [TCFilesListViewController new];
+	TCUsersFilesListViewController *vc = [TCUsersFilesListViewController new];
 	vc.gist = gist;
 	[self.navigationController pushViewController:vc animated:YES];
 }

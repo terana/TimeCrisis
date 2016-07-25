@@ -26,7 +26,8 @@
 				oo.preservesSuperviewLayoutMargins = YES;
 				[o addSubview:oo];
 				oo.keepWidthTo(o).equal = 1;
-				oo.keepInsets.equal     = 0;
+				oo.keepHeightTo(o).equal = 1;
+				//oo.keepInsets.equal     = 0;
 			}];
 		}];
 	}

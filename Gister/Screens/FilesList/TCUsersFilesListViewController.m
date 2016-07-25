@@ -2,16 +2,20 @@
 // Created by Anastasia on 6/29/16.
 //
 
-#import "TCFilesListViewController.h"
+#import "TCUsersFilesListViewController.h"
 #import "TCFilesListView.h"
-#import "NSObject+TCDoWith.h"
 #import "TCUserFileContentViewController.h"
 
-@interface TCFilesListViewController () <TCFilesListViewDelegate>
+@interface TCUsersFilesListViewController () <TCFilesListViewDelegate>
 @end
 
-@implementation TCFilesListViewController
+@implementation TCUsersFilesListViewController
 {
+}
+
++ (Class) viewClass
+{
+	return [TCFilesListView class];
 }
 
 - (instancetype) init
@@ -29,8 +33,8 @@
 - (void) addNewFile
 {
 	TCFile *file = [TCFile new];
-	_gist.files = [_gist.files arrayByAddingObject:file];
-	file.gist   = _gist;
+	_gist.files  = [_gist.files arrayByAddingObject:file];
+	file.gist    = _gist;
 	file.changed = YES;
 
 	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Creating new file"
@@ -39,24 +43,25 @@
 
 	UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Create" style:UIAlertActionStyleDefault
 	                                                      handler:^(UIAlertAction *action) {
-		                                                      UITextField                     *fileNameTextField = [alert textFields][0];
+		                                                      UITextField *fileNameTextField = [alert textFields][0];
 		                                                      file.filename = fileNameTextField.text;
-		                                                      TCUserFileContentViewController *vc                = [TCUserFileContentViewController new];
-		                                                      vc.file       = file;
+		                                                      TCUserFileContentViewController *vc = [TCUserFileContentViewController new];
+		                                                      vc.file = file;
 		                                                      [[self navigationController] pushViewController:vc animated:YES];
 	                                                      }];
 
 	[alert addAction:defaultAction];
-	[alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {}];
+	[alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+	}];
 	[self presentViewController:alert animated:YES completion:nil];
 }
 
 
 - (void) viewDidLoad
 {
+	[super viewDidLoad];
 	TCFilesListView *view = self.view;
-	view.gist     = _gist;
-	view.delegate = self;
+	view.gist = _gist;
 }
 
 - (void) fileIsSelected:(TCFile *)file
