@@ -6,7 +6,7 @@
 #import "TCUserFileContentViewController.h"
 #import "TCServerManager.h"
 #import "TCUserFileContentView.h"
-#import "TCUsersFilesListViewController.h"
+#import "UIViewController+ShowError.h"
 
 @implementation TCUserFileContentViewController
 {
@@ -36,7 +36,7 @@
 		{
 			TCUserFileContentView *view = self.view;
 			view.fileContent = content;
-			_file.content = content;
+			_file.content    = content;
 			[self reloadInputViews];
 		}
 	}];
@@ -45,26 +45,29 @@
 - (void) renameFile
 {
 
-	UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Rename file"
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Rename file"
 	                                                               message:@"Write new name"
 	                                                        preferredStyle:UIAlertControllerStyleAlert];
 
-	UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Rename" style:UIAlertActionStyleDefault
-	                                                      handler:^(UIAlertAction * action) {
+	UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Rename" style:UIAlertActionStyleDefault
+	                                                      handler:^(UIAlertAction *action) {
 		                                                      UITextField *nameTextField = [alert textFields][0];
 		                                                      _file.changedName = nameTextField.text;
-		                                                      _file.changed = YES;
-		                                                      [[TCServerManager shared] editGist:_file.gist withCallback:^(TCGist *gist, NSError *error){
-			                                                     if(!error)
-			                                                     {
-				                                                     _file.gist = gist;
-				                                                     [[self navigationController] popViewControllerAnimated:YES];
-			                                                     }
+		                                                      _file.changed     = YES;
+		                                                      [[TCServerManager shared] editGist:_file.gist withCallback:^(TCGist *gist, NSError *error) {
+			                                                      if (!error)
+			                                                      {
+				                                                      _file.gist.gistDescription = gist.gistDescription;
+				                                                      _file.gist.public          = gist.public;
+				                                                      _file.gist.files           = gist.files;
+				                                                      [[self navigationController] popViewControllerAnimated:YES];
+			                                                      }
 		                                                      }];
 	                                                      }];
 
 	[alert addAction:defaultAction];
-	[alert addTextFieldWithConfigurationHandler:^(UITextField *textField){}];
+	[alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+	}];
 	[self presentViewController:alert animated:YES completion:nil];
 }
 
@@ -79,10 +82,16 @@
 		[[TCServerManager shared] editGist:_file.gist withCallback:^(TCGist *gist, NSError *error) {
 			if (error == nil)
 			{
-				_file.gist                    = gist;
-				TCUsersFilesListViewController *vc = [TCUsersFilesListViewController new];
-				vc.gist = gist;
-				[[self navigationController] pushViewController:vc animated:YES];
+				_file.gist.public       = gist.public;
+				_file.gist.updatingDate = gist.updatingDate;
+				_file.gist.files        = gist.files;
+
+				[[self navigationController] popViewControllerAnimated:YES];
+			}
+			else
+			{
+				[self showMessageWithError:error callback:^() {
+				}];
 			}
 		}];
 	}
@@ -96,8 +105,8 @@
 		if (error == nil)
 		{
 			_file.gist.gistDescription = gist.gistDescription;
-			_file.gist.public = gist.public;
-
+			_file.gist.public          = gist.public;
+			_file.gist.files           = gist.files;
 			[[self navigationController] popViewControllerAnimated:YES];
 		}
 	}];

@@ -148,4 +148,21 @@
 		callback([[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding], error);
 	};
 }
+
+
+- (void) getFollowersForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback
+{
+	NSString *path = [NSString stringWithFormat:@"/users/%@/followers", user.login];
+	[_server doGet:path withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCUser class] andSendingTo:callback]];
+}
+- (void) getFollowingForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback
+{
+	NSString *path = [NSString stringWithFormat:@"/users/%@/following", user.login];
+	[_server doGet:path withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCUser class] andSendingTo:callback]];
+}
+
+- (void) getStarredGistsWithCallback:(void (^)(NSArray *, NSError *))callback
+{
+	[_server doGet:@"/gists/starred" withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
+}
 @end

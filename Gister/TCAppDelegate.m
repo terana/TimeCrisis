@@ -6,7 +6,7 @@
 #import "NSDictionary+TCParseURL.h"
 #import "TCAuthenticationScreenViewController.h"
 #import "TCPublicGistsListViewController.h"
-#import "TCProfileScreenViewController.h"
+#import "TCMainUserProfileViewController.h"
 
 @implementation TCAppDelegate
 {
@@ -39,9 +39,10 @@
 	NSData       *tokenURLData   = [[NSData alloc] initWithContentsOfURL:tokenURL];
 	NSString     *tokenURLString = [[NSString alloc] initWithData:tokenURLData encoding:NSNonLossyASCIIStringEncoding];
 	NSDictionary *tokenParametrs = [NSDictionary dictionaryFromURLString:tokenURLString];
+	NSAssert(tokenParametrs[@"access_token"], @"Authentication Failed");
 	[[NSUserDefaults standardUserDefaults] setObject:tokenParametrs[@"access_token"] forKey:@"access_token"];
 
-	UINavigationController *nc1 = [[UINavigationController alloc] initWithRootViewController:[TCProfileScreenViewController new]];
+	UINavigationController *nc1 = [[UINavigationController alloc] initWithRootViewController:[TCMainUserProfileViewController new]];
 	UINavigationController *nc2 = [[UINavigationController alloc] initWithRootViewController:[TCPublicGistsListViewController new]];
 
 	UITabBarController *tabBarController = [UITabBarController new];

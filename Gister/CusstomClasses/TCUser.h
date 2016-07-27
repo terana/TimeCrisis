@@ -8,11 +8,8 @@
 @interface TCUser : NSObject
 @property (strong, nonatomic) NSString *avatarURL;
 @property (strong, nonatomic) NSString *login;
-@property (strong, nonatomic) NSString *gitURL;
-@property (strong, nonatomic) NSString *followersURL;
-@property (strong, nonatomic) NSString *followingsURL;
-@property (strong, nonatomic) NSString *gistsURL;
 @property (strong, nonatomic) NSDate   *registrationDate;
 @property (strong, nonatomic) NSArray  *gists;
+@property (strong, nonatomic) NSString *organizationsURL;
 + (instancetype) unmap:(NSDictionary *)dictionary;
 @end

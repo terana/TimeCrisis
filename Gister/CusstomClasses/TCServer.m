@@ -79,6 +79,8 @@
 	[request setURL:[NSURL URLWithString:url]];
 	[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+	NSString *str = [NSString stringWithFormat:@"token %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"]];
+	[request setValue: str forHTTPHeaderField:@"Authorization"];
 	[request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-length"];
 	[request setHTTPBody:requestData];
 

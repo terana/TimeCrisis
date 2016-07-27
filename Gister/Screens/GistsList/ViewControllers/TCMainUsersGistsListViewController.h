@@ -7,6 +7,6 @@
 #import "TCViewController.h"
 #import "TCGistsListViewDelegate.h"
 
-@interface TCUsersGistsListViewController : TCViewController <TCGistsListViewDelegate>
-@property (strong, nonatomic) TCUser *user;
+@interface TCMainUsersGistsListViewController : TCViewController <TCGistsListViewDelegate>
+@property (strong, nonatomic) NSArray* gists;
 @end

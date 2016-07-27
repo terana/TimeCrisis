@@ -13,7 +13,6 @@
 	TCImageView *_avatar;
 	UILabel     *_login;
 	UILabel     *_joinedOn;
-	UILabel     *_numberOfGists;
 }
 - (instancetype) init
 {
@@ -55,7 +54,6 @@
 	_avatar.imageURL    = user.avatarURL;
 	_login.text         = user.login;
 	_joinedOn.text      = [NSString stringWithFormat:@"Joined on %@", [_user.registrationDate stringFromDate]];
-	_numberOfGists.text = [NSString stringWithFormat:@"%d gists", user.gists.count];
 	[self reloadInputViews];
 }
 @end

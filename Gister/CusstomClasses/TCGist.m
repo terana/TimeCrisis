@@ -16,6 +16,7 @@
 	gist.creationDate    = [NSDate dateFromStringWithTime:dictionary[@"created_at"]];
 	gist.updatingDate    = [NSDate dateFromStringWithTime:dictionary[@"updated_at"]];
 	gist.gistDescription = dictionary[@"description"];
+	gist.public = (BOOL)dictionary[@"public"];
 	NSMutableArray *files = [NSMutableArray new];
 	for (id        dictFile in [dictionary[@"files"] allValues])
 	{

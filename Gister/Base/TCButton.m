@@ -19,6 +19,7 @@
 		__unused UILabel *titleLabel = _label = [UILabel tc_with:^(UILabel *o) {
 			[self addSubview:o];
 			o.keepInsets.equal = 0;
+			o.keepHeight.min = 40;
 		}];
 	}
 

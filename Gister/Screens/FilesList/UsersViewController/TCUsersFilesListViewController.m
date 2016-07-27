@@ -57,13 +57,6 @@
 }
 
 
-- (void) viewDidLoad
-{
-	[super viewDidLoad];
-	TCFilesListView *view = self.view;
-	view.gist = _gist;
-}
-
 - (void) fileIsSelected:(TCFile *)file
 {
 	TCUserFileContentViewController *vc = [TCUserFileContentViewController new];
@@ -74,7 +67,9 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-	[super viewWillAppear:animated];
 	[self reloadInputViews];
+	TCFilesListView *view = self.view;
+	view.gist = _gist;
+	[super viewWillAppear:animated];
 }
 @end

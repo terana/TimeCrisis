@@ -4,10 +4,12 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol TCProfileScreenViewDelegate <NSObject>
+@protocol TCProfileViewDelegate <NSObject>
+@required
 - (void) openGists;
 - (void) openFollowers;
 - (void) openFollowing;
+@optional
 - (void) openStarred;
 - (void) signOut;
 @end

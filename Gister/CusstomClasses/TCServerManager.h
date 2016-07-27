@@ -17,4 +17,7 @@
 - (void) createGist:(TCGist *)gist callback:(void (^)(TCGist *, NSError *))callback;
 - (void) editGist:(TCGist *)gist withCallback:(void (^)(TCGist *, NSError *))callback;
 - (void) getFileContentForFile:(TCFile *)file withCallback:(void (^)(NSString *, NSError *))callback;
+- (void) getFollowersForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback;
+- (void) getFollowingForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback;
+-(void) getStarredGistsWithCallback:(void (^)(NSArray *, NSError *))callback;
 @end
