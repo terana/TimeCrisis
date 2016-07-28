@@ -34,16 +34,19 @@
 	[request setURL:[NSURL URLWithString:url]];
 	[request setHTTPMethod:@"GET"];
 	[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-
+	NSString *str = [NSString stringWithFormat:@"token %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"]];
+	[request setValue:str forHTTPHeaderField:@"Authorization"];
 	NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
 	[[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 		NSError *error1 = nil;
-		id result;
-		if(data)
+		id      result;
+		if (data)
 		{
 			result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error1];
 		}
-		dispatch_async(dispatch_get_main_queue(), ^{ callback(result,error); });
+		dispatch_async(dispatch_get_main_queue(), ^{
+			callback(result, error);
+		});
 	}] resume];
 }
 
@@ -54,7 +57,9 @@
 	NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
 
 	[[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-		dispatch_async(dispatch_get_main_queue(), ^{ callback(data,error); });
+		dispatch_async(dispatch_get_main_queue(), ^{
+			callback(data, error);
+		});
 	}] resume];
 }
 
@@ -80,7 +85,7 @@
 	[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 	NSString *str = [NSString stringWithFormat:@"token %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"]];
-	[request setValue: str forHTTPHeaderField:@"Authorization"];
+	[request setValue:str forHTTPHeaderField:@"Authorization"];
 	[request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-length"];
 	[request setHTTPBody:requestData];
 
@@ -88,7 +93,9 @@
 	[[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 		NSError *error1 = nil;
 		id      result  = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error1];// TODO
-		dispatch_async(dispatch_get_main_queue(), ^{ callback(result,error); });
+		dispatch_async(dispatch_get_main_queue(), ^{
+			callback(result, error);
+		});
 	}] resume];
 }
 
@@ -113,7 +120,7 @@
 	[request setURL:[NSURL URLWithString:url]];
 	[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 	NSString *str = [NSString stringWithFormat:@"token %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"]];
-	[request setValue: str forHTTPHeaderField:@"Authorization"];
+	[request setValue:str forHTTPHeaderField:@"Authorization"];
 	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 	[request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-length"];
 	NSLog(@"%@", request.allHTTPHeaderFields);
@@ -122,12 +129,14 @@
 	NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
 	[[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 		id result;
-		if(!error)
+		if (!error)
 		{
 			NSError *error1 = nil;
-			result  = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error1];// TODO
+			result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error1];// TODO
 		}
-		dispatch_async(dispatch_get_main_queue(), ^{ callback(result,error); });
+		dispatch_async(dispatch_get_main_queue(), ^{
+			callback(result, error);
+		});
 	}] resume];
 }
 @end
