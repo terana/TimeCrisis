@@ -6,6 +6,7 @@
 #import "TCUsersListView.h"
 #import "TCMainUserProfileViewController.h"
 #import "TCOtherUsersProfileViewController.h"
+#import "TCServerManager.h"
 
 @implementation TCUsersListViewController
 {
@@ -20,8 +21,11 @@
 
 - (void) openProfileOfUser:(TCUser *)user
 {
-	TCOtherUsersProfileViewController *vc = [TCOtherUsersProfileViewController new];
-	vc.user = user;
-	[[self navigationController] pushViewController:vc animated:YES];
+	[[TCServerManager shared] getInformationForUser:user withCallback:^(TCUser *userWithFullInformation, NSError *error){
+		TCOtherUsersProfileViewController *vc = [TCOtherUsersProfileViewController new];
+		vc.user = userWithFullInformation;
+		[[self navigationController] pushViewController:vc animated:YES];
+	}];
+
 }
 @end

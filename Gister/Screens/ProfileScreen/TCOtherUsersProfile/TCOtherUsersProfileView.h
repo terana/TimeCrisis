@@ -5,9 +5,10 @@
 #import <UIKit/UIKit.h>
 #import "TCTableViewContainer.h"
 #import "TCMainUserProfileView.h"
-#import "TCUserProfileView.h"
 
 @class TCUser;
 
-@interface TCOtherUsersProfileView : TCUserProfileView
+@interface TCOtherUsersProfileView : TCTableViewContainer
+@property (strong, nonatomic) TCUser                   *user;
+@property (weak, nonatomic) id <TCProfileViewDelegate> delegate;
 @end

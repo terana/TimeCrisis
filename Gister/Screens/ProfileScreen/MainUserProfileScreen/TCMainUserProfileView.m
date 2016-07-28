@@ -7,10 +7,21 @@
 #import "TCGeneralProfileInfoView.h"
 #import "NSObject+TCDoWith.h"
 #import "TCProfileViewDelegate.h"
+#import "TCUser.h"
 
 @implementation TCMainUserProfileView
 {
 }
++ (UITableViewStyle) tableViewStyle
+{
+	return UITableViewStyleGrouped;
+}
+
++ (NSDictionary *) cellIdentifiers
+{
+	return @{ @"Cell" : [UITableViewCell class] };
+}
+
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
 	return 3;
@@ -24,6 +35,7 @@
 	}
 	return 4;
 }
+
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
@@ -48,25 +60,25 @@
 			{
 				case 0:
 				{
-					cell.textLabel.text = @"Gists";
+					cell.textLabel.text = [NSString stringWithFormat:@"%d Gists", [_user.privateGists unsignedIntegerValue] + [_user.publicGists unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				case 1:
 				{
-					cell.textLabel.text = @"Followers";
+					cell.textLabel.text = [NSString stringWithFormat:@"%d Followers", [_user.followers unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				case 2:
 				{
-					cell.textLabel.text = @"Following";
+					cell.textLabel.text = [NSString stringWithFormat:@"%d Following", [_user.following unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				case 3:
 				{
-					cell.textLabel.text = @"Starred";
+					cell.textLabel.text = @"Starred gists";
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
@@ -85,5 +97,66 @@
 		}
 	}
 	return cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (indexPath.section == 0)
+	{
+		return 100.f;
+	}
+	return 40.f;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"#### selected row %d at section %d ####", indexPath.row, indexPath.section);
+	switch (indexPath.section)
+	{
+		case 1:
+		{
+
+			switch (indexPath.row)
+			{
+				case 0:
+				{
+					[_delegate openGists];
+					break;
+				}
+				case 1:
+				{
+					[_delegate openFollowers];
+					break;
+				}
+				case 2:
+				{
+					[_delegate openFollowing];
+					break;
+				}
+				case 3:
+				{
+					[_delegate openStarred];
+					break;
+				}
+				default:
+					break;
+			}
+			break;
+		}
+		case 2:
+		{
+			[_delegate signOut];
+			break;
+		}
+		default:
+			break;
+	}
+}
+
+- (void) setUser:(TCUser *)user
+{
+	_user = user;
+
+	[_tableView reloadData];
 }
 @end

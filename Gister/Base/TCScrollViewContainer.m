@@ -27,7 +27,6 @@
 				[o addSubview:oo];
 				oo.keepWidthTo(o).equal = 1;
 				oo.keepHeightTo(o).equal = 1;
-				//oo.keepInsets.equal     = 0;
 			}];
 		}];
 	}

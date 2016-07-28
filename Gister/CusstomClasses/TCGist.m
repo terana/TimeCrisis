@@ -23,9 +23,6 @@
 		TCFile *file = [TCFile new];
 		file.filename = dictFile[@"filename"];
 		NSString *str = dictFile[@"size"];
-		file.fileSize = [str integerValue];
-		file.fileType = dictFile[@"type"];
-		file.language = dictFile[@"language"];
 		file.rawURL   = dictFile[@"raw_url"];
 		file.gist     = gist;
 		[files addObject:file];

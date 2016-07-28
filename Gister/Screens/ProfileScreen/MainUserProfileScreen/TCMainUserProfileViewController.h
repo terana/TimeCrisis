@@ -6,8 +6,7 @@
 #import "TCViewController.h"
 #import "TCUser.h"
 #import "TCProfileViewDelegate.h"
-#import "TCUserProfileView.h"
-#import "TCUserProfileViewController.h"
 
-@interface TCMainUserProfileViewController : TCUserProfileViewController
+@interface TCMainUserProfileViewController : TCViewController <TCProfileViewDelegate>
+@property (strong, nonatomic) TCUser *user;
 @end

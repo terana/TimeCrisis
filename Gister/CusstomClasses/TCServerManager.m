@@ -4,6 +4,7 @@
 
 #import "TCServerManager.h"
 #import "TCServer.h"
+#import "NSDictionary+DictionaryWithoutNSNull.h"
 
 @implementation TCServerManager
 {
@@ -29,8 +30,8 @@
 	return self;
 }
 
-- (void) getInformationForUserWithCallback:(void (^)(TCUser *, NSError *))callback
-{
+- (void) getInformationForMainUserWithCallback:(void (^)(TCUser *, NSError *))callback
+ {
 	[_server doGet:@"/user" withParameters:@{ @"access_token" : [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"] } callback:[self callbackParsingClass:[TCUser class] andSendingTo:callback]];
 }
 
@@ -41,12 +42,17 @@
 		{
 			callback(nil, error);
 		}
+
 		callback([self parse:result as:cl], nil);
 	};
 }
 
 - (id) parse:(id)primitives as:(Class)cl
 {
+	if([primitives isKindOfClass:[NSDictionary class]])
+	{
+		primitives = [primitives dictionaryWithoutNSNull];
+	}
 	return [cl unmap:primitives];
 };
 
@@ -164,5 +170,11 @@
 - (void) getStarredGistsWithCallback:(void (^)(NSArray *, NSError *))callback
 {
 	[_server doGet:@"/gists/starred" withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
+}
+
+- (void) getInformationForUser:(TCUser *)user withCallback:(void (^)(TCUser *, NSError *))callback
+{
+	NSString *path = [NSString stringWithFormat:@"/users/%@", user.login];
+	[_server doGet:path withParameters:nil callback:[self callbackParsingClass:[TCUser class] andSendingTo:callback]];
 }
 @end

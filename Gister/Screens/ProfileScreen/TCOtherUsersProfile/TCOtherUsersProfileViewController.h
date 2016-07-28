@@ -9,5 +9,6 @@
 
 @class TCUser;
 
-@interface TCOtherUsersProfileViewController : TCUserProfileViewController
+@interface TCOtherUsersProfileViewController : TCViewController <TCProfileViewDelegate>
+@property (strong, nonatomic) TCUser *user;
 @end

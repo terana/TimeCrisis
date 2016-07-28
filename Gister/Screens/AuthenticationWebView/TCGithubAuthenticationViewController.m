@@ -5,7 +5,6 @@
 #import <KeepLayout/KeepLayout.h>
 #import "TCGithubAuthenticationViewController.h"
 #import "NSObject+TCDoWith.h"
-#import "TCGithubAuthenticationView.h"
 
 @interface TCGithubAuthenticationViewController () <UIWebViewDelegate>
 @end
@@ -13,6 +12,11 @@
 @implementation TCGithubAuthenticationViewController
 {
 	UIActivityIndicatorView *_activityIndicator;
+}
+
++(Class) viewClass
+{
+	return [UIWebView class];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -27,7 +31,7 @@
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	[request setHTTPShouldHandleCookies:YES];
 
-	TCGithubAuthenticationView *webView = self.view;
+	UIWebView *webView = self.view;
 	[webView loadRequest:request];
 }
 
@@ -42,23 +46,13 @@
 	}];
 }
 
-- (void) displayActivityIndicator
+- (void) webViewDidStartLoad:(UIWebView *)webView
 {
 	[_activityIndicator startAnimating];
 }
 
-- (void) hideActivityIndicator
-{
-	[_activityIndicator stopAnimating];
-}
-
-- (void) webViewDidStartLoad:(UIWebView *)webView
-{
-	[self displayActivityIndicator];
-}
-
 - (void) webViewDidFinishLoad:(UIWebView *)webView
 {
-	[self hideActivityIndicator];
+	[_activityIndicator stopAnimating];
 }
 @end

@@ -11,6 +11,16 @@
 {
 }
 
+- (instancetype) init
+{
+	self = [super init];
+	if (self)
+	{
+		self.title = @"Files";
+	}
+	return self;
+}
+
 + (Class) viewClass
 {
 	return [TCFilesListView class];
@@ -27,9 +37,8 @@
 {
 	TCPublicFileContentViewController *vc = [TCPublicFileContentViewController new];
 	vc.file                     = file;
+	vc.title = file.filename;
 	vc.hidesBottomBarWhenPushed = YES;// HOW to hide tab bar?
 	[self.navigationController pushViewController:vc animated:YES];
 }
-
-
 @end

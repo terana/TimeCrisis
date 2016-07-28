@@ -13,6 +13,7 @@
 }
 - (void) viewWillAppear:(BOOL)animated
 {
+	[self reloadInputViews];
 	[super viewWillAppear:animated];
 	[[TCServerManager shared] getFileContentForFile:_file withCallback:^(NSString *content, NSError *error) {
 		if (!error)

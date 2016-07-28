@@ -17,6 +17,15 @@
 	return [TCGistsListView class];
 }
 
+-(instancetype)init
+{
+	self = [super init];
+	if(self)
+	{
+		self.title = @"Recent gists";
+	}
+	return self;
+}
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];

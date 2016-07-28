@@ -10,7 +10,7 @@
 
 @interface TCServerManager : NSObject
 + (instancetype) shared;
-- (void) getInformationForUserWithCallback:(void (^)(TCUser *, NSError *))callback;
+- (void) getInformationForMainUserWithCallback:(void (^)(TCUser *, NSError *))callback;
 - (void) getImageWithURL:(NSString *)imageURL callback:(void (^)(UIImage *, NSError *))callback;
 - (void) getGistsForUser:(TCUser *)user callback:(void (^)(NSArray *, NSError *))callback;
 - (void) getPublicGistsWithCallback:(void (^)(NSArray *, NSError *))callback;
@@ -19,5 +19,6 @@
 - (void) getFileContentForFile:(TCFile *)file withCallback:(void (^)(NSString *, NSError *))callback;
 - (void) getFollowersForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback;
 - (void) getFollowingForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback;
--(void) getStarredGistsWithCallback:(void (^)(NSArray *, NSError *))callback;
+- (void) getStarredGistsWithCallback:(void (^)(NSArray *, NSError *))callback;
+- (void) getInformationForUser:(TCUser *)user withCallback:(void (^)(TCUser *, NSError *))callback;
 @end

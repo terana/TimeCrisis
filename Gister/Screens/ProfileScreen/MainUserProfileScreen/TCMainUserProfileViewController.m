@@ -10,6 +10,7 @@
 #import "UIViewController+ShowError.h"
 #import "TCMainUsersGistsListViewController.h"
 #import "TCGistsListView.h"
+#import "TCUsersListViewController.h"
 
 @implementation TCMainUserProfileViewController
 {
@@ -17,15 +18,15 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
+	[self reloadInputViews];
 	[super viewWillAppear:animated];
 	self.title = @"My Profile";
-	[[TCServerManager shared] getInformationForUserWithCallback:^(TCUser *user, NSError *error) {
+	[[TCServerManager shared] getInformationForMainUserWithCallback:^(TCUser *user, NSError *error) {
 		if (error == nil)
 		{
 			self.user                   = user;
 			TCMainUserProfileView *view = self.view;
 			view.user = self.user;
-			[[NSUserDefaults standardUserDefaults] setObject:user.login forKey:@"login"];
 		}
 		else
 		{
@@ -46,6 +47,7 @@
 		[storage deleteCookie:cookie];
 	}
 	TCAuthenticationScreenViewController *vc = [TCAuthenticationScreenViewController new];
+	vc.hidesBottomBarWhenPushed = YES;
 	[[self navigationController] pushViewController:vc animated:YES];
 }
 
@@ -71,6 +73,32 @@
 		}
 		else {
 			[self showMessageWithError:error callback:^(){}];
+		}
+	}];
+}
+
+- (void) openFollowers
+{
+	[[TCServerManager shared] getFollowersForUser:_user withCallback:^(NSArray *users, NSError *error) {
+		if (!error)
+		{
+			TCUsersListViewController *vc = [TCUsersListViewController new];
+			vc.users = users;
+			vc.title = @"Followers";
+			[[self navigationController] pushViewController:vc animated:YES];
+		}
+	}];
+}
+
+- (void) openFollowing
+{
+	[[TCServerManager shared] getFollowingForUser:_user withCallback:^(NSArray *users, NSError *error) {
+		if (!error)
+		{
+			TCUsersListViewController *vc = [TCUsersListViewController new];
+			vc.users = users;
+			vc.title = @"Following";
+			[[self navigationController] pushViewController:vc animated:YES];
 		}
 	}];
 }

@@ -48,7 +48,7 @@
 	UITabBarController *tabBarController = [UITabBarController new];
 	[tabBarController setViewControllers:@[ nc1, nc2 ]];
 	nc1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"My profile" image:[UIImage imageNamed:@"github_logo_30pxl.png"] tag:1];
-	nc2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recent gists" image:nil tag:2];
+	nc2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recent gists" image:[UIImage imageNamed:@"recent_gists.png"] tag:2];
 	NSLog(@"#### access_token=%@ ####", tokenParametrs[@"access_token"]);
 
 	_window.rootViewController = tabBarController;
