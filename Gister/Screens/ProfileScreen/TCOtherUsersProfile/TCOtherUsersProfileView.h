@@ -8,7 +8,13 @@
 
 @class TCUser;
 
+@protocol TCOtherUsersProfileViewDelegate <NSObject>
+- (void) openGists;
+- (void) openFollowers;
+- (void) openFollowing;
+@end
+
 @interface TCOtherUsersProfileView : TCTableViewContainer
-@property (strong, nonatomic) TCUser                   *user;
-@property (weak, nonatomic) id <TCProfileViewDelegate> delegate;
+@property (strong, nonatomic) TCUser                           *user;
+@property (weak, nonatomic) id <TCOtherUsersProfileViewDelegate> delegate;
 @end

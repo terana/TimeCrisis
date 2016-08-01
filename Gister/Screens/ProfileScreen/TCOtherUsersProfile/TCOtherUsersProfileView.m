@@ -6,8 +6,8 @@
 #import "TCGeneralProfileInfoView.h"
 #import "KeepLayout/KeepLayout.h"
 #import "NSObject+TCDoWith.h"
-#import "TCProfileViewDelegate.h"
 #import "TCUser.h"
+#import "TCGeneralProfileInfoTableCell.h"
 
 @implementation TCOtherUsersProfileView
 {
@@ -19,7 +19,8 @@
 
 + (NSDictionary *) cellIdentifiers
 {
-	return @{ @"Cell" : [UITableViewCell class] };
+	return @{ @"PlainCell" : [UITableViewCell class],
+			@"CellWithUserInfo" : [TCGeneralProfileInfoTableCell class] };
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -35,21 +36,18 @@
 	}
 	return 3;
 }
+
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+	UITableViewCell *cell;
 
 	switch (indexPath.section)
 	{
 		case 0:
 		{
-			__unused TCGeneralProfileInfoView *view = [TCGeneralProfileInfoView tc_with:^(TCGeneralProfileInfoView *o) {
-				if (_user)
-				{o.user = _user;}
-				UIView *view = cell.contentView;
-				[view addSubview:o];
-				o.keepInsets.equal = 0;
-			}];
+			cell = [tableView dequeueReusableCellWithIdentifier:@"CellWithUserInfo"];
+			TCGeneralProfileInfoTableCell *infoCell = (TCGeneralProfileInfoTableCell *)cell;
+			infoCell.user = _user;
 			break;
 		}
 		case 1:
@@ -59,35 +57,38 @@
 			{
 				case 0:
 				{
-					cell.textLabel.text = [NSString stringWithFormat:@"%d Gists",[_user.publicGists unsignedIntegerValue]];
+					cell = [tableView dequeueReusableCellWithIdentifier:@"PlainCell"];
+					cell.textLabel.text = [NSString stringWithFormat:@"%d Gists", [_user.publicGists unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				case 1:
 				{
+					cell = [tableView dequeueReusableCellWithIdentifier:@"PlainCell"];
 					cell.textLabel.text = [NSString stringWithFormat:@"%d Followers", [_user.followers unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				case 2:
 				{
+					cell = [tableView dequeueReusableCellWithIdentifier:@"PlainCell"];
 					cell.textLabel.text = [NSString stringWithFormat:@"%d Following", [_user.following unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				default:
 				{
-					cell.textLabel.text = @"";
-					cell.accessoryType  = UITableViewCellAccessoryNone;
 					break;
 				}
 			}
 			break;
 		}
-		default: break;
+		default:
+			break;
 	}
 	return cell;
 }
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSLog(@"#### selected row %d at section %d ####", indexPath.row, indexPath.section);

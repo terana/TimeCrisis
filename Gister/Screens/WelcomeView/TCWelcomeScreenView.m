@@ -3,12 +3,12 @@
 //
 
 #import <KeepLayout/KeepLayout.h>
-#import "TCAuthenticationScreenView.h"
+#import "TCWelcomeScreenView.h"
 #import "TCButton.h"
 #import "UIView+TCTapAction.h"
 #import "NSObject+TCDoWith.h"
 
-@implementation TCAuthenticationScreenView
+@implementation TCWelcomeScreenView
 {
 }
 - (instancetype) init

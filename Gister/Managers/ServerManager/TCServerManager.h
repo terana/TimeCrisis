@@ -8,9 +8,23 @@
 #import "TCGist.h"
 #import "TCFile.h"
 
+@class TCServerManager;
+@class TCViewController;
+
+@protocol TCServerManagerDelegate
+- (void) serverManager:(TCServerManager *)serverManager foundExpiredToken:(NSString *)expiredToken;
+@end;
+
 @interface TCServerManager : NSObject
+@property (weak, nonatomic) id <TCServerManagerDelegate> delegate;
 + (instancetype) shared;
+- (BOOL) foundAccessToken;
+- (NSURLRequest *) requestForWebView;
+- (void) signInFromViewController:(TCViewController *)viewController callback:(void (^)(NSError *))callback;
+- (void) getAccessParametersFromURL:(NSString *)url withCallback:(void (^)(NSError *error))callback;
+- (void) dropCookies;
 - (void) getInformationForMainUserWithCallback:(void (^)(TCUser *, NSError *))callback;
+- (void) getGistsForMainUserWithCallback:(void (^)(NSArray *, NSError *))callback;
 - (void) getImageWithURL:(NSString *)imageURL callback:(void (^)(UIImage *, NSError *))callback;
 - (void) getGistsForUser:(TCUser *)user callback:(void (^)(NSArray *, NSError *))callback;
 - (void) getPublicGistsWithCallback:(void (^)(NSArray *, NSError *))callback;

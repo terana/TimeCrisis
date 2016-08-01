@@ -4,6 +4,7 @@
 
 #import <KeepLayout/KeepLayout.h>
 #import "TCGithubAuthenticationViewController.h"
+#import "TCServerManager.h"
 #import "NSObject+TCDoWith.h"
 
 @interface TCGithubAuthenticationViewController () <UIWebViewDelegate>
@@ -11,10 +12,10 @@
 
 @implementation TCGithubAuthenticationViewController
 {
-	UIActivityIndicatorView *_activityIndicator;
+	__weak UIActivityIndicatorView *_activityIndicator;
 }
 
-+(Class) viewClass
++ (Class) viewClass
 {
 	return [UIWebView class];
 }
@@ -22,21 +23,15 @@
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	NSURL               *url     = [NSURL URLWithString:@"https://github.com/login/oauth/authorize/?"
-			@"client_id=dc665db234579172b3b8"
-			@"&redirect_uri=gister://"
-			@"&scope=user%2Cgist"
-			@"&state=1234"
-			@"&allow_signup=true"];
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-	[request setHTTPShouldHandleCookies:YES];
 
-	UIWebView *webView = self.view;
-	[webView loadRequest:request];
+	UIWebView *webView = (UIWebView *) self.view;
+	[webView loadRequest:[[TCServerManager shared] requestForWebView]];
 }
 
-- (void) viewDidLoad
+- (void) loadView
 {
+	[super loadView];
+
 	__unused UIActivityIndicatorView *activityIndicator = _activityIndicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] tc_with:^(UIActivityIndicatorView *o) {
 		o.hidden           = YES;
 		o.color            = [UIColor grayColor];
@@ -51,8 +46,13 @@
 	[_activityIndicator startAnimating];
 }
 
-- (void) webViewDidFinishLoad:(UIWebView *)webView
+-(void) webViewDidFinishLoad:(UIWebView *)webView
 {
 	[_activityIndicator stopAnimating];
+}
+
+- (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+	return _callback(request);
 }
 @end

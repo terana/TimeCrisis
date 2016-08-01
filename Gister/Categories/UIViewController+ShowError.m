@@ -11,5 +11,6 @@
 	[alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
 		callback();
 	}]];
+	[self presentViewController:alertController animated:YES completion:nil];
 }
 @end

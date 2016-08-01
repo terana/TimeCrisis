@@ -6,4 +6,5 @@
 #import "TCViewController.h"
 
 @interface TCGithubAuthenticationViewController : TCViewController
+@property (strong, nonatomic) BOOL (^callback)(NSURLRequest *);
 @end

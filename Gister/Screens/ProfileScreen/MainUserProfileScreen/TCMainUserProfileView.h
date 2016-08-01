@@ -5,10 +5,17 @@
 #import <UIKit/UIKit.h>
 #import "TCTableViewContainer.h"
 
-@protocol TCProfileViewDelegate;
 @class TCUser;
+
+@protocol TCMainUserProfileViewDelegate <NSObject>
+- (void) openGists;
+- (void) openFollowers;
+- (void) openFollowing;
+- (void) openStarred;
+- (void) signOut;
+@end
 
 @interface TCMainUserProfileView : TCTableViewContainer
 @property (strong, nonatomic) TCUser                   *user;
-@property (weak, nonatomic) id <TCProfileViewDelegate> delegate;
+@property (weak, nonatomic) id <TCMainUserProfileViewDelegate> delegate;
 @end

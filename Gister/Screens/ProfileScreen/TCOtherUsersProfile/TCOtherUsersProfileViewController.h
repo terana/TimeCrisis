@@ -4,11 +4,10 @@
 
 #import <UIKit/UIKit.h>
 #import "TCViewController.h"
-#import "TCProfileViewDelegate.h"
 #import "TCMainUserProfileViewController.h"
 
 @class TCUser;
 
-@interface TCOtherUsersProfileViewController : TCViewController <TCProfileViewDelegate>
+@interface TCOtherUsersProfileViewController : TCViewController
 @property (strong, nonatomic) TCUser *user;
 @end

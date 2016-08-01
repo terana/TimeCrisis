@@ -7,6 +7,10 @@
 #import "TCOtherUsersGistListViewController.h"
 #import "TCServerManager.h"
 #import "TCUsersListViewController.h"
+#import "UIViewController+ShowError.h"
+
+@interface TCOtherUsersProfileViewController () <TCOtherUsersProfileViewDelegate>
+@end
 
 @implementation TCOtherUsersProfileViewController
 {
@@ -47,6 +51,10 @@
 			vc.title = @"Followers";
 			[[self navigationController] pushViewController:vc animated:YES];
 		}
+		else
+		{
+			[self showMessageWithError:error callback:nil];
+		}
 	}];
 }
 
@@ -59,6 +67,10 @@
 			vc.users = users;
 			vc.title = @"Followings";
 			[[self navigationController] pushViewController:vc animated:YES];
+		}
+		else
+		{
+			[self showMessageWithError:error callback:nil];
 		}
 	}];
 }

@@ -3,9 +3,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TCAuthenticationScreenViewDelegate.h"
 
-@interface TCAuthenticationScreenView : UIView
+@protocol TCAuthenticationScreenViewDelegate <NSObject>
+- (void) signIn;
+@end
+
+@interface TCWelcomeScreenView : UIView
 @property (strong, nonatomic) id <TCAuthenticationScreenViewDelegate> delegate;
 - (void) signIn;
 @end

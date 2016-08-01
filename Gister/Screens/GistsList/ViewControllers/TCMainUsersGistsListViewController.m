@@ -10,6 +10,7 @@
 
 @implementation TCMainUsersGistsListViewController
 {
+
 }
 + (Class) viewClass
 {
@@ -36,8 +37,10 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-	[self reloadInputViews];
 	[super viewWillAppear:animated];
+
+	//[[TCServerManager shared] getGistsForMainUserWithCallback];
+
 	TCGistsListView *view = self.view;
 	view.data = _gists;
 }

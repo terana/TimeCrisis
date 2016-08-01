@@ -4,10 +4,8 @@
 
 #import <KeepLayout/KeepLayout.h>
 #import "TCMainUserProfileView.h"
-#import "TCGeneralProfileInfoView.h"
-#import "NSObject+TCDoWith.h"
-#import "TCProfileViewDelegate.h"
 #import "TCUser.h"
+#import "TCGeneralProfileInfoTableCell.h"
 
 @implementation TCMainUserProfileView
 {
@@ -19,7 +17,8 @@
 
 + (NSDictionary *) cellIdentifiers
 {
-	return @{ @"Cell" : [UITableViewCell class] };
+	return @{ @"PlainCell" : [UITableViewCell class],
+			@"CellWithUserInfo" : [TCGeneralProfileInfoTableCell class] };
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -38,19 +37,15 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+	UITableViewCell *cell;
 
 	switch (indexPath.section)
 	{
 		case 0:
 		{
-			__unused TCGeneralProfileInfoView *view = [TCGeneralProfileInfoView tc_with:^(TCGeneralProfileInfoView *o) {
-				if (_user)
-				{o.user = _user;}
-				UIView *view = cell.contentView;
-				[view addSubview:o];
-				o.keepInsets.equal = 0;
-			}];
+			cell = [tableView dequeueReusableCellWithIdentifier:@"CellWithUserInfo"];
+			TCGeneralProfileInfoTableCell *infoCell = (TCGeneralProfileInfoTableCell *) cell;
+			infoCell.user = _user;
 			break;
 		}
 		case 1:
@@ -60,41 +55,45 @@
 			{
 				case 0:
 				{
-					cell.textLabel.text = [NSString stringWithFormat:@"%d Gists", [_user.privateGists unsignedIntegerValue] + [_user.publicGists unsignedIntegerValue]];
+					cell = [tableView dequeueReusableCellWithIdentifier:@"PlainCell"];
+					cell.textLabel.text = [NSString stringWithFormat:@"%d Gists", [_user.publicGists unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				case 1:
 				{
+					cell = [tableView dequeueReusableCellWithIdentifier:@"PlainCell"];
 					cell.textLabel.text = [NSString stringWithFormat:@"%d Followers", [_user.followers unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				case 2:
 				{
+					cell = [tableView dequeueReusableCellWithIdentifier:@"PlainCell"];
 					cell.textLabel.text = [NSString stringWithFormat:@"%d Following", [_user.following unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				case 3:
 				{
+					cell = [tableView dequeueReusableCellWithIdentifier:@"PlainCell"];
 					cell.textLabel.text = @"Starred gists";
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}
 				default:
-				{
-					cell.textLabel.text = @"";
-					cell.accessoryType  = UITableViewCellAccessoryNone;
 					break;
-				}
 			}
 			break;
 		}
 		case 2:
 		{
+			cell = [tableView dequeueReusableCellWithIdentifier:@"PlainCell"];
+			cell.accessoryType  = UITableViewCellAccessoryNone;
 			cell.textLabel.text = @"Sign out";
 		}
+		default:
+			break;
 	}
 	return cell;
 }
