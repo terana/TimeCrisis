@@ -9,7 +9,7 @@
 {
 	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertActionStyleDefault];
 	[alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-		callback();
+		callback ? callback() : nil;
 	}]];
 	[self presentViewController:alertController animated:YES completion:nil];
 }

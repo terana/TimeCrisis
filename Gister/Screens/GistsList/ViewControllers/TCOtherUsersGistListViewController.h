@@ -5,8 +5,8 @@
 #import <UIKit/UIKit.h>
 #import "TCUser.h"
 #import "TCViewController.h"
-#import "TCGistsListViewDelegate.h"
+#import "TCGistsListView.h"
 
 @interface TCOtherUsersGistsListViewController : TCViewController <TCGistsListViewDelegate>
-@property (strong, nonatomic) TCUser *user;
+@property (strong, nonatomic) NSArray *gists;
 @end

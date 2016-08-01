@@ -3,7 +3,6 @@
 //
 
 #import "TCPublicGistsListViewController.h"
-#import "TCGistsListView.h"
 #import "TCUsersFilesListViewController.h"
 #import "TCServerManager.h"
 #import "TCPublicFilesListViewController.h"
@@ -17,21 +16,22 @@
 	return [TCGistsListView class];
 }
 
--(instancetype)init
+- (instancetype) init
 {
 	self = [super init];
-	if(self)
+	if (self)
 	{
 		self.title = @"Recent gists";
 	}
 	return self;
 }
+
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
 	[[TCServerManager shared] getPublicGistsWithCallback:^(NSArray *gists, NSError *error) {
-	 	TCGistsListView *view = self.view;
-		view.data = gists;
+		TCGistsListView *view = self.view;
+		view.data             = gists;
 	}];
 }
 

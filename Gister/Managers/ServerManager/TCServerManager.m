@@ -17,7 +17,6 @@ static const NSString *const clientSecret = @"fb76ebe1be54a5b1b37981af7dc4950b0b
 	TCServer *_server;
 	NSString *_accessToken;
 	NSString *_mainUserLogin;
-	void (^_callback)(NSError *);
 }
 + (instancetype) shared
 {
@@ -40,6 +39,8 @@ static const NSString *const clientSecret = @"fb76ebe1be54a5b1b37981af7dc4950b0b
 	return self;
 }
 
+#pragma mark - Authentication
+
 - (BOOL) foundAccessToken
 {
 	return (_accessToken != nil);
@@ -48,9 +49,9 @@ static const NSString *const clientSecret = @"fb76ebe1be54a5b1b37981af7dc4950b0b
 - (void) signInFromViewController:(TCViewController *)viewController callback:(void (^)(NSError *))callback
 {
 	BOOL (^blockForWebViewTryingLoadRequest)(NSURLRequest *) = ^(NSURLRequest *request) {
-		NSString *url  = request.URL.absoluteString;
+		NSString *url = request.URL.absoluteString;
 		NSLog(@"%@", url);
-		NSRange  range = [url rangeOfString:@"code"];
+		NSRange range = [url rangeOfString:@"code"];
 		if (range.location == NSNotFound)
 		{
 			return YES;
@@ -112,31 +113,15 @@ static const NSString *const clientSecret = @"fb76ebe1be54a5b1b37981af7dc4950b0b
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"access_token"];
 }
 
+#pragma mark - Getting information for main user
+
 - (void) getInformationForMainUserWithCallback:(void (^)(TCUser *, NSError *))callback
 {
-	[_server doGet:@"/user" withParameters:@{ @"access_token" : [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"] } callback:[self callbackParsingClass:[TCUser class] andSendingTo:callback]];
+	[_server doGet:@"/user" withParameters:@{ @"access_token" : _accessToken } callback:[self callbackParsingClass:[TCUser class] andSendingTo:^(TCUser *user, NSError *error) {
+		_mainUserLogin = user.login;
+		callback(user, error);
+	}]];
 }
-
-- (void (^)(id, NSError *)) callbackParsingClass:(Class)cl andSendingTo:(void (^)(id, NSError *))callback
-{
-	return ^(id result, NSError *error) {
-		if (error)
-		{
-			callback(nil, error);
-		}
-
-		callback([self parse:result as:cl], nil);
-	};
-}
-
-- (id) parse:(id)primitives as:(Class)cl
-{
-	if ([primitives isKindOfClass:[NSDictionary class]])
-	{
-		primitives = [primitives dictionaryWithoutNSNull];
-	}
-	return [cl unmap:primitives];
-};
 
 - (void) getGistsForMainUserWithCallback:(void (^)(NSArray *, NSError *))callback
 {
@@ -144,48 +129,53 @@ static const NSString *const clientSecret = @"fb76ebe1be54a5b1b37981af7dc4950b0b
 	[_server doGet:path withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
 }
 
-- (void) getImageWithURL:(NSString *)imageURL callback:(void (^)(UIImage *, NSError *))callback
+- (void) getStarredGistsWithCallback:(void (^)(NSArray *, NSError *))callback
 {
-	[_server doGetWithURL:imageURL callback:[self callbackCreatingImageAndSendingTo:callback]];
+	[_server doGet:@"/gists/starred" withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
 }
 
-- (void (^)(id, NSError *)) callbackCreatingImageAndSendingTo:(void (^)(UIImage *, NSError *))callback
-{
-	return ^(NSData *data, NSError *error) {
-		if (error)
-		{
-			callback(nil, error);
-		}
-		callback([UIImage imageWithData:data], error);
-	};
-}
+#pragma mark - Getting information for other users
 
+- (void) getInformationForUser:(TCUser *)user withCallback:(void (^)(TCUser *, NSError *))callback
+{
+	NSString *path = [NSString stringWithFormat:@"/users/%@", user.login];
+	[_server doGet:path withParameters:nil callback:[self callbackParsingClass:[TCUser class] andSendingTo:callback]];
+}
 
 - (void) getGistsForUser:(TCUser *)user callback:(void (^)(NSArray *, NSError *))callback
 {
 	[_server doGet:[NSString stringWithFormat:@"/users/%@/gists", user.login] withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
 }
 
-- (void (^)(id, NSError *)) callbackParsingCollectionOfClass:(Class)cl andSendingTo:(void (^)(id, NSError *))callback
+- (void) getFollowersForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback
 {
-	return ^(id result, NSError *error) {
-		if (error)
-		{
-			callback(nil, error);
-		}
-		NSMutableArray   *array = [NSMutableArray new];
-		for (__strong id object in result)
-		{
-			[array addObject:[self parse:object as:cl]];
-		}
-		callback(array, error);
-	};
+	NSString *path = [NSString stringWithFormat:@"/users/%@/followers", user.login];
+	[_server doGet:path withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCUser class] andSendingTo:callback]];
 }
+
+- (void) getFollowingForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback
+{
+	NSString *path = [NSString stringWithFormat:@"/users/%@/following", user.login];
+	[_server doGet:path withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCUser class] andSendingTo:callback]];
+}
+
 
 - (void) getPublicGistsWithCallback:(void (^)(NSArray *, NSError *))callback
 {
 	[_server doGet:@"/gists/public" withParameters:@{ } callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
 }
+
+- (void) getFileContentForFile:(TCFile *)file withCallback:(void (^)(NSString *, NSError *))callback
+{
+	[_server doGetWithURL:file.rawURL callback:[self callbackCreatingStringAndSendingTo:callback]];
+}
+
+- (void) getImageWithURL:(NSString *)imageURL callback:(void (^)(UIImage *, NSError *))callback
+{
+	[_server doGetWithURL:imageURL callback:[self callbackCreatingImageAndSendingTo:callback]];
+}
+
+#pragma mark - Managing gists
 
 - (void) createGist:(TCGist *)gist callback:(void (^)(TCGist *, NSError *))callback
 {
@@ -227,9 +217,45 @@ static const NSString *const clientSecret = @"fb76ebe1be54a5b1b37981af7dc4950b0b
 	[_server doPatch:path withParameters:nil body:dictionary callback:[self callbackParsingClass:[TCGist class] andSendingTo:callback]];
 }
 
-- (void) getFileContentForFile:(TCFile *)file withCallback:(void (^)(NSString *, NSError *))callback
+#pragma mark - Modifying callbacks
+
+- (void (^)(id, NSError *)) callbackParsingClass:(Class)cl andSendingTo:(void (^)(id, NSError *))callback
 {
-	[_server doGetWithURL:file.rawURL callback:[self callbackCreatingStringAndSendingTo:callback]];
+	return ^(id result, NSError *error) {
+		if (error)
+		{
+			callback(nil, error);
+		}
+
+		callback([self parse:result as:cl], nil);
+	};
+}
+
+- (void (^)(id, NSError *)) callbackCreatingImageAndSendingTo:(void (^)(UIImage *, NSError *))callback
+{
+	return ^(NSData *data, NSError *error) {
+		if (error)
+		{
+			callback(nil, error);
+		}
+		callback([UIImage imageWithData:data], error);
+	};
+}
+
+- (void (^)(id, NSError *)) callbackParsingCollectionOfClass:(Class)cl andSendingTo:(void (^)(id, NSError *))callback
+{
+	return ^(id result, NSError *error) {
+		if (error)
+		{
+			callback(nil, error);
+		}
+		NSMutableArray   *array = [NSMutableArray new];
+		for (__strong id object in result)
+		{
+			[array addObject:[self parse:object as:cl]];
+		}
+		callback(array, error);
+	};
 }
 
 - (void (^)(id, NSError *)) callbackCreatingStringAndSendingTo:(void (^)(NSString *, NSError *))callback
@@ -243,27 +269,12 @@ static const NSString *const clientSecret = @"fb76ebe1be54a5b1b37981af7dc4950b0b
 	};
 }
 
-
-- (void) getFollowersForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback
+- (id) parse:(id)primitives as:(Class)cl
 {
-	NSString *path = [NSString stringWithFormat:@"/users/%@/followers", user.login];
-	[_server doGet:path withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCUser class] andSendingTo:callback]];
-}
-
-- (void) getFollowingForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback
-{
-	NSString *path = [NSString stringWithFormat:@"/users/%@/following", user.login];
-	[_server doGet:path withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCUser class] andSendingTo:callback]];
-}
-
-- (void) getStarredGistsWithCallback:(void (^)(NSArray *, NSError *))callback
-{
-	[_server doGet:@"/gists/starred" withParameters:nil callback:[self callbackParsingCollectionOfClass:[TCGist class] andSendingTo:callback]];
-}
-
-- (void) getInformationForUser:(TCUser *)user withCallback:(void (^)(TCUser *, NSError *))callback
-{
-	NSString *path = [NSString stringWithFormat:@"/users/%@", user.login];
-	[_server doGet:path withParameters:nil callback:[self callbackParsingClass:[TCUser class] andSendingTo:callback]];
-}
+	if ([primitives isKindOfClass:[NSDictionary class]])
+	{
+		primitives = [primitives dictionaryWithoutNSNull];
+	}
+	return [cl unmap:primitives];
+};
 @end

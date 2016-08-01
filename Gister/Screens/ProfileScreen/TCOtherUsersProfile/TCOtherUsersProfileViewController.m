@@ -4,10 +4,8 @@
 
 #import "TCOtherUsersProfileViewController.h"
 #import "TCOtherUsersProfileView.h"
-#import "TCOtherUsersGistListViewController.h"
 #import "TCServerManager.h"
-#import "TCUsersListViewController.h"
-#import "UIViewController+ShowError.h"
+#import "TCPresentationManager.h"
 
 @interface TCOtherUsersProfileViewController () <TCOtherUsersProfileViewDelegate>
 @end
@@ -16,29 +14,34 @@
 {
 }
 
-- (void) viewWillAppear:(BOOL)animated
-{
-	[self reloadInputViews];
-	[super viewWillAppear:animated];
-
-	TCOtherUsersProfileView *view = self.view;
-	view.user = self.user;
-}
-
-- (void) openGists
-{
-	TCOtherUsersGistsListViewController *vc = [TCOtherUsersGistsListViewController new];
-	vc.user = _user;
-	[[self navigationController] pushViewController:vc animated:YES];
-}
+//- (void) viewWillAppear:(BOOL)animated
+//{
+//	[super viewWillAppear:animated];
+//
+//	TCOtherUsersProfileView *view = self.view;
+//	view.user = self.user;
+//}
 
 - (void) setUser:(TCUser *)user
 {
 	_user = user;
 
-	TCOtherUsersProfileView *view = self.view;
+	TCOtherUsersProfileView *view = (TCOtherUsersProfileView *) self.view;
 	view.user = self.user;
-	[self reloadInputViews];
+}
+
+- (void) openGists
+{
+	[[TCServerManager shared] getGistsForUser:_user callback:^(NSArray *gists, NSError *error) {
+		if (error == nil)
+		{
+			[[TCPresentationManager shared] openOtherUserGists:gists withSender:self];
+		}
+		else
+		{
+			[[TCPresentationManager shared] showMessageWithError:error sender:self callback:nil];
+		}
+	}];
 }
 
 - (void) openFollowers
@@ -46,14 +49,11 @@
 	[[TCServerManager shared] getFollowersForUser:_user withCallback:^(NSArray *users, NSError *error) {
 		if (!error)
 		{
-			TCUsersListViewController *vc = [TCUsersListViewController new];
-			vc.users = users;
-			vc.title = @"Followers";
-			[[self navigationController] pushViewController:vc animated:YES];
+			[[TCPresentationManager shared] openFollowers:users withSender:self];
 		}
 		else
 		{
-			[self showMessageWithError:error callback:nil];
+			[[TCPresentationManager shared] showMessageWithError:error sender:self callback:nil];
 		}
 	}];
 }
@@ -63,14 +63,11 @@
 	[[TCServerManager shared] getFollowingForUser:_user withCallback:^(NSArray *users, NSError *error) {
 		if (!error)
 		{
-			TCUsersListViewController *vc = [TCUsersListViewController new];
-			vc.users = users;
-			vc.title = @"Followings";
-			[[self navigationController] pushViewController:vc animated:YES];
+			[[TCPresentationManager shared] openFollowers:users withSender:self];
 		}
 		else
 		{
-			[self showMessageWithError:error callback:nil];
+			[[TCPresentationManager shared] showMessageWithError:error sender:self callback:nil];
 		}
 	}];
 }

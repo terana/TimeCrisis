@@ -4,8 +4,6 @@
 
 #import "TCMainUsersGistsListViewController.h"
 #import "TCGistsListView.h"
-#import "TCServerManager.h"
-#import "TCUsersFilesListViewController.h"
 #import "TCOtherUsersGistListViewController.h"
 #import "TCPublicFilesListViewController.h"
 
@@ -27,17 +25,10 @@
 	return self;
 }
 
-- (void) viewWillAppear:(BOOL)animated
+- (void) setGists:(NSArray *)gists
 {
-	[super viewWillAppear:animated];
-
-	[[TCServerManager shared] getGistsForUser:_user callback:^(NSArray *gists, NSError *error) {
-		if (error == nil)
-		{
-			TCGistsListView *view = self.view;
-			view.data = gists;
-		}
-	}];
+	TCGistsListView *view = (TCGistsListView *) self.view;
+	view.data = gists;
 }
 
 - (void) gistIsSelected:(TCGist *)gist

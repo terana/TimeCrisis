@@ -102,7 +102,6 @@
 		CBB6B5DF405BD2E1E7AD5CC4 /* TCPublicFileContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPublicFileContentView.m; sourceTree = "<group>"; };
 		CBB6B622E80A6C30A3AF3FAB /* NSObject+TCDoWith.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TCDoWith.m"; sourceTree = "<group>"; };
 		CBB6B63FF72771DD4BC126C9 /* UIView+TCTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TCTapAction.m"; sourceTree = "<group>"; };
-		CBB6B6640F098C329E7D8F17 /* TCGistsListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGistsListViewDelegate.h; sourceTree = "<group>"; };
 		CBB6B67D95A732171A262092 /* TCOtherUsersGistListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCOtherUsersGistListViewController.h; sourceTree = "<group>"; };
 		CBB6B6AAFF61504861ACB241 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBB6B6EE96EEB7E0B173B966 /* TCDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCDraggableView.m; sourceTree = "<group>"; };
@@ -273,7 +272,6 @@
 		CBB6B337B2DBE1C54DF3241E /* GistsList */ = {
 			isa = PBXGroup;
 			children = (
-				CBB6B6640F098C329E7D8F17 /* TCGistsListViewDelegate.h */,
 				CBB6B387B00B582B78A35682 /* ViewControllers */,
 				CBB6BB955C8520EDAF682F7C /* Views */,
 			);

@@ -3,7 +3,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TCGistsListViewDelegate.h"
+#import "TCGistsListView.h"
 #import "TCViewController.h"
 
 @interface TCPublicGistsListViewController : TCViewController <TCGistsListViewDelegate>

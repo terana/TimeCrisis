@@ -3,10 +3,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TCGistsListViewDelegate.h"
 #import "TCTableViewContainer.h"
 
+@class TCGist;
+
+@protocol TCGistsListViewDelegate <NSObject>
+- (void) gistIsSelected:(TCGist *)gist;
+@end
+
 @interface TCGistsListView : TCTableViewContainer
-@property (strong, nonatomic) NSArray                              *data;
+@property (strong, nonatomic) NSArray                    *data;
 @property (nonatomic, weak) id <TCGistsListViewDelegate> delegate;
 @end

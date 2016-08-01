@@ -5,10 +5,7 @@
 #import "TCMainUserProfileViewController.h"
 #import "TCMainUserProfileView.h"
 #import "TCServerManager.h"
-#import "TCPublicGistsListViewController.h"
 #import "UIViewController+ShowError.h"
-#import "TCMainUsersGistsListViewController.h"
-#import "TCUsersListViewController.h"
 #import "TCPresentationManager.h"
 #import "KeepLayout/KeepLayout.h"
 #import "NSObject+TCDoWith.h"
@@ -19,6 +16,7 @@
 @implementation TCMainUserProfileViewController
 {
 	TCUser *_user;
+	UIActivityIndicatorView *_activityIndicator;
 }
 
 - (instancetype) init
@@ -35,21 +33,21 @@
 {
 	[super viewWillAppear:animated];
 
-	__unused UIActivityIndicatorView *activityIndicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] tc_with:^(UIActivityIndicatorView *o) {
+	__unused UIActivityIndicatorView *activityIndicator = _activityIndicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] tc_with:^(UIActivityIndicatorView *o) {
 		o.hidden           = YES;
 		o.color            = [UIColor grayColor];
 		o.hidesWhenStopped = YES;
 		[self.view addSubview:o];
 		o.keepCenter.equal = 0.5;
 	}];
-	[activityIndicator startAnimating];
+	[_activityIndicator startAnimating];
 	[[TCServerManager shared] getInformationForMainUserWithCallback:^(TCUser *user, NSError *error) {
-		[activityIndicator stopAnimating];
+		[_activityIndicator stopAnimating];
 		if (error == nil)
 		{
-			_user                       = user;
-			TCMainUserProfileView *view = self.view;
-			view.user = _user;
+			_user = user;
+			TCMainUserProfileView *view = (TCMainUserProfileView *)self.view;
+			view.user = user;
 		}
 		else
 		{
@@ -66,28 +64,17 @@
 
 - (void) openGists
 {
-	[[TCServerManager shared] getGistsForUser:_user callback:^(NSArray *gists, NSError *error) {
-		if (error == nil)
-		{
-			TCMainUsersGistsListViewController *vc = [TCMainUsersGistsListViewController new];
-			vc.gists = gists;
-			[[self navigationController] pushViewController:vc animated:YES];
-		}
-		else
-		{
-			[self showMessageWithError:error callback:nil];
-		}
-	}];
+	[[TCPresentationManager shared] openMainUserGistsWithSender:self];
 }
 
 - (void) openStarred
 {
+	[_activityIndicator startAnimating];
 	[[TCServerManager shared] getStarredGistsWithCallback:^(NSArray *gists, NSError *error) {
+		[_activityIndicator stopAnimating];
 		if (error == nil)
 		{
-			TCMainUsersGistsListViewController *vc = [TCMainUsersGistsListViewController new];
-			vc.gists = gists;
-			[[self navigationController] pushViewController:vc animated:YES];
+			[[TCPresentationManager shared] openStarredGists:gists withSender:self];
 		}
 		else
 		{
@@ -98,34 +85,32 @@
 
 - (void) openFollowers
 {
+	[_activityIndicator startAnimating];
 	[[TCServerManager shared] getFollowersForUser:_user withCallback:^(NSArray *users, NSError *error) {
+		[_activityIndicator stopAnimating];
 		if (!error)
 		{
-			TCUsersListViewController *vc = [TCUsersListViewController new];
-			vc.users = users;
-			vc.title = @"Followers";
-			[[self navigationController] pushViewController:vc animated:YES];
+			[[TCPresentationManager shared] openFollowers:users withSender:self];
 		}
 		else
 		{
-			[self showMessageWithError:error callback:nil];
+			[[TCPresentationManager shared] showMessageWithError:error sender:self callback:nil];
 		}
 	}];
 }
 
 - (void) openFollowing
 {
+	[_activityIndicator startAnimating];
 	[[TCServerManager shared] getFollowingForUser:_user withCallback:^(NSArray *users, NSError *error) {
+		[_activityIndicator stopAnimating];
 		if (!error)
 		{
-			TCUsersListViewController *vc = [TCUsersListViewController new];
-			vc.users = users;
-			vc.title = @"Following";
-			[[self navigationController] pushViewController:vc animated:YES];
+			[[TCPresentationManager shared] openFollowing:users withSender:self];
 		}
 		else
 		{
-			[self showMessageWithError:error callback:nil];
+			[[TCPresentationManager shared] showMessageWithError:error sender:self callback:nil];
 		}
 	}];
 }
