@@ -5,7 +5,6 @@
 #import <KeepLayout/KeepLayout.h>
 #import "TCUserTableCell.h"
 #import "NSObject+TCDoWith.h"
-#import "NSDate+TCDateString.h"
 
 @implementation TCUserTableCell
 {
@@ -32,8 +31,8 @@
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
 				oo.keepHorizontalAlignTo(_avatar).equal = 1;
-				oo.keepLeftOffsetTo(_avatar).equal = 5;
-				oo.keepRightInset.min  = 0;
+				oo.keepLeftOffsetTo(_avatar).equal      = 5;
+				oo.keepRightInset.min                   = 0;
 			}];
 		}];
 	}
@@ -43,7 +42,7 @@
 - (void) setUser:(TCUser *)user
 {
 	_user = user;
-	_avatar.imageURL    = user.avatarURL;
-	_loginLabel.text        = user.login;
+	_avatar.imageURL = user.avatarURL;
+	_loginLabel.text = user.login;
 }
 @end

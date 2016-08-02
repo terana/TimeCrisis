@@ -14,14 +14,6 @@
 {
 }
 
-//- (void) viewWillAppear:(BOOL)animated
-//{
-//	[super viewWillAppear:animated];
-//
-//	TCOtherUsersProfileView *view = self.view;
-//	view.user = self.user;
-//}
-
 - (void) setUser:(TCUser *)user
 {
 	_user = user;

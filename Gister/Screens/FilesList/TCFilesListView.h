@@ -4,10 +4,15 @@
 
 #import <UIKit/UIKit.h>
 #import "TCGist.h"
-#import "TCFilesListViewDelegate.h"
 #import "TCTableViewContainer.h"
 
+@class TCFile;
+
+@protocol TCFilesListViewDelegate <NSObject>
+- (void) fileIsSelected:(TCFile *)file;
+@end
+
 @interface TCFilesListView : TCTableViewContainer
-@property (strong, nonatomic) TCGist                               *gist;
-@property (weak, nonatomic, nullable) id <TCFilesListViewDelegate> delegate;
+@property (strong, nonatomic) NSArray                    *files;
+@property (weak, nonatomic) id <TCFilesListViewDelegate> delegate;
 @end

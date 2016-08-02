@@ -6,6 +6,10 @@
 #import "TCGist.h"
 #import "TCFilesListView.h"
 #import "TCPublicFileContentViewController.h"
+#import "TCPresentationManager.h"
+
+@interface TCPublicFilesListViewController () <TCFilesListViewDelegate>
+@end
 
 @implementation TCPublicFilesListViewController
 {
@@ -29,16 +33,12 @@
 - (void) viewDidLoad
 {
 	[super viewDidLoad];
-	TCFilesListView *view = self.view;
-	view.gist = _gist;
+	TCFilesListView *view = (TCFilesListView *) self.view;
+	view.files = _gist.files;
 }
 
 - (void) fileIsSelected:(TCFile *)file
 {
-	TCPublicFileContentViewController *vc = [TCPublicFileContentViewController new];
-	vc.file                     = file;
-	vc.title = file.filename;
-	vc.hidesBottomBarWhenPushed = YES;// HOW to hide tab bar?
-	[self.navigationController pushViewController:vc animated:YES];
+	[[TCPresentationManager shared] openOtherUserContentOfFile:file withSender:self];
 }
 @end

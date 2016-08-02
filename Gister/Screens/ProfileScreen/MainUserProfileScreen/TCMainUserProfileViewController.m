@@ -15,7 +15,7 @@
 
 @implementation TCMainUserProfileViewController
 {
-	TCUser *_user;
+	TCUser                  *_user;
 	UIActivityIndicatorView *_activityIndicator;
 }
 
@@ -45,8 +45,8 @@
 		[_activityIndicator stopAnimating];
 		if (error == nil)
 		{
-			_user = user;
-			TCMainUserProfileView *view = (TCMainUserProfileView *)self.view;
+			_user                       = user;
+			TCMainUserProfileView *view = (TCMainUserProfileView *) self.view;
 			view.user = user;
 		}
 		else

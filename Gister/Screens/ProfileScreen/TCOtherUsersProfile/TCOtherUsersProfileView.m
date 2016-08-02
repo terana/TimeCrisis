@@ -3,9 +3,6 @@
 //
 
 #import "TCOtherUsersProfileView.h"
-#import "TCGeneralProfileInfoView.h"
-#import "KeepLayout/KeepLayout.h"
-#import "NSObject+TCDoWith.h"
 #import "TCUser.h"
 #import "TCGeneralProfileInfoTableCell.h"
 
@@ -46,7 +43,7 @@
 		case 0:
 		{
 			cell = [tableView dequeueReusableCellWithIdentifier:@"CellWithUserInfo"];
-			TCGeneralProfileInfoTableCell *infoCell = (TCGeneralProfileInfoTableCell *)cell;
+			TCGeneralProfileInfoTableCell *infoCell = (TCGeneralProfileInfoTableCell *) cell;
 			infoCell.user = _user;
 			break;
 		}

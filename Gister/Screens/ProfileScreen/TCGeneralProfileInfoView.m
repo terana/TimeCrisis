@@ -31,11 +31,11 @@
 		__unused UIView *viewWithLabels = [UIView tc_with:^(UIView *o) {
 			o.backgroundColor = [UIColor whiteColor];
 			[self addSubview:o];
-			o.keepTopMarginInset.equal              = 0;
-			o.keepBottomMarginInset.equal           = 0;
-			o.keepRightMarginInset.equal            = 0;
+			o.keepTopMarginInset.equal        = 0;
+			o.keepBottomMarginInset.equal     = 0;
+			o.keepRightMarginInset.equal      = 0;
 			o.keepLeftOffsetTo(_avatar).equal = 10;
-			o.keepLeftMarginInset.equal             = KeepFitting(110);
+			o.keepLeftMarginInset.equal       = KeepFitting(110);
 
 			__unused UILabel *login = _login = [UILabel tc_with:^(UILabel *oo) {
 				oo.backgroundColor = [UIColor whiteColor];

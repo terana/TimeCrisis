@@ -9,5 +9,5 @@
 @protected
 	UITextView *_textView;
 }
-@property (nonatomic, readonly) UIScrollView *textView;
+@property (nonatomic, readonly) UITextView *textView;
 @end

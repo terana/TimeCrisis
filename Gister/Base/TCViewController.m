@@ -28,7 +28,7 @@
 {
 	Class  explicitViewClass = [[self class] viewClass];
 	Class  implicitViewClass = NSClassFromString([NSStringFromClass([self class]) stringByReplacingOccurrencesOfString:@"Controller" withString:@""]);
-	UIView *view             = [explicitViewClass ? : implicitViewClass ? : [UIView class] new];
+	UIView *view             = (UIView *) [explicitViewClass ? : implicitViewClass ? : [UIView class] new];
 
 	if (![view isKindOfClass:[UIScrollView class]] && [view respondsToSelector:@selector(setDelegate:)])
 	{

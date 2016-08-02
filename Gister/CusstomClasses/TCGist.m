@@ -5,6 +5,7 @@
 #import "TCGist.h"
 #import "NSDate+TCDateString.h"
 #import "TCFile.h"
+#import "TCUser.h"
 
 @implementation TCGist
 {
@@ -22,12 +23,13 @@
 	{
 		TCFile *file = [TCFile new];
 		file.filename = dictFile[@"filename"];
-		NSString *str = dictFile[@"size"];
 		file.rawURL   = dictFile[@"raw_url"];
 		file.gist     = gist;
 		[files addObject:file];
 	}
 	gist.files            = files;
+	NSDictionary *owner = dictionary[@"owner"];
+	gist.owner = [TCUser unmap:owner];
 	return gist;
 }
 @end

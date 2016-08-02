@@ -3,9 +3,12 @@
 //
 
 #import "TCPublicGistsListViewController.h"
-#import "TCUsersFilesListViewController.h"
+#import "TCMainUserFilesListViewController.h"
 #import "TCServerManager.h"
-#import "TCPublicFilesListViewController.h"
+#import "TCPresentationManager.h"
+
+@interface TCPublicGistsListViewController () <TCGistsListViewDelegate>
+@end
 
 @implementation TCPublicGistsListViewController
 {
@@ -30,15 +33,13 @@
 {
 	[super viewWillAppear:animated];
 	[[TCServerManager shared] getPublicGistsWithCallback:^(NSArray *gists, NSError *error) {
-		TCGistsListView *view = self.view;
-		view.data             = gists;
+		TCGistsListView *view = (TCGistsListView *) self.view;
+		view.data = gists;
 	}];
 }
 
 - (void) gistIsSelected:(TCGist *)gist
 {
-	TCPublicFilesListViewController *vc = [TCPublicFilesListViewController new];
-	vc.gist = gist;
-	[self.navigationController pushViewController:vc animated:YES];
+	[[TCPresentationManager shared] openOtheUserFilesOfGist:gist withSender:self];
 }
 @end

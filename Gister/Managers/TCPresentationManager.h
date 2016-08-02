@@ -7,6 +7,8 @@
 @class TCServerManager;
 @class TCViewController;
 @class TCUser;
+@class TCGist;
+@class TCFile;
 
 @interface TCPresentationManager : NSObject
 + (instancetype) shared;
@@ -18,4 +20,12 @@
 - (void) openFollowing:(NSArray *)following withSender:(TCViewController *)sender;
 - (void) openStarredGists:(NSArray *)gists withSender:(TCViewController *)sender;
 - (void) openOtherUserGists:(NSArray *)gists withSender:(TCViewController *)sender;
+- (void) openNewGistScreenWithSender:(TCViewController *)sender;
+- (void) openMainUserFilesOfGist:(TCGist *)gist withSender:(TCViewController *)sender;
+- (void) openOtheUserFilesOfGist:(TCGist *)gist withSender:(TCViewController *)sender;
+- (void) returnToFilesOfGist:(TCGist *)gist withSender:(TCViewController *)sender;
+- (void) openNewFile:(TCFile *)file withSender:(TCViewController *)sender;
+- (void) openOtherUserContentOfFile:(TCFile *)file withSender:(TCViewController *)sender;
+- (void) openMainUserContentOfFile:(TCFile *)file withSender:(TCViewController *)sender;
+- (void) openRenamingOfFile:(TCFile *)file withSender:(TCViewController *)sender;
 @end

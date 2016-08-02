@@ -18,7 +18,7 @@
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self)
 	{
-		self.accessoryType = UITableViewCellAccessoryNone;
+		self.accessoryType                      = UITableViewCellAccessoryNone;
 		__unused TCGeneralProfileInfoView *view = _profileInfoView = [TCGeneralProfileInfoView tc_with:^(TCGeneralProfileInfoView *o) {
 			o.backgroundColor = [UIColor whiteColor];
 			[self.contentView addSubview:o];

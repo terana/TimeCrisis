@@ -4,7 +4,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TCViewController.h"
-#import "TCCreatingGistViewDelegate.h"
+#import "TCCreatingGistView.h"
 
-@interface TCCreatingGistViewController : TCViewController <TCCreatingGistViewDelegate>
+@interface TCCreatingGistViewController : TCViewController
 @end

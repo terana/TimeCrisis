@@ -7,7 +7,6 @@
 #import "TCCreatingGistView.h"
 #import "NSObject+TCDoWith.h"
 #import "TCGist.h"
-#import "TCCreatingGistViewDelegate.h"
 #import "TCServerManager.h"
 
 @implementation TCCreatingGistView

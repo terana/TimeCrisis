@@ -31,7 +31,7 @@
 				oo.keepWidth.max             = 100;
 				oo.keepLeftMarginInset.equal = 0;
 			}];
-			__unused UILabel *descriptionLabel  = _descriptionLabel = [UILabel tc_with:^(UILabel *oo) {
+			__unused UILabel *descriptionLabel  = _descriptionLabel  = [UILabel tc_with:^(UILabel *oo) {
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
 				oo.keepTopMarginInset.equal  = 0;
@@ -43,16 +43,16 @@
 				oo.text            = @"Created at:";
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
-				oo.keepTopOffsetTo(_descriptionLabel).equal = 10;
-				oo.keepWidth.max                   = 100;
-				oo.keepLeftMarginInset.equal       = 0;
+				oo.keepTopOffsetTo(descriptionString).equal = 10;
+				oo.keepWidth.max                            = 100;
+				oo.keepLeftMarginInset.equal                = 0;
 			}];
 			__unused UILabel *creationDateLabel = _creationDateLabel = [UILabel tc_with:^(UILabel *oo) {
 				oo.backgroundColor = [UIColor whiteColor];
 				[o addSubview:oo];
-				oo.keepTopOffsetTo(_descriptionLabel).equal = 10;
-				oo.keepRightMarginInset.min        = 0;
-				oo.keepLeftMarginInset.equal       = 105;
+				oo.keepTopOffsetTo(descriptionString).equal = 10;
+				oo.keepRightMarginInset.min                 = 0;
+				oo.keepLeftMarginInset.equal                = 105;
 			}];
 		}];
 	}
@@ -63,7 +63,7 @@
 {
 	_gist = gist;
 
-	_descriptionLabel.text           = gist.gistDescription;
+	_descriptionLabel.text  = gist.gistDescription;
 	_creationDateLabel.text = [gist.creationDate stringFromDate];
 }
 @end

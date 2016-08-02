@@ -4,8 +4,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TCViewController.h"
-#import "TCUsersListViewDelegate.h"
+#import "TCUsersListView.h"
 
-@interface TCUsersListViewController : TCViewController <TCUsersListViewDelegate>
+@interface TCUsersListViewController : TCViewController
 @property (strong, nonatomic) NSArray *users;
 @end

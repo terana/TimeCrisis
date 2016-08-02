@@ -4,7 +4,6 @@
 
 #import "TCUsersListView.h"
 #import "TCUserTableCell.h"
-#import "TCUsersListViewDelegate.h"
 
 @implementation TCUsersListView
 {

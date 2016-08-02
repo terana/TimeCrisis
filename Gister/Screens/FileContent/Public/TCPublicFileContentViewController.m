@@ -3,33 +3,28 @@
 //
 
 #import "TCPublicFileContentViewController.h"
-#import "TCUserFileContentView.h"
 #import "TCServerManager.h"
+#import "TCPresentationManager.h"
+#import "TCFileContentView.h"
 #import "TCPublicFileContentView.h"
-#import "UIViewController+ShowError.h"
 
 @implementation TCPublicFileContentViewController
 {
 }
+
 - (void) viewWillAppear:(BOOL)animated
 {
-	[self reloadInputViews];
 	[super viewWillAppear:animated];
 	[[TCServerManager shared] getFileContentForFile:_file withCallback:^(NSString *content, NSError *error) {
 		if (!error)
 		{
-			TCPublicFileContentView *view = self.view;
+			TCPublicFileContentView *view = (TCPublicFileContentView *) self.view;
 			view.fileContent = content;
-			[self reloadInputViews];
 		}
 		else
 		{
-			[self showMessageWithError:error callback:^{
-				[[self navigationController] popViewControllerAnimated:YES];
-			}];
+			[[TCPresentationManager shared] showMessageWithError:error sender:self callback:nil];
 		}
 	}];
-
-	[[[self tabBarController] tabBar] setHidden:YES]; //WHY it doesn't work?
 }
 @end

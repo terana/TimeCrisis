@@ -56,7 +56,7 @@
 				case 0:
 				{
 					cell = [tableView dequeueReusableCellWithIdentifier:@"PlainCell"];
-					cell.textLabel.text = [NSString stringWithFormat:@"%d Gists", [_user.publicGists unsignedIntegerValue]];
+					cell.textLabel.text = [NSString stringWithFormat:@"%d Gists", [_user.publicGists unsignedIntegerValue] + [_user.privateGists unsignedIntegerValue]];
 					cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 					break;
 				}

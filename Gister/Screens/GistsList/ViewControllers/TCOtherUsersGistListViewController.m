@@ -3,9 +3,11 @@
 //
 
 #import "TCMainUsersGistsListViewController.h"
-#import "TCGistsListView.h"
 #import "TCOtherUsersGistListViewController.h"
-#import "TCPublicFilesListViewController.h"
+#import "TCPresentationManager.h"
+
+@interface TCOtherUsersGistsListViewController () <TCGistsListViewDelegate>
+@end
 
 @implementation TCOtherUsersGistsListViewController
 {
@@ -33,8 +35,6 @@
 
 - (void) gistIsSelected:(TCGist *)gist
 {
-	TCPublicFilesListViewController *vc = [TCPublicFilesListViewController new];
-	vc.gist = gist;
-	[self.navigationController pushViewController:vc animated:YES];
+	[[TCPresentationManager shared] openOtheUserFilesOfGist:gist withSender:self];
 }
 @end

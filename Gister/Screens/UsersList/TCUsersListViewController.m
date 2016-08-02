@@ -3,29 +3,30 @@
 //
 
 #import "TCUsersListViewController.h"
-#import "TCUsersListView.h"
 #import "TCMainUserProfileViewController.h"
 #import "TCOtherUsersProfileViewController.h"
 #import "TCServerManager.h"
 
+@interface TCUsersListViewController () <TCUsersListViewDelegate>
+@end
+
 @implementation TCUsersListViewController
 {
-}
-- (void) viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:animated];
-
-	TCUsersListView *view = self.view;
-	view.users = _users;
 }
 
 - (void) openProfileOfUser:(TCUser *)user
 {
-	[[TCServerManager shared] getInformationForUser:user withCallback:^(TCUser *userWithFullInformation, NSError *error){
+	[[TCServerManager shared] getInformationForUser:user withCallback:^(TCUser *userWithFullInformation, NSError *error) {
 		TCOtherUsersProfileViewController *vc = [TCOtherUsersProfileViewController new];
 		vc.user = userWithFullInformation;
 		[[self navigationController] pushViewController:vc animated:YES];
 	}];
+}
 
+- (void) setUsers:(NSArray *)users
+{
+	_users = users;
+	TCUsersListView *view = (TCUsersListView *) self.view;
+	view.users = users;
 }
 @end

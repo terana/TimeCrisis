@@ -4,29 +4,15 @@
 
 #import "TCCreatingGistViewController.h"
 #import "TCServerManager.h"
-#import "TCUsersFilesListViewController.h"
-#import "UIViewController+ShowError.h"
+#import "TCPresentationManager.h"
+
+@interface TCCreatingGistViewController () <TCCreatingGistViewDelegate>
+@end
 
 @implementation TCCreatingGistViewController
 {
 }
-- (void) createGist:(TCGist *)gist
-{
-	[[TCServerManager shared] createGist:gist callback:^(TCGist *gist1, NSError *error) {
-		if (error == nil)
-		{
-			TCUsersFilesListViewController *vc = [TCUsersFilesListViewController new];
-			vc.gist = gist1;
-			[[self navigationController] pushViewController:vc animated:YES];
-		}
-		else
-		{
-			[self showMessageWithError:error callback:^{
-			}];
-		}
-	}];
-}
--(instancetype) init
+- (instancetype) init
 {
 	self = [super init];
 	if (self)
@@ -34,5 +20,19 @@
 		self.title = @"New gist";
 	}
 	return self;
+}
+
+- (void) createGist:(TCGist *)gist
+{
+	[[TCServerManager shared] createGist:gist callback:^(TCGist *gist1, NSError *error) {
+		if (error == nil)
+		{
+			[[TCPresentationManager shared] openMainUserGistsWithSender:self];
+		}
+		else
+		{
+			[[TCPresentationManager shared] showMessageWithError:error sender:self callback:nil];
+		}
+	}];
 }
 @end

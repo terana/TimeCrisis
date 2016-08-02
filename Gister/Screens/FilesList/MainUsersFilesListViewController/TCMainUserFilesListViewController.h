@@ -6,6 +6,6 @@
 #import "TCGist.h"
 #import "TCViewController.h"
 
-@interface TCUsersFilesListViewController : TCViewController
+@interface TCMainUserFilesListViewController : TCViewController
 @property (strong, nonatomic) TCGist *gist;
 @end

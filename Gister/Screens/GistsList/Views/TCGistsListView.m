@@ -40,7 +40,7 @@
 		return cell;
 	}
 	TCGistTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-	cell.gist          = _data[indexPath.row];
+	cell.gist          = _data[(NSUInteger) indexPath.row];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
 	return cell;
@@ -53,6 +53,9 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[_delegate gistIsSelected:_data[indexPath.row]];
+	if (_data.count)
+	{
+		[_delegate gistIsSelected:_data[(NSUInteger) indexPath.row]];
+	}
 }
 @end

@@ -5,7 +5,11 @@
 #import <UIKit/UIKit.h>
 #import "TCTableViewContainer.h"
 
-@protocol TCCreatingGistViewDelegate;
+@class TCGist;
+
+@protocol TCCreatingGistViewDelegate <NSObject>
+- (void) createGist:(TCGist *)gist;
+@end
 
 @interface TCCreatingGistView : TCTableViewContainer
 @property (weak, nonatomic) id <TCCreatingGistViewDelegate> delegate;

@@ -6,5 +6,5 @@
 #import "TCGistsListView.h"
 #import "TCViewController.h"
 
-@interface TCPublicGistsListViewController : TCViewController <TCGistsListViewDelegate>
+@interface TCPublicGistsListViewController : TCViewController
 @end

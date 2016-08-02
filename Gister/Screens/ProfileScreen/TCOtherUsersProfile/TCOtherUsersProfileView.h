@@ -15,6 +15,6 @@
 @end
 
 @interface TCOtherUsersProfileView : TCTableViewContainer
-@property (strong, nonatomic) TCUser                           *user;
+@property (strong, nonatomic) TCUser                             *user;
 @property (weak, nonatomic) id <TCOtherUsersProfileViewDelegate> delegate;
 @end

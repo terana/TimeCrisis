@@ -18,7 +18,7 @@
 
 - (void) signIn
 {
-	__unused UIActivityIndicatorView *activityIndicator  = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] tc_with:^(UIActivityIndicatorView *o) {
+	__unused UIActivityIndicatorView *activityIndicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] tc_with:^(UIActivityIndicatorView *o) {
 		o.hidden           = YES;
 		o.color            = [UIColor grayColor];
 		o.hidesWhenStopped = YES;
