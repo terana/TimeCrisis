@@ -173,9 +173,9 @@
 
 - (void) returnToFilesOfGist:(TCGist *)gist withSender:(TCViewController *)sender
 {
-	NSArray *viewControllers = sender.navigationController.viewControllers;
-	NSUInteger index = [viewControllers indexOfObject:sender];
-	TCMainUserFilesListViewController *vc = viewControllers[index - 1];
+	NSArray                           *viewControllers = sender.navigationController.viewControllers;
+	NSUInteger                        index            = [viewControllers indexOfObject:sender];
+	TCMainUserFilesListViewController *vc              = viewControllers[index - 1];
 	vc.gist = gist;
 	[sender.navigationController popViewControllerAnimated:YES];
 }
@@ -217,7 +217,7 @@
 		                                                     [[TCServerManager shared] editGist:file.gist withCallback:^(TCGist *gist, NSError *error) { //TODO do block in sender
 			                                                     if (error == nil)
 			                                                     {
-				                                                     file.gist                             = gist;
+				                                                     file.gist = gist;
 				                                                     [self returnToFilesOfGist:gist withSender:sender];
 			                                                     }
 			                                                     else
@@ -227,7 +227,7 @@
 		                                                     }];
 	                                                     }];
 	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-	[alert addAction: cancelAction];
+	[alert addAction:cancelAction];
 	[alert addAction:renameAction];
 	[alert setPreferredAction:renameAction];
 
@@ -246,7 +246,7 @@
 	[_window setRootViewController:navigationController];
 }
 
-#pragma  mark - Handling errors
+#pragma  mark - Presenting alerts
 
 - (void) showMessageWithError:(NSError *)error sender:(TCViewController *)sender callback:(void (^)())callback
 {
@@ -254,6 +254,18 @@
 	[alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
 		callback ? callback() : nil; //TODO
 	}]];
+	[sender presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void) showGistRemovingAlertWithSender:(TCViewController *)sender action:(void (^)())action
+{
+	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Do you realy want to delete this gist?" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction     *deleteAction    = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action1) {
+		action();
+	}];
+	UIAlertAction     *cancelAction    = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+	[alertController addAction:deleteAction];
+	[alertController addAction:cancelAction];
 	[sender presentViewController:alertController animated:YES completion:nil];
 }
 @end

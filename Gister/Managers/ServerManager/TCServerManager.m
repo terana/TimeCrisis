@@ -217,6 +217,12 @@ static const NSString *const clientSecret = @"fb76ebe1be54a5b1b37981af7dc4950b0b
 	[_server doPatch:path withParameters:nil body:dictionary callback:[self callbackParsingClass:[TCGist class] andSendingTo:callback]];
 }
 
+- (void) deleteGist:(TCGist *)gist withCallback:(void (^)(NSError *))callback
+{
+	NSString *path = [NSString stringWithFormat:@"/gists/%@", gist.id];
+	[_server doDelete:path withParameters:nil callback:callback];
+}
+
 #pragma mark - Modifying callbacks
 
 - (void (^)(id, NSError *)) callbackParsingClass:(Class)cl andSendingTo:(void (^)(id, NSError *))callback

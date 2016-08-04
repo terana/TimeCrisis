@@ -10,4 +10,5 @@
 - (void) doGetWithURL:(NSString *)url callback:(void (^)(id, NSError *))callback;
 - (void) doPost:(NSString *)path withParameters:(NSDictionary *)parameters body:(NSDictionary *)body callback:(void (^)(id, NSError *))callback;
 - (void) doPatch:(NSString *)path withParameters:(NSDictionary *)parameters body:(NSDictionary *)body callback:(void (^)(id, NSError *))callback;
+- (void) doDelete:(NSString *)path withParameters:(NSDictionary *)parameters callback:(void (^)(NSError *))callback;
 @end

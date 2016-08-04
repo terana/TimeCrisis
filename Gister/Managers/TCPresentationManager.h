@@ -28,4 +28,5 @@
 - (void) openOtherUserContentOfFile:(TCFile *)file withSender:(TCViewController *)sender;
 - (void) openMainUserContentOfFile:(TCFile *)file withSender:(TCViewController *)sender;
 - (void) openRenamingOfFile:(TCFile *)file withSender:(TCViewController *)sender;
+- (void) showGistRemovingAlertWithSender:(TCViewController *)sender action:(void (^)())action;
 @end

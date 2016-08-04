@@ -139,4 +139,32 @@
 		});
 	}] resume];
 }
+
+- (void) doDelete:(NSString *)path withParameters:(NSDictionary *)parameters callback:(void (^)(NSError *))callback
+{
+	NSString *url = [_serverURL stringByAppendingString:path];
+	if (parameters)
+	{
+		url = [url stringByAppendingString:@"?"];
+		for (NSString *key in parameters)
+		{
+			url = [url stringByAppendingString:[NSString stringWithFormat:@"%@=%@", key, parameters[key]]];
+		}
+	}
+	NSLog(@"PATCH: %@", url);
+
+	NSMutableURLRequest *request = [NSMutableURLRequest new];
+	[request setHTTPMethod:@"DELETE"];
+	[request setURL:[NSURL URLWithString:url]];
+	[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+	NSString *token = [NSString stringWithFormat:@"token %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"]];
+	[request setValue:token forHTTPHeaderField:@"Authorization"];
+
+	NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+	[[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			callback(error);
+		});
+	}] resume];
+}
 @end

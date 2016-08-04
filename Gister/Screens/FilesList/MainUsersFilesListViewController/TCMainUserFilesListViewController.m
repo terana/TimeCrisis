@@ -27,7 +27,9 @@
 	{
 		self.title = @"Files";
 
-		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewFile)];
+		UIBarButtonItem *newItem    = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewFile)];
+		UIBarButtonItem *deleteItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteGist)];
+		[self.navigationItem setRightBarButtonItems:@[ deleteItem, newItem ] animated:YES];
 	}
 	return self;
 }
@@ -40,6 +42,22 @@
 	file.changed = YES;
 
 	[[TCPresentationManager shared] openNewFile:file withSender:self];
+}
+
+- (void) deleteGist
+{
+	[[TCPresentationManager shared] showGistRemovingAlertWithSender:self action:^{
+		[[TCServerManager shared] deleteGist:_gist withCallback:^(NSError *error) {
+			if (error == nil)
+			{
+				[[TCPresentationManager shared] openMainUserGistsWithSender:self];
+			}
+			else
+			{
+				[[TCPresentationManager shared] showMessageWithError:error sender:self callback:nil];
+			}
+		}];
+	}];
 }
 
 

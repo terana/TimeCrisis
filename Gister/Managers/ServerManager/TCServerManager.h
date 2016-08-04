@@ -35,4 +35,5 @@
 - (void) getFollowingForUser:(TCUser *)user withCallback:(void (^)(NSArray *, NSError *))callback;
 - (void) getStarredGistsWithCallback:(void (^)(NSArray *, NSError *))callback;
 - (void) getInformationForUser:(TCUser *)user withCallback:(void (^)(TCUser *, NSError *))callback;
+- (void) deleteGist:(TCGist *)gist withCallback:(void (^)(NSError *))callback;
 @end
